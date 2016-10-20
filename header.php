@@ -57,8 +57,8 @@ $("a.mylink").attr("href", "#");
 </script>
 
 <!-- add custom js inline -->
-<?php if (of_get_option('urid_inlinejs') == true) { ?>
-<?php echo of_get_option('urid_inlinejs'); ?>
+<?php if (of_get_option('urid_jsinline') == true) { ?>
+<?php echo of_get_option('urid_jsinline'); ?>
 <?php } ?>
 <!-- end custom js -->
 
