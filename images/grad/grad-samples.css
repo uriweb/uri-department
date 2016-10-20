@@ -1,0 +1,72 @@
+/* CSS3 Gradients, Homepage Example Bank*/
+
+/* ++++ Dark Blue to Lighter Blue, From Left to Right (1) ++++ */
+
+.db {
+background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    color-stop(0.43, rgb(14,62,117)),
+    color-stop(0.72, rgb(0,33,71))
+);
+background-image: -moz-linear-gradient(
+    right bottom,
+    rgb(14,62,117) 43%,
+    rgb(0,33,71) 72%
+);
+}
+
+/* ++++ Dark blue to Lighter Blue, From Top to Bottom (2) ++++ */
+
+.dbtb {
+background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    right top,
+    color-stop(0.43, rgb(14,62,117)),
+    color-stop(0.72, rgb(0,33,71))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(14,62,117) 43%,
+    rgb(0,33,71) 72%
+);
+}
+
+
+/* ++++ Three Color Gradient, Angled Lightest to Darkest from Top Left to Bottom Right (3) ++++ */
+
+.tcltd {
+background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    color-stop(0.43, rgb(0,33,71)),
+    color-stop(0.56, rgb(27,60,100)),
+    color-stop(0.68, rgb(54,90,130))
+);
+background-image: -moz-linear-gradient(
+    right bottom,
+    rgb(0,33,71) 43%,
+    rgb(27,60,100) 56%,
+    rgb(54,90,130) 68%
+);
+}
+
+/* +++++ Two Color, Dark to Lighter blue, Angled from Top Left to Bottom Right (4) ++++ */
+
+.dctlr {
+background-image: -webkit-gradient(
+    linear,
+    right bottom,
+    left top,
+    color-stop(0.47, rgb(21,80,148)),
+    color-stop(0.74, rgb(0,33,71))
+);
+background-image: -moz-linear-gradient(
+    right bottom,
+    rgb(21,80,148) 47%,
+    rgb(0,33,71) 74%
+);
+}

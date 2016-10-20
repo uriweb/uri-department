@@ -1,0 +1,2 @@
+<p>This is a alert. The alert is dropped in the parent WP directory for this install, so it's on the same server and can be included correctly. <a href="#">Sample link</a></p>
+<p>This is formatted with paragraphs and links <strong>to see how it looks</strong>. <em>It's just an alert!</em></p>
