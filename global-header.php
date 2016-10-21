@@ -1,9 +1,12 @@
 <div id="panel">
-    <div class="center">
-<?php include ( get_template_directory() . '/global-nav.php' ); ?>
-    </div>
-<div style="clear:both;"></div>
-  </div>
+	<div class="center">
+		<?php	
+			include ( get_template_directory() . '/global-nav.php' );
+		?>
+	</div>
+	<div style="clear:both;"></div>
+</div>
+
 <div id="nav">
   <div class="center">
     <a class="toggle open mylink" href="http://www.uri.edu/home/about">About URI</a><a class="toggle open mylink" href="http://www.uri.edu/admission">Admission</a><a class="toggle open mylink" href="http://www.uri.edu/home/academics">Academics</a><a class="toggle open mylink" href="http://www.uri.edu/home/students">Campus Life</a><a class="toggle open mylink" href="http://www.gorhody.com">Athletics</a><a class="rsl toggle open mylink" href="http://www.uri.edu/research/tro/">Research &amp; Outreach</a><a class="toggle open mylink noborder" href="http://web.uri.edu/globaluri">Global</a>

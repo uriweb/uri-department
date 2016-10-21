@@ -1,18 +1,19 @@
 <?php
-
-function hide_version()
-{
+function hide_version() {
 	return '';
 }
 add_filter('the_generator', 'hide_version');
 
+
+
 // Use WordPress packaged jQuery
 function insert_jquery(){
-   wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery');
 }
-
-
 add_filter('wp_enqueue_scripts','insert_jquery');
+
+
+
 
 function my_scripts_method() {
 	wp_enqueue_script(
@@ -20,45 +21,56 @@ function my_scripts_method() {
 		get_template_directory_uri() . '/js/slide.js',
 		array( 'jquery' )
 	);
+}
+add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
+
+
+
+function my_scripts_method2() {
 	wp_enqueue_script(
 		'flexslider',
 		get_template_directory_uri() . '/js/flexslider.js',
 		array( 'jquery' )
 	);
-
 }
+add_action( 'wp_enqueue_scripts', 'my_scripts_method2' );
 
-add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
 
 
-function theme_styles()  
-{ 
+function theme_styles() { 
 	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), '313', 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), '313', 'all' );
 	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), '313', 'all' );
 
-		// enqueing:
+	// enqueing:
 	wp_enqueue_style( 'inuit' );
 	wp_enqueue_style( 'thegrid' );
 	wp_enqueue_style( 'basestyle' );
 }
-
 add_action('wp_enqueue_scripts', 'theme_styles');
+
 
 
 /* Flush your rewrite rules */
 function frosty_flush_rewrite_rules() {
 	global $pagenow, $wp_rewrite;
 
-	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) )
+	if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
 		$wp_rewrite->flush_rules();
+	}
 }
 /* Flush rewrite rules for custom post types. */
 add_action( 'load-themes.php', 'frosty_flush_rewrite_rules' );
 
+
+
+
 // Add buttons to html editor
 function eg_quicktags() {
+	?>
+	<script type="text/javascript" charset="utf-8">
+	<?php
 	/* Adding Quicktag buttons to the editor Wordpress ver. 3.3 and above
 	* - Button HTML ID (required)
 	* - Button display, value="" attribute (required)
@@ -69,7 +81,6 @@ function eg_quicktags() {
 	* - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
 	*/
 	?>
-	<script type="text/javascript" charset="utf-8">
 	QTags.addButton( 'eg_bluebox', 'bluebox', '<div class="bluebox">', '</div>' );
 	QTags.addButton( 'eg_featureditem', 'featureditem','<div class="archiveitem"><div class="postpic">Insert an image here</div><div class="bc"><h2>Edit the title here</h2>Now edit the content', '</div><div style="clear: both;"></div></div>' );
 	QTags.addButton( 'eg_inlineslide', 'slider','<div class="flexslider inlineslide"><ul class="slides">Insert images and wrap them with list item then close this tag', '</ul></div>' );
@@ -79,31 +90,39 @@ function eg_quicktags() {
 add_action('admin_print_footer_scripts','eg_quicktags');
 
 
-function bluebox_shortcode( $atts, $content = null ) {
-   return '<div class="bluebox">' . $content . '</div>';
-}
 
+
+function bluebox_shortcode( $atts, $content = null ) {
+	return '<div class="bluebox">' . $content . '</div>';
+}
 add_shortcode( 'bluebox', 'bluebox_shortcode' );
 
 
-function remove_width_attributedept( $html ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
-}
+
+
 add_filter( 'post_thumbnail_html', 'remove_width_attributedept', 10 );
 add_filter( 'image_send_to_editor', 'remove_width_attributedept', 10 );
 
-
-function string_limit_wordsdept($string, $word_limit)
-{
-  $words = explode(' ', $string, ($word_limit + 1));
-  if(count($words) > $word_limit) {
-  array_pop($words);
-  //add a ... at last article when more than limit word count
-  echo implode(' ', $words)."..."; } else {
-  //otherwise
-  echo implode(' ', $words); }
+function remove_width_attributedept( $html ) {
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+	return $html;
 }
+
+
+
+
+function string_limit_wordsdept($string, $word_limit) {
+	$words = explode(' ', $string, ($word_limit + 1));
+	if(count($words) > $word_limit) {
+	array_pop($words);
+	//add a ... at last article when more than limit word count
+	echo implode(' ', $words)."..."; } else {
+	//otherwise
+	echo implode(' ', $words); }
+}
+
+
+
 
 add_theme_support( 'post-thumbnails' );
 
@@ -135,62 +154,67 @@ register_nav_menus( array(
 unregister_nav_menu( 'col1-menu' );
 unregister_nav_menu( 'footer-menu' );
 
-function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' )
-{
 
-	global $post; if ( $allowed_tags == 'all' ) $allowed_tags = '<a>,<i>,<em>,<b>,<strong>,<ul>,<ol>,<li>,<span>,<blockquote>,<img>'; $text = preg_replace('/[*]/', '', strip_tags($post->post_content, $allowed_tags)); $text = explode(' ', $text); $tot = count($text); for ( $i=0; $i<$words; $i++ ) : $output .= $text[$i] . ' '; endfor; if ( $smileys == "yes" ) $output = convert_smilies($output); ?>
-
-	<p><?php echo force_balance_tags($output) ?>
-
-		<?php if ( $i < $tot ) : ?>
-
-		<?php else : ?>
-
-	</p>
-
-	<?php endif; ?>
-
-	<?php if ( $i < $tot ) : if ( $container == 'p' || $container == 'div' ) : ?>
-
-	</p>
-
-	<?php endif; if ( $container != 'plain' ) : ?>
-
-	<<?php echo $container; ?> class="more">
-
-	<?php if ( $container == 'div' ) : ?>
-
-	<p><?php endif; endif; ?>
-
-	<a href="<?php the_permalink(); ?>" title="<?php echo $link_text; ?>"><?php echo $link_text; ?></a>
-
-		<?php if ( $container == 'div' ) : ?>
-
-	</p>
-
-	<?php endif; if ( $container != 'plain' ) : ?>
-	</<?php echo $container; ?>>
-
-	<?php endif; if ( $container == 'plain' || $container == 'span' ) : ?>
-
-	</p>
-
-	<?php endif; endif;
-
+function the_excerpt_rereloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
+	global $post;
+	$return = '';
+	
+	if ( $allowed_tags == 'all' ) {
+		$allowed_tags = '<a>,<i>,<em>,<b>,<strong>,<ul>,<ol>,<li>,<span>,<blockquote>,<img>';
 	}
+	$text = preg_replace('/[*]/', '', strip_tags($post->post_content, $allowed_tags));
+	$text = explode(' ', $text);
+	$tot = count($text);
+	for ( $i=0; $i<$words; $i++ ) {
+		$output .= $text[$i] . ' ';
+	}
+	if ( $smileys == "yes" ) {
+		$output = convert_smilies($output);
+	}
+	
+	$return = '<p>' . force_balance_tags($output);
+	if ( $i >= $tot ) {
+		$return .= '</p>';
+	}
+	
+	if ( $i < $tot ) {
+		if ( $container == 'p' || $container == 'div' ) {
+			$return .= '</p>';
+		}
+		if ( $container != 'plain' ) {
+			$return .= '<' . $container . ' class="more">';
+			if ( $container == 'div' ) {
+				$return .= '<p>';
+			}
+		}
+
+		$return .= '<a href="' . get_the_permalink() . '" title="' . $link_text . '">' . $link_text . '</a>';
+		
+		if ( $container == 'div' ) {
+			$return .= '</p>';
+		}
+		if ( $container != 'plain' ) {
+			$return .= '</' . $container . '>';
+		}
+		if ( $container == 'plain' || $container == 'span' ) {
+			$return .= '</p>';
+		}
+	}
+	print $return;
+}
+
 
 // Area 1, right sidebar customization
 
-	register_sidebar( array(
-		'name' => __( 'Right Department Sidebar', 'uri' ),
-		'id' => 'mainsidebar',
-		'description' => __( 'Right sidebar content for department', 'uri' ),
-			'before_widget' => '<div class="sidebarwidget">',
-			'after_widget'  => '</div>',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-		)
-	);
+register_sidebar( array(
+	'name' => __( 'Right Department Sidebar', 'uri' ),
+	'id' => 'mainsidebar',
+	'description' => __( 'Right sidebar content for department', 'uri' ),
+	'before_widget' => '<div class="sidebarwidget">',
+	'after_widget'  => '</div>',
+	'before_title' => '<h3>',
+	'after_title' => '</h3>',
+	));
 
 register_sidebar(array(
 		'name'=> 'Left Column',
@@ -220,6 +244,9 @@ register_sidebar(array(
 	));
 
 add_action('init', 'my_post_type_maker');
+
+
+
 function my_post_type_maker() {
 
 	register_post_type('people', array(	'label' => 'People','description' => 'For faculty, staff, and others.','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => true,'rewrite' => array('slug' => 'meet'),'query_var' => true,'has_archive' => true,'exclude_from_search' => false,'supports' => array('title','thumbnail',),'labels' => array (
@@ -304,15 +331,12 @@ function my_post_type_maker() {
  * This code must run every time the functions.php file is read
  */
 
-if(function_exists("register_field_group"))
-{
+if(function_exists("register_field_group")) {
 	register_field_group(array (
 		'id' => '502a639e579f1',
 		'title' => 'People',
-		'fields' => 
-		array (
-			0 => 
-			array (
+		'fields' => array (
+			0 => array (
 				'label' => 'Title',
 				'name' => 'peopletitle',
 				'type' => 'text',
@@ -323,8 +347,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da51637c7',
 				'order_no' => '0',
 			),
-			1 => 
-			array (
+			1 => array (
 				'label' => 'Department',
 				'name' => 'peopledepartment',
 				'type' => 'text',
@@ -335,8 +358,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5163bdb',
 				'order_no' => '1',
 			),
-			2 => 
-			array (
+			2 => array (
 				'label' => 'Phone',
 				'name' => 'peoplephone',
 				'type' => 'text',
@@ -347,8 +369,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5163f7d',
 				'order_no' => '2',
 			),
-			3 => 
-			array (
+			3 => array (
 				'label' => 'Email',
 				'name' => 'peopleemail',
 				'type' => 'text',
@@ -359,8 +380,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da516431f',
 				'order_no' => '3',
 			),
-			4 => 
-			array (
+			4 => array (
 				'label' => 'Mailing Address',
 				'name' => 'peoplemail',
 				'type' => 'textarea',
@@ -371,8 +391,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5164706',
 				'order_no' => '4',
 			),
-			5 => 
-			array (
+			5 => array (
 				'label' => 'Fax Number',
 				'name' => 'peoplefax',
 				'type' => 'text',
@@ -383,8 +402,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5164ac9',
 				'order_no' => '5',
 			),
-			6 => 
-			array (
+			6 => array (
 				'label' => 'Biography',
 				'name' => 'peoplebio',
 				'type' => 'wysiwyg',
@@ -395,8 +413,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5164ea8',
 				'order_no' => '6',
 			),
-			7 => 
-			array (
+			7 => array (
 				'label' => 'Publications',
 				'name' => 'peoplepubs',
 				'type' => 'wysiwyg',
@@ -407,8 +424,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5165266',
 				'order_no' => '7',
 			),
-			8 => 
-			array (
+			8 => array (
 				'label' => 'URL',
 				'name' => 'peopleurl',
 				'type' => 'text',
@@ -419,8 +435,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da516562b',
 				'order_no' => '8',
 			),
-			9 => 
-			array (
+			9 => array (
 				'label' => 'People Excerpt',
 				'name' => 'peoplereview',
 				'type' => 'wysiwyg',
@@ -431,8 +446,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5165286',
 				'order_no' => '9',
 			),
-			10 => 
-			array (
+			10 => array (
 				'label' => 'Research Interests',
 				'name' => 'peopleresearch',
 				'type' => 'wysiwyg',
@@ -443,8 +457,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5165317',
 				'order_no' => '10',
 			),
-			11 => 
-			array (
+			11 => array (
 				'label' => 'Education',
 				'name' => 'peopleedu',
 				'type' => 'wysiwyg',
@@ -455,8 +468,7 @@ if(function_exists("register_field_group"))
 				'key' => 'field_5017da5165357',
 				'order_no' => '11',
 			),
-			12 => 
-			array (
+			12 => array (
 				'label' => 'Custom',
 				'name' => 'peoplecustom',
 				'type' => 'textarea',
@@ -468,12 +480,9 @@ if(function_exists("register_field_group"))
 				'order_no' => '12',
 			),
 		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
+		'location' => array (
+			'rules' => array (
+				0 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'people',
@@ -482,23 +491,20 @@ if(function_exists("register_field_group"))
 			),
 			'allorany' => 'all',
 		),
-		'options' => 
-		array (
+		'options' => array (
 			'position' => 'normal',
 			'layout' => 'default',
 			'hide_on_screen' => 
-			array (
-			),
+			array (),
 		),
 		'menu_order' => 0,
 	));
+	
 	register_field_group(array (
 		'id' => '502a639e5813f',
 		'title' => 'Custom Sidebar',
-		'fields' => 
-		array (
-			0 => 
-			array (
+		'fields' => array (
+			0 => array (
 				'key' => 'field_502a61d11ab3a',
 				'label' => 'Sidebar',
 				'name' => 'side',
@@ -514,15 +520,13 @@ if(function_exists("register_field_group"))
 		array (
 			'rules' => 
 			array (
-				0 => 
-				array (
+				0 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'post',
 					'order_no' => '0',
 				),
-				1 => 
-				array (
+				1 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'page',
@@ -541,13 +545,12 @@ if(function_exists("register_field_group"))
 		),
 		'menu_order' => 0,
 	));
+	
 	register_field_group(array (
 		'id' => '502a639e58574',
 		'title' => 'People Options',
-		'fields' => 
-		array (
-			0 => 
-			array (
+		'fields' => array (
+			0 => array (
 				'label' => 'People Category',
 				'name' => 'peoplecat',
 				'type' => 'text',
@@ -559,12 +562,9 @@ if(function_exists("register_field_group"))
 				'order_no' => '0',
 			),
 		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
+		'location' => array (
+			'rules' => array (
+				0 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'page',
@@ -573,21 +573,18 @@ if(function_exists("register_field_group"))
 			),
 			'allorany' => 'all',
 		),
-		'options' => 
-		array (
+		'options' => array (
 			'position' => 'normal',
 			'layout' => 'default',
-			'hide_on_screen' => 
-			array (
-			),
+			'hide_on_screen' => array (),
 		),
 		'menu_order' => 0,
 	));
-register_field_group(array (
+	
+	register_field_group(array (
 		'id' => '502b9f08e2358',
 		'title' => 'Layout Options',
-		'fields' => 
-		array (
+		'fields' => array (
 			array (
 				'key' => 'field_502b9eb29fc45',
 				'label' => 'Use Custom Page or Post Title?',
@@ -599,10 +596,8 @@ register_field_group(array (
 				'order_no' => '0',
 			),
 		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
+		'location' => array (
+			'rules' => array (
 				array (
 					'param' => 'post_type',
 					'operator' => '==',
@@ -618,23 +613,20 @@ register_field_group(array (
 			),
 			'allorany' => 'any',
 		),
-		'options' => 
-		array (
+		'options' => array (
 			'position' => 'side',
 			'layout' => 'default',
 			'hide_on_screen' => 
-			array (
-			),
+			array (),
 		),
 		'menu_order' => 0,
 	));
-register_field_group(array (
+	
+	register_field_group(array (
 		'id' => '506446f1c5b8d',
 		'title' => 'Custom Archive',
-		'fields' => 
-		array (
-			0 => 
-			array (
+		'fields' => array (
+			0 => array (
 				'key' => 'field_506446c8993e1',
 				'label' => 'Custom Archive Category',
 				'name' => 'customcat',
@@ -646,12 +638,9 @@ register_field_group(array (
 				'order_no' => '0',
 			),
 		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
+		'location' => array (
+			'rules' => array (
+				0 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'page',
@@ -660,23 +649,20 @@ register_field_group(array (
 			),
 			'allorany' => 'all',
 		),
-		'options' => 
-		array (
+		'options' => array (
 			'position' => 'side',
 			'layout' => 'default',
 			'hide_on_screen' => 
-			array (
-			),
+			array (),
 		),
 		'menu_order' => 0,
 	));
-register_field_group(array (
+	
+	register_field_group(array (
 		'id' => '506ae97f314e0',
 		'title' => 'People Sorting',
-		'fields' => 
-		array (
-			0 => 
-			array (
+		'fields' => array (
+			0 => array (
 				'label' => 'Sort People',
 				'name' => 'peoplesort',
 				'type' => 'true_false',
@@ -687,12 +673,9 @@ register_field_group(array (
 				'order_no' => '0',
 			),
 		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
+		'location' => array (
+			'rules' => array (
+				0 => array (
 					'param' => 'post_type',
 					'operator' => '==',
 					'value' => 'page',
@@ -701,13 +684,11 @@ register_field_group(array (
 			),
 			'allorany' => 'all',
 		),
-		'options' => 
-		array (
+		'options' => array (
 			'position' => 'side',
 			'layout' => 'default',
 			'hide_on_screen' => 
-			array (
-			),
+			array (),
 		),
 		'menu_order' => 0,
 	));
@@ -719,13 +700,11 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	/*-----------------------------------------------------------------------------------*/
 	/* Options Framework Theme
 	/*-----------------------------------------------------------------------------------*/
-
 	/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
 	if ( STYLESHEETPATH == TEMPLATEPATH ) {
 		define('OPTIONS_FRAMEWORK_URL', TEMPLATEPATH . '/admin/');
 		define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/');
-	}
-	else {
+	} else {
 		define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/admin/');
 		define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('stylesheet_directory') . '/admin/');
 	}
@@ -733,20 +712,14 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 }
 
 
-
 function my_admin_notice(){
 	global $pagenow;
 	if ( $pagenow == 'nav-menus.php' ) {
-	echo '<div class="updated">';
-	echo '<p><span style="color:#ca1717;"><strong>Important:</strong></span> ';
-	echo 'Be sure that your select the corresponding menu ';
-	echo 'under <em>"Primary Department Sidebar"</em> in the <em>"Theme Locations"</em> box. ';
-	echo 'Please refer to the documentation for more.</p>';
-	echo '</div>';
-
+		echo '<div class="updated">
+		<p><span style="color:#ca1717;"><strong>Important:</strong></span> Be sure that your select the corresponding menu under <em>"Primary Department Sidebar"</em> in the <em>"Theme Locations"</em> box. Please refer to the documentation for more.</p>
+		</div>';
 	}
 }
-
 add_action('admin_notices', 'my_admin_notice');
 
 
@@ -754,16 +727,13 @@ add_action('admin_notices', 'my_admin_notice');
 function my_admin_notice2(){
 	global $pagenow;
 	if ( $pagenow == 'options-reading.php' ) {
-		echo '<div class="updated"><p>';
-		echo '<span style="color:#ca1717;"><strong>Important:</strong></span>';
-		echo 'Be sure to set the "homepage" for this department by setting "A static page" and choosing a page in the drop-down for the <em>Front-Page</em>. ';
-		echo '<strong>Leave the <em>Post Page</em> selection blank</strong>, and use the <em>Archive</em> page template on any page you would like to list posts. ';
-		echo 'See the documentation for more.';
-		echo '</p></div>';
+		echo '<div class="updated">
+		<p><span style="color:#ca1717;"><strong>Important:</strong></span> Be sure to set the "homepage" for this department by setting "A static page" and choosing a page in the drop-down for the <em>Front-Page</em>. <strong>Leave the <em>Post Page</em> selection blank</strong>, and use the <em>Archive</em> page template on any page you would like to list posts. See the documentation for more.</p>
+		</div>';
 	}
 }
-
 add_action('admin_notices', 'my_admin_notice2');
+
 
 function remove_metaboxes() {
 	remove_meta_box( 'postcustom' , 'page' , 'normal' ); //removes custom fields for page
@@ -773,13 +743,33 @@ function remove_metaboxes() {
 }
 add_action( 'admin_menu' , 'remove_metaboxes' );
 
+
+
 function my_acf_load_value( $value, $post_id, $field ) {
 	//Set the default value for "pagetitle" to checked if the option is set in options panel
 	if( of_get_option('urid_pageover') == true && ! is_numeric( $value ) ) {
 		$value = 1;
 	}
-
 	return $value;
 }
-
 add_filter('acf/load_value/name=pagetitle', 'my_acf_load_value', 10, 3);
+
+
+//********************************************************/
+//By default, SearchWP adds an entry to WP Admin Bar but it is now restricted to super admin only
+function my_searchwp_admin_bar_cap ($capability){
+	//return 'manage_network'; //
+	$capability = 'manage_network'; //restructed to users with super admin privilege
+	return $capability;
+}
+add_filter( 'searchwp_settings_cap', 'my_searchwp_admin_bar_cap' );
+
+
+//prevent SearchWP from initializing itself unless it is a search page
+function my_searchwp_init() {
+	return is_search();
+}
+add_filter( 'searchwp_init', 'my_searchwp_init' );
+
+//********************************************************/
+
