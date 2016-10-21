@@ -155,7 +155,7 @@ unregister_nav_menu( 'col1-menu' );
 unregister_nav_menu( 'footer-menu' );
 
 
-function the_excerpt_rereloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
+function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
 	global $post;
 	$return = '';
 	

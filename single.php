@@ -8,27 +8,14 @@
 	<div class="subcol">
 		<div id="content_start" style="display : none ; "></div>
 
-		<!-- the alert system for departments -->
-		<?php if ((of_get_option('urid_sitealert') == true) && (of_get_option('urid_alertspot') == 'everywhere')) { ?>
-		<div class="depalert"><?php $contentoutput = of_get_option('urid_sitealert'); apply_filters('the_content', $contentoutput); echo wpautop($contentoutput); ?></div>
-		<?php } ?>
-		<!-- end alerts -->
+		<?php
+			include (STYLESHEETPATH . '/inc/alert.php');
+		?>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 		<?php
-			$onoroff = get_field('pagetitle');
-			if (of_get_option('urid_pageover') == true && !isset($onoroff)) {
-			} else {
-				if (get_field('pagetitle') == true) {
-				} else {
-					?>
-					<div class="title">
-						<h1><?php the_title(); ?></h1>
-					</div>
-					<?php
-				}
-			}
+			include (STYLESHEETPATH . '/inc/title.php');
 		?>
 
 		<div class="post" id="post-<?php the_ID(); ?>">

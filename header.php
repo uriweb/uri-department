@@ -10,7 +10,7 @@
 
 	<?php wp_head(); ?>
 
-	<?php require_once ( get_stylesheet_directory() . '/typekit-embed.php' ); ?>
+	<?php require_once ( get_stylesheet_directory() . '/inc/typekit-embed.php' ); ?>
 
 
 	<link rel="icon" type="image/gif" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />
