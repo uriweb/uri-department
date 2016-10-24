@@ -1,2 +1,0 @@
-[23-Apr-2012 09:16:05] PHP Fatal error:  Call to undefined function  get_header() in /home/astereos/public_html/core/dev/wp-content/themes/uri-department/index.php on line 1
-[23-Apr-2012 09:17:43] PHP Fatal error:  Call to undefined function  get_header() in /home/astereos/public_html/core/dev/wp-content/themes/uri-department/index.php on line 1

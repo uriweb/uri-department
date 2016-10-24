@@ -1,47 +1,47 @@
 <?php
 
-class Localist extends WP_Widget
-{
-  function Localist()
-  {
-    $widget_ops = array('classname' => 'Localist', 'description' => 'Drop in a localist calendar' );
-    $this->WP_Widget('Localist', 'Localist Events', $widget_ops);
-  }
- 
-  function form($instance)
-  {
-    $instance = wp_parse_args( (array) $instance, array( 'text' => '' ) );
-    $text = $instance['text'];
-?>
- <p>
-      	<label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Localist Javascript code'); ?></label>
-      	<textarea class="widefat" rows="8" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea><small>Generate your code <a href="http://events.uri.edu/help/widget">here</a> paste it into the box below. <strong>Recommended setting: Javascript</strong></small>
-    </p>
-<?php
-  }
- 
-  function update($new_instance, $old_instance)
-  {
-    $instance = $old_instance;
-    $instance['text'] = $new_instance['text'];
-    return $instance;
-  }
- 
-  function widget($args, $instance)
-  {
-    extract($args, EXTR_SKIP);
- 
-    echo $before_widget;
+class Localist extends WP_Widget {
 
-    $text = empty($instance['text']) ? ' ' : apply_filters('', $instance['text']);
+	function Localist() {
+		$widget_ops = array('classname' => 'Localist', 'description' => 'Drop in a localist calendar' );
+		$this->WP_Widget('Localist', 'Localist Events', $widget_ops);
+	}
 
-    // WIDGET CODE GOES HERE
-	echo "<div class='localist'>";
-	echo $text;
-	echo "</div>";
- 
-    echo $after_widget;
+	/**
+	 * Renders the widget form
+	 */
+	function form($instance) {
+		$instance = wp_parse_args( (array) $instance, array( 'text' => '' ) );
+
+		$content = '<p>';
+		$content .= '<label for="' . $this->get_field_id('text') . '">' . _e('Localist Javascript code') . '</label>';
+		$content .= '<textarea class="widefat" rows="8" id="' . $this->get_field_id('text') . '" name="' . $this->get_field_name('text') . '">' . $instance['text'] . '</textarea>';
+		$content .= '<small>Generate your code <a href="http://events.uri.edu/help/widget">here</a> paste it into the box below. <strong>Recommended setting: Javascript</strong></small>';
+		$content .= '</p>';
+		
+		print $content;
   }
  
+	/**
+	 * Handles updates to widget
+	 */
+	function update($new_instance, $old_instance) {
+		$instance = $old_instance;
+		$instance['text'] = $new_instance['text'];
+		return $instance;
+	}
+
+	/**
+	 * Outputs widget to page
+	 */
+	function widget($args, $instance) {
+		extract($args, EXTR_SKIP);
+		$text = empty($instance['text']) ? ' ' : apply_filters('', $instance['text']);
+
+		print $before_widget;
+		print '<div class="localist">' . $text . '</div>';
+		print $after_widget;
+	}
+
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("Localist");') );?>
+add_action( 'widgets_init', create_function('', 'return register_widget("Localist");') );
