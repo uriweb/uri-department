@@ -105,9 +105,9 @@ unregister_nav_menu( 'col1-menu' );
 unregister_nav_menu( 'footer-menu' );
 
 
-
-
- 
+/**
+ * Suppress version number
+ */
 function uri_department_hide_version() {
 	return '';
 }
@@ -124,29 +124,35 @@ add_filter('wp_enqueue_scripts','uri_department_insert_jquery');
 
 
 
+/**
+ * Add JS
+ */
 function uri_department_scripts_method() {
+	$version = '20161024';
 	wp_enqueue_script(
 		'slider',
 		get_template_directory_uri() . '/js/slide.js',
-		array( 'jquery' )
+		array( 'jquery' ),
+		$version,
+		TRUE
 	);
+
+	wp_enqueue_script(
+		'flexslider',
+		get_template_directory_uri() . '/js/flexslider.js',
+		array( 'jquery' ),
+		$version,
+		TRUE
+	);
+
 }
 add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
 
 
 
-
-function uri_department_scripts_method2() {
-	wp_enqueue_script(
-		'flexslider',
-		get_template_directory_uri() . '/js/flexslider.js',
-		array( 'jquery' )
-	);
-}
-add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method2' );
-
-
-
+/**
+ * Add CSS
+ */
 function uri_department_styles() { 
 	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), '313', 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), '313', 'all' );
@@ -232,7 +238,35 @@ function string_limit_wordsdept($string, $word_limit) {
 }
 
 
+/**
+ * Calculates the page title.  As in HTML <title> title
+ * @return str
+ */
+function uri_department_get_page_title() {
+	global $page, $paged;
+	wp_title( '|', true, 'right' );
+	bloginfo( 'name' );
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) ) { 
+		return ' | ' . $site_description;
+	}
+	if ( $paged >= 2 || $page >= 2 ) {
+		return ' | ' . sprintf( __( 'Page %s', 'uridepartment' ), max( $paged, $page ) );
+	}
+}
 
+/**
+ * adds custom per page styling if it exists in the page meta
+ * @return str
+ */
+function uri_department_get_page_css() {
+	global $wp_query;
+	$postid = $wp_query->post->ID;
+	$meta = get_post_meta($postid,'_my_meta',TRUE);
+	if (isset($meta['pagecss']) && $meta['pagecss'] === true) {
+		return '<style type="text/css">' . $meta['pagecss'] . '</style>';
+	}
+}
 
 
 function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {

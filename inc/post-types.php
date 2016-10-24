@@ -152,7 +152,18 @@ if(function_exists('register_field_group')) {
 		'id' => '502a639e579f1',
 		'title' => 'People',
 		'fields' => array (
-			0 => array (
+			array (
+				'label' => 'Sort Name',
+				'name' => 'sortname',
+				'type' => 'text',
+				'instructions' => 'Enter the Sort Name',
+				'required' => '0',
+				'default_value' => '',
+				'formatting' => 'none',
+				'key' => 'field_sortname',
+				'order_no' => '-1',
+			),
+			array (
 				'label' => 'Title',
 				'name' => 'peopletitle',
 				'type' => 'text',
@@ -163,7 +174,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da51637c7',
 				'order_no' => '0',
 			),
-			1 => array (
+			array (
 				'label' => 'Department',
 				'name' => 'peopledepartment',
 				'type' => 'text',
@@ -174,7 +185,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5163bdb',
 				'order_no' => '1',
 			),
-			2 => array (
+			array (
 				'label' => 'Phone',
 				'name' => 'peoplephone',
 				'type' => 'text',
@@ -185,7 +196,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5163f7d',
 				'order_no' => '2',
 			),
-			3 => array (
+			array (
 				'label' => 'Email',
 				'name' => 'peopleemail',
 				'type' => 'text',
@@ -196,7 +207,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da516431f',
 				'order_no' => '3',
 			),
-			4 => array (
+			array (
 				'label' => 'Mailing Address',
 				'name' => 'peoplemail',
 				'type' => 'textarea',
@@ -207,7 +218,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5164706',
 				'order_no' => '4',
 			),
-			5 => array (
+			array (
 				'label' => 'Fax Number',
 				'name' => 'peoplefax',
 				'type' => 'text',
@@ -218,7 +229,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5164ac9',
 				'order_no' => '5',
 			),
-			6 => array (
+			array (
 				'label' => 'Biography',
 				'name' => 'peoplebio',
 				'type' => 'wysiwyg',
@@ -229,7 +240,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5164ea8',
 				'order_no' => '6',
 			),
-			7 => array (
+			array (
 				'label' => 'Publications',
 				'name' => 'peoplepubs',
 				'type' => 'wysiwyg',
@@ -240,7 +251,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5165266',
 				'order_no' => '7',
 			),
-			8 => array (
+			array (
 				'label' => 'URL',
 				'name' => 'peopleurl',
 				'type' => 'text',
@@ -251,7 +262,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da516562b',
 				'order_no' => '8',
 			),
-			9 => array (
+			array (
 				'label' => 'People Excerpt',
 				'name' => 'peoplereview',
 				'type' => 'wysiwyg',
@@ -262,7 +273,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5165286',
 				'order_no' => '9',
 			),
-			10 => array (
+			array (
 				'label' => 'Research Interests',
 				'name' => 'peopleresearch',
 				'type' => 'wysiwyg',
@@ -273,7 +284,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5165317',
 				'order_no' => '10',
 			),
-			11 => array (
+			array (
 				'label' => 'Education',
 				'name' => 'peopleedu',
 				'type' => 'wysiwyg',
@@ -284,7 +295,7 @@ if(function_exists('register_field_group')) {
 				'key' => 'field_5017da5165357',
 				'order_no' => '11',
 			),
-			12 => array (
+			array (
 				'label' => 'Custom',
 				'name' => 'peoplecustom',
 				'type' => 'textarea',

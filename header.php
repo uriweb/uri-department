@@ -6,43 +6,41 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=3.0" />
 
-	<title><?php global $page, $paged; wp_title( '|', true, 'right' ); bloginfo( 'name' ); $site_description = get_bloginfo( 'description', 'display' ); if ( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description"; if ( $paged >= 2 || $page >= 2 ) echo ' | ' . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) ); ?></title>
+	<title><?php print uri_department_get_page_title(); ?></title>
 
 	<?php wp_head(); ?>
+	<?php
+	/*
+	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+	<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
+	*/
+	?>
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 	<?php require_once ( get_stylesheet_directory() . '/inc/typekit-embed.php' ); ?>
 
 
 	<link rel="icon" type="image/gif" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />
-	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/print.css" />
+	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/css/print.css" />
 
-	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
-	<link rel="alternate" type="application/atom+xml" title="<?php bloginfo('name'); ?> Atom Feed" href="<?php bloginfo('atom_url'); ?>" />
 
-	<?php if (of_get_option('urid_css') == true) { ?>
+	<?php if (of_get_option('urid_css')) { ?>
 	<style type="text/css">
 		@import url("<?php echo of_get_option('urid_css'); ?>");
 	</style>
 	<?php } ?>
 
-	<?php if (of_get_option('urid_cssinline') == true) { ?>
+	<?php if (of_get_option('urid_cssinline')) { ?>
 	<style type="text/css">
+		<?php print of_get_option('urid_cssinline'); ?>
+	</style>
+	<?php } ?>
+
 	<?php
-		echo of_get_option('urid_cssinline');
+		// adds custom per page styling if it exists in the page meta
+		print uri_department_get_page_css();
 	?>
-	</style>
-	<?php } ?>
-
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
-	<!-- adds custom per page styling if it exists in the page meta -->
-	<?php global $wp_query; $postid = $wp_query->post->ID; $my_meta = get_post_meta($postid,'_my_meta',TRUE); if (isset($my_meta['pagecss']) && $my_meta['pagecss'] === true) { ?>
-	<style type="text/css">
-		<?php echo $my_meta['pagecss']; ?>
-	</style>
-	<?php } ?>
-	<!-- end -->
 
 </head>
 
@@ -70,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 //  if (@fopen("http://web.uri.edu/files/alert.txt","r")) { ?>  
 <?php if (false) { ?>
 <div class="alertbar">
-<?php echo ( file_get_contents( "http://web.uri.edu/files/alert.txt") ); ?>
+	<?php echo ( file_get_contents( "http://web.uri.edu/files/alert.txt") ); ?>
 </div>
 <?php } ?>
 

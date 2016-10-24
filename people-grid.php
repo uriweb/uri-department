@@ -181,7 +181,50 @@ if ( $count > 0 ){
 
 <?php } else { ?><!-- if no category is defined or people aren't sorted -->
 
-	<?php query_posts('post_type=people&posts_per_page=9999'); ?>
+	<?php
+	
+	$args = array(
+		'post_type' => 'people',
+		'posts_per_page' => 9999,
+		'order' => 'ASC',
+		'orderby' => 'meta_value',
+
+// 		'meta_key' => 'sortname',
+// 
+//  		'meta_value' => 'asdfasdfaiusdfasdklfjasd',
+//  		'meta_compare' => '!='
+		
+		'meta_query' => array(
+			'relation' => 'OR',
+				array(
+					'key' => 'sortname',
+					'value' => '',
+					'compare' => '!='
+				),
+				array(
+					'key' => 'sortname',
+					'value' => '',
+					'compare' => '='
+				),
+// 				array(
+// 					'key' => 'peopledepartment',
+// 					'value' => '',
+// 					'compare' => '!='
+// 				),
+// 				array(
+// 					'key' => 'peopledepartment',
+// 					'value' => '',
+// 					'compare' => '='
+// 				),
+			)
+	);
+	
+	
+	
+		query_posts($args);
+		
+		
+	?>
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $i++; // Increase count ?>
 		<div class="peopleitem<?php if ($i % 2 == 0) { ?> endperson<?php } ?>">
