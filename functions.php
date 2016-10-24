@@ -34,7 +34,6 @@ require_once ( get_stylesheet_directory() . '/inc/post-types.php' );
 require_once ( get_stylesheet_directory() . '/widgets/recentposts.php' );
 require_once ( get_stylesheet_directory() . '/widgets/recentpostsfull.php' );
 require_once ( get_stylesheet_directory() . '/widgets/localist.php' );
-//require_once ( get_template_directory() . '/mdetect.php' );
 
 
 if ( !function_exists( 'optionsframework_init' ) ) {
