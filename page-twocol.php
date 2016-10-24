@@ -14,11 +14,11 @@
 
 		<?php
 			include (STYLESHEETPATH . '/inc/alert.php');
-		?>
 
-		<?php if (have_posts()) : while (have_posts()) : the_post(); $tagline = get_post_meta($post->ID, 'tagline', $single = true); $side = get_post_meta($post->ID, 'side', $single = true); ?>
+			if (have_posts()) : while (have_posts()) : the_post();
+			$tagline = get_post_meta($post->ID, 'tagline', $single = true);
+			$side = get_post_meta($post->ID, 'side', $single = true);
 
-		<?php
 			include (STYLESHEETPATH . '/inc/title.php');
 		?>
 
