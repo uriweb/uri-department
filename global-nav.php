@@ -34,7 +34,7 @@
 		<li><a href="http://web.uri.edu/career/">Career and Internships</a></li>
 		<li><a class="odd" href="http://web.uri.edu/ceps/">College of Education and Professional Studies</a></li>
 		<li><a href="http://web.uri.edu/library/">Libraries</a></li>
-		<li><a class="odd" href="http://web.uri.edu/learningonline">Online Learning</a></li>
+		<li><a class="odd" href="http://web.uri.edu/online">Online Learning</a></li>
 		<li><a href="http://web.uri.edu/faculty/">For Faculty</a></li>
 	</ul>
 </div>
