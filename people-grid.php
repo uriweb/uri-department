@@ -77,24 +77,10 @@ add_filter('post_limits', 'your_query_limit');
 	<?php while ($loop->have_posts()) : $loop->the_post(); ?>
 	<?php $i++; // Increase count ?>
 
-<div class="peopleitem<?php if ($i % 2 == 0) { ?> endperson<?php } ?>">
-	<div class="header">
-		<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-	</div>
-	<div class="inside">
-		<?php if ( has_post_thumbnail() ) : ?>
-			<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('people-thumb'); ?></a>
-		<?php else: ?>
-			<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/defaultsmall.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
-		<?php endif; ?>
-	
-		<p><?php the_field('peopletitle'); ?></p>
-		<p style="font-size:1em;font-weight:bold;color:#555;font-style:italic;"><?php the_field('peopledepartment'); ?></p>
-		<p><?php if(get_field('peoplephone')) { ?><?php the_field('peoplephone'); ?><?php } ?><?php if(get_field('peoplephone') && get_field('peopleemail')) { ?> &ndash; <?php } ?><?php if(get_field('peopleemail')) { ?><a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a><?php } ?></p>
+			<?php
+				get_template_part( 'templates/partials/person', 'card' );
+			?>
 
-		<div style="clear:both;"></div>
-	</div>
-</div>
 
 <?php if ($i % 2 == 0) : ?>
 	<div style="clear:both;"></div>
@@ -118,8 +104,11 @@ add_filter('post_limits', 'your_query_limit');
 	}
 	add_filter('post_limits', 'your_query_limit');
 ?>
-<?php $sortstuff = explode(" ", $peoplecat); foreach($sortstuff as $solocat) { ?>
-<?php $terms = get_terms( 'peoplegroups', 'hide_empty=1&slug='.$solocat.'' );
+<?php
+	$sortstuff = explode(" ", $peoplecat);
+	foreach($sortstuff as $solocat):
+?>
+<?php $terms = get_terms( 'peoplegroups', 'hide_empty=1&slug=' . $solocat );
 $count = count($terms);
 if ( $count > 0 ){
     foreach ( $terms as $term ) {
@@ -140,120 +129,72 @@ if ( $count > 0 ){
 ?>
 
  <?php $i = 0; // Create a new (incrementing) var ?>
+
+
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
 
-        <?php $i++; // Increase count ?>
+			<?php
+				get_template_part( 'templates/partials/person', 'card' );
+			?>
 
-<div class="peopleitem<?php if ($i % 2 == 0) { ?> endperson<?php } ?>">
-<div class="header"><h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3></div>
-<div class="inside">
-<?php if ( has_post_thumbnail() ) { ?>
-<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('people-thumb'); ?></a>
-<?php } else { ?>
-<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/defaultsmall.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
-<?php } ?>
+			<?php if ($i % 2 == 0) : ?>
+			<div style="clear:both;"></div>
+			<div class="gapspacer"></div>
+			<?php endif; ?>
 
-<p><?php the_field('peopletitle'); ?></p>
-
-<p style="font-size:1em;font-weight:bold;color:#555;font-style:italic;"><?php the_field('peopledepartment'); ?></p>
-
-<p><?php if(get_field('peoplephone')) { ?><?php the_field('peoplephone'); ?><?php } ?><?php if(get_field('peoplephone') && get_field('peopleemail')) { ?> &ndash; <?php } ?><?php if(get_field('peopleemail')) { ?><a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a><?php } ?></p>
-
-<div style="clear:both;"></div>
-</div>
-</div>
-
-<?php if ($i % 2 == 0) : ?>
-<div style="clear:both;"></div>
-<div class="gapspacer"></div>
-<?php endif; ?>
-
-<?php endwhile; ?>
+		<?php endwhile; ?>
 <div style="clear:both;"></div>
 </div><!-- end people sector -->
 <div style="clear:both;"></div>
 <?php wp_reset_postdata(); } } ?>
 
-<?php unset($solocat); ?>
-<?php } ?>
+<?php
+	unset($solocat);
+	endforeach;
+?>
 
 <?php remove_filter('post_limits', 'your_query_limit'); ?>
 
 <?php } else { ?><!-- if no category is defined or people aren't sorted -->
 
-	<?php
-	
-	$args = array(
-		'post_type' => 'people',
-		'posts_per_page' => 9999,
-		'order' => 'ASC',
-		'orderby' => 'meta_value',
+<?php
 
-// 		'meta_key' => 'sortname',
-// 
-//  		'meta_value' => 'asdfasdfaiusdfasdklfjasd',
-//  		'meta_compare' => '!='
-		
-		'meta_query' => array(
-			'relation' => 'OR',
+		$args = array(
+			'meta_query' => array(
+				'relation' => 'AND',
 				array(
 					'key' => 'sortname',
-					'value' => '',
-					'compare' => '!='
+					'compare' => 'EXISTS'
 				),
 				array(
 					'key' => 'sortname',
-					'value' => '',
-					'compare' => '='
+					'compare' => '!=',
+					'value' => ''
 				),
-// 				array(
-// 					'key' => 'peopledepartment',
-// 					'value' => '',
-// 					'compare' => '!='
-// 				),
-// 				array(
-// 					'key' => 'peopledepartment',
-// 					'value' => '',
-// 					'compare' => '='
-// 				),
-			)
-	);
-	
-	
-	
-		query_posts($args);
-		
-		
+			),
+			'orderby' => array( 'meta_value' => 'ASC', 'publication_date' => 'DESC' ),
+		);
+		uri_department_get_people($args);
+
+		$args = array(
+			'meta_query' => array(
+				'relation' => 'OR',
+				array(
+					'key' => 'sortname',
+					'compare' => 'NOT EXISTS'
+				),
+				array(
+					'key' => 'sortname',
+					'compare' => '=',
+					'value' => ''
+				),
+			),
+			'orderby' => array('publication_date' => 'DESC' ),
+		);
+		uri_department_get_people($args);
 	?>
-	<?php while (have_posts()) : the_post(); ?>
-		<?php $i++; // Increase count ?>
-		<div class="peopleitem<?php if ($i % 2 == 0) { ?> endperson<?php } ?>">
-			<div class="header">
-				<h3><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-			</div>
-			<div class="inside">
-				<?php if ( has_post_thumbnail() ) : ?>
-				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('people-thumb'); ?></a>
-				<?php else : ?>
-				<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/defaultsmall.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
-				<?php endif; ?>
-
-				<p><?php the_field('peopletitle'); ?></p>
-
-				<p style="font-size:1em;font-weight:bold;color:#555;font-style:italic;"><?php the_field('peopledepartment'); ?></p>
-
-				<p><?php if(get_field('peoplephone')) { ?><?php the_field('peoplephone'); ?><?php } ?><?php if(get_field('peoplephone') && get_field('peopleemail')) { ?> &ndash; <?php } ?><?php if(get_field('peopleemail')) { ?><a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a><?php } ?></p>
-
-				<div style="clear:both;"></div>
-			</div>
-		</div>
-		<?php if ($i % 2 == 0) : ?>
-			<div style="clear:both;"></div>
-			<div class="gapspacer"></div>
-		<?php endif; ?>
-	<?php endwhile; ?>
-
-	<?php wp_reset_query(); ?>
+<div style="clear:both;"></div>
+<div class="gapspacer"></div>
 
 <?php } ?><!-- end if else statement for determining post loop -->
 </div><!-- end subcol -->

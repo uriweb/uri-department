@@ -269,6 +269,35 @@ function uri_department_get_page_css() {
 }
 
 
+/**
+ * Print a list of people
+ * @param arr $args @see https://codex.wordpress.org/Class_Reference/WP_Query
+ */
+function uri_department_get_people($args) {
+
+	$default_args = array(
+		'post_type' => 'people',
+		'posts_per_page' => -1,
+		'order' => 'DESC',
+		'orderby' => array('date' => 'DESC' ),
+	);
+
+	$loop = new WP_Query( array_merge( $default_args, $args ) );
+
+	while ($loop->have_posts()) {
+		$i++;
+		$loop->the_post();
+		get_template_part( 'templates/partials/person', 'card' );
+		if ($i % 2 == 0) {
+			print '<div style="clear:both;"></div><div class="gapspacer"></div>';
+		}
+	}
+	wp_reset_postdata();
+
+}
+
+
+
 function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
 	global $post;
 	$return = '';
