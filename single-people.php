@@ -7,13 +7,12 @@
 		<div id="content_start" style="display : none ; "></div>
 
 		<?php
-			include (STYLESHEETPATH . '/inc/alert.php');
-			
+			get_template_part( 'templates/partials', 'alert' );			
 			if (have_posts()) : while (have_posts()) : the_post();
 			$tagline = get_post_meta($post->ID, 'tagline', $single = true);
 			$side = get_post_meta($post->ID, 'side', $single = true);
 
-			include (STYLESHEETPATH . '/inc/title.php');
+			get_template_part( 'templates/partials', 'title' );
 		?>
 
 		<div class="post" id="post-<?php the_ID(); ?>">

@@ -17,7 +17,9 @@
 	?>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-	<?php require_once ( get_stylesheet_directory() . '/inc/typekit-embed.php' ); ?>
+	<?php
+		get_template_part( 'templates/partials/typekit', 'embed' );
+	?>
 
 
 	<link rel="icon" type="image/gif" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />

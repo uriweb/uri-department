@@ -12,8 +12,7 @@
 	<div class="two" style="padding-right;0px;border-right:none;">
 		<div id="content_start" style="display : none ; "></div>
 			<?php
-				include (STYLESHEETPATH . '/inc/alert.php');
-			?>
+				get_template_part( 'templates/partials', 'alert' );			?>
 
 			<?php
 				if (have_posts()) : while (have_posts()) : the_post();
@@ -22,7 +21,7 @@
 			?>
 
 			<?php
-				include (STYLESHEETPATH . '/inc/title.php');
+				get_template_part( 'templates/partials', 'title' );
 			?>
 
 			<div class="post" id="post-<?php the_ID(); ?>">

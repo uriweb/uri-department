@@ -10,15 +10,11 @@
 		<?php endif; ?>
 
 		<p><?php the_field('peopletitle'); ?></p>
-
-		<p style="font-size:1em;font-weight:bold;color:#555;font-style:italic;"><?php the_field('peopledepartment'); ?></p>
+		
+		<p class="people-department"><?php the_field('peopledepartment'); ?></p>
 
 		<p><?php if(get_field('peoplephone')) { ?><?php the_field('peoplephone'); ?><?php } ?><?php if(get_field('peoplephone') && get_field('peopleemail')) { ?> &ndash; <?php } ?><?php if(get_field('peopleemail')) { ?><a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a><?php } ?></p>
 
 		<div style="clear:both;"></div>
 	</div>
 </div>
-<?php if ($i % 2 == 0) : ?>
-	<div style="clear:both;"></div>
-	<div class="gapspacer"></div>
-<?php endif; ?>

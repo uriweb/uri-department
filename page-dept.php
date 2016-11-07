@@ -12,13 +12,12 @@
 	<div class="subspace">
 		<div class="subcol" style="padding-left: 0px; border-left: 0px;">
 			<?php
-				include (STYLESHEETPATH . '/inc/alert.php');
-			?>
+				get_template_part( 'templates/partials', 'alert' );			?>
 			<div class="subl1"><!-- layer one, full width -->
 				<div id="content_start" style="display : none ; "></div>
 
 				<?php
-					include (STYLESHEETPATH . '/inc/title.php');
+					get_template_part( 'templates/partials', 'title' );
 				?>
 				<?php if (of_get_option('urid_pagecontent') == true) : ?>
 					<div class="post" id="post-<?php the_ID(); ?>">

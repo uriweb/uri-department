@@ -288,9 +288,6 @@ function uri_department_get_people($args) {
 		$i++;
 		$loop->the_post();
 		get_template_part( 'templates/partials/person', 'card' );
-		if ($i % 2 == 0) {
-			print '<div style="clear:both;"></div><div class="gapspacer"></div>';
-		}
 	}
 	wp_reset_postdata();
 

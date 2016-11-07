@@ -11,17 +11,13 @@
 	<div class="subcol">
 	<div id="content_start" style="display : none ; "></div>
 		<?php
-			include (STYLESHEETPATH . '/inc/alert.php');
-		?>
+			get_template_part( 'templates/partials', 'alert' );
 
-		<?php
 			if (have_posts()) : while (have_posts()) : the_post();
 			$tagline = get_post_meta($post->ID, 'tagline', $single = true);
 			$side = get_post_meta($post->ID, 'side', $single = true);
-		?>
 
-		<?php
-			include (STYLESHEETPATH . '/inc/title.php');
+			get_template_part( 'templates/partials', 'title' );
 		?>
 
 	<div class="post" id="post-<?php the_ID(); ?>">
@@ -41,123 +37,90 @@
 	$postid = $wp_query->post->ID;
 	$peoplesort = get_post_meta($post->ID, 'peoplesort', $single = true);
 	$peoplecat = get_post_meta($post->ID, 'peoplecat', $single = true);
-?>
-
-<?php if(get_field('peoplesort') == 1) { ?>
-
-<?php
-function your_query_limit($limit){
-	return "LIMIT 9999";
-}
-add_filter('post_limits', 'your_query_limit');
-?>
-
-<?php
-	$terms = get_terms("peoplegroups");
-	$count = count($terms);
-	if ( $count > 0 ){
-    foreach ( $terms as $term ) {
-        echo '<h2 class="peopleterm">' . $term->name . '</h2>';
-        echo '<div class="peoplesector">';
-        $loop = new WP_Query( array( 
-            'post_type' => 'people',
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'peoplegroups',
-                    'field' => 'id',
-                    'terms' => $term->term_id
-                )
-            )
-        ));
-?>
-
-	<?php $i = 0; // Create a new (incrementing) var ?>
-	<?php while ($loop->have_posts()) : $loop->the_post(); ?>
-	<?php $i++; // Increase count ?>
-
-			<?php
-				get_template_part( 'templates/partials/person', 'card' );
-			?>
-
-
-<?php if ($i % 2 == 0) : ?>
-	<div style="clear:both;"></div>
-	<div class="gapspacer"></div>
-<?php endif; ?>
-
-<?php endwhile; ?>
-<div style="clear:both;"></div>
-</div><!-- end people sector -->
-<div style="clear:both;"></div>
-<?php
-			wp_reset_postdata();
+	
+	// First, check to see if we display by group or by specific, selected groups:
+	
+	if(get_field('peoplesort') == 1) { // if the "group people" checkbox is checked
+		$terms = get_terms('peoplegroups');
+	} else if(!(get_field('peoplecat') == NULL)) { // if a specific person group or groups is defined
+		$terms = array();
+		$selected_terms = explode(' ', $peoplecat);
+		foreach ($selected_terms as $cat) {
+			$terms = array_merge($terms, get_terms( 'peoplegroups', 'hide_empty=1&slug=' . $cat ) );
 		}
+	} else {
+		$terms = FALSE;
 	}
-	remove_filter('post_limits', 'your_query_limit');
+	
 
-} else if(!(get_field('peoplecat') == NULL)) { // if a specific person group or groups is defined
+	// Next, display people
+	
+	if($terms !== FALSE) { // See if we're showing people in groups
+	
+		if ( count($terms) > 0 ) {
+			foreach ( $terms as $term ) {
+				echo '<h2 class="peopleterm">' . $term->name . '</h2>';
+				echo '<div class="peoplesector">';
 
-	function your_query_limit($limit){
-		return "LIMIT 9999";
-	}
-	add_filter('post_limits', 'your_query_limit');
-?>
-<?php
-	$sortstuff = explode(" ", $peoplecat);
-	foreach($sortstuff as $solocat):
-?>
-<?php $terms = get_terms( 'peoplegroups', 'hide_empty=1&slug=' . $solocat );
-$count = count($terms);
-if ( $count > 0 ){
-    foreach ( $terms as $term ) {
-        echo '<h2 class="peopleterm">' . $term->name . '</h2>';
-        echo '<div class="peoplesector">';
-        $loop = new WP_Query( array( 
-            'post_type' => 'people',
-            'orderby' => 'date',
-            'order' => 'DESC',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'peoplegroups',
-                    'field' => 'id',
-                    'terms' => $term->term_id
-                )
-            )
-        ));
-?>
+				$args = array(
+					'meta_query' => array(
+						'relation' => 'AND',
+						array(
+							'key' => 'sortname',
+							'compare' => 'EXISTS'
+						),
+						array(
+							'key' => 'sortname',
+							'compare' => '!=',
+							'value' => ''
+						),
+					),
+					'orderby' => array( 'meta_value' => 'ASC', 'date' => 'DESC' ),
+					'tax_query' => array(
+							array(
+									'taxonomy' => 'peoplegroups',
+									'field' => 'id',
+									'terms' => $term->term_id
+							)
+					)
+				);
+				uri_department_get_people($args);
 
- <?php $i = 0; // Create a new (incrementing) var ?>
+				$args = array(
+					'meta_query' => array(
+						'relation' => 'OR',
+						array(
+							'key' => 'sortname',
+							'compare' => 'NOT EXISTS'
+						),
+						array(
+							'key' => 'sortname',
+							'compare' => '=',
+							'value' => ''
+						),
+					),
+					'orderby' => array('date' => 'DESC' ),
+					'tax_query' => array(
+							array(
+									'taxonomy' => 'peoplegroups',
+									'field' => 'id',
+									'terms' => $term->term_id
+							)
+					)
+				);
+				uri_department_get_people($args);
+				
+				echo '<div style="clear:both;"></div>';
+				echo '</div><!-- end people sector -->';
+				echo '<div style="clear:both;"></div>';
 
+				wp_reset_postdata();
+			}
+		}
+		
 
-    <?php while ($loop->have_posts()) : $loop->the_post(); ?>
+	} else {  // show people without groups
 
-			<?php
-				get_template_part( 'templates/partials/person', 'card' );
-			?>
-
-			<?php if ($i % 2 == 0) : ?>
-			<div style="clear:both;"></div>
-			<div class="gapspacer"></div>
-			<?php endif; ?>
-
-		<?php endwhile; ?>
-<div style="clear:both;"></div>
-</div><!-- end people sector -->
-<div style="clear:both;"></div>
-<?php wp_reset_postdata(); } } ?>
-
-<?php
-	unset($solocat);
-	endforeach;
-?>
-
-<?php remove_filter('post_limits', 'your_query_limit'); ?>
-
-<?php } else { ?><!-- if no category is defined or people aren't sorted -->
-
-<?php
 
 		$args = array(
 			'meta_query' => array(
@@ -192,11 +155,13 @@ if ( $count > 0 ){
 			'orderby' => array('publication_date' => 'DESC' ),
 		);
 		uri_department_get_people($args);
-	?>
-<div style="clear:both;"></div>
-<div class="gapspacer"></div>
 
-<?php } ?><!-- end if else statement for determining post loop -->
+		echo '<div style="clear:both;"></div>';
+
+	}
+	
+	
+?>
 </div><!-- end subcol -->
 </div> <!-- end grid 11 -->
 
