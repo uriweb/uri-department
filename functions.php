@@ -294,26 +294,6 @@ function uri_department_get_people($args) {
 }
 
 
-/**
- * Force srcset urls to use the same http scheme as the image source
- */
-function uri_department_https_srcset($sources, $size_array, $image_src) {
-	if(	! is_array( $sources ) ) {
-		return $sources;
-	}
-	
-	$src = parse_url($image_src);
-
-	foreach( $sources as &$source ) {
-		if( isset( $source['url'] ) ) {
-			$source['url'] = set_url_scheme( $source['url'], $src['scheme'] );
-		}
-	}
-	return $sources;
-}
-add_filter( 'wp_calculate_image_srcset', 'uri_department_https_srcset', 10, 3 );
-
-
 
 function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
 	global $post;
