@@ -6,7 +6,7 @@
 	<div class="subcol" style="padding-right: 24px; border-right: 1px solid #ccc;">
 		<div id="content_start" style="display : none ; "></div>
 			<?php
-				get_template_part( 'templates/partials', 'alert' );			?>
+				get_template_part( 'templates/partials/alert' );			?>
 		<div class="title">
 			<h1>
 				<?php

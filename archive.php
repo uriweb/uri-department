@@ -7,7 +7,7 @@
 		<div id="content_start" style="display : none ; "></div>
 
 		<?php
-			get_template_part( 'templates/partials', 'alert' );			get_template_part( 'templates/partials', 'title' );
+			get_template_part( 'templates/partials/alert' );			get_template_part( 'templates/partials/title' );
 		?>
 
 		<div id="ba">
