@@ -1,7 +1,7 @@
 <div id="panel">
 	<div class="center">
 		<?php	
-			include ( get_template_directory() . '/global-nav.php' );
+			get_template_part( 'templates/partials/global-nav' );
 		?>
 	</div>
 	<div style="clear:both;"></div>

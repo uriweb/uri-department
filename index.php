@@ -1,6 +1,7 @@
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-10">
 	<div class="two">
@@ -11,6 +12,7 @@
 	</div>
 </div>
 
-<?php include (STYLESHEETPATH . '/sidebarpage.php'); ?>
-
-<?php get_footer(); ?>
+<?php
+	get_template_part( 'sidebarpage' );
+	get_footer();
+?>

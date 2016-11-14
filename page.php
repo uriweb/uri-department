@@ -1,6 +1,7 @@
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-9">
 	<div class="two">
@@ -35,7 +36,9 @@
 	</div><!-- /end two column -->
 </div><!-- /end this middle column -->
 
-<?php include (STYLESHEETPATH . '/sidebar2.php'); ?>
+<?php
+	get_template_part( 'sidebar2' );
+?>
 <?php endwhile; endif; ?>
 <!-- Above line ends the loop. Calls in Sidebar2 where the call to the custom field "side" will be made -->
 

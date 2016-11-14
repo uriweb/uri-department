@@ -1,6 +1,8 @@
-<?php get_header(); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
 
 <div class="grid-11">
 	<div class="subcol">

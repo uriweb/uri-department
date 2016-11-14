@@ -13,10 +13,12 @@
 		</div><!-- end sbnav -->
 
 		<div class="socialize">
-			<?php if (of_get_option('urid_tweet') == true) { ?><a href="http://www.twitter.com/<?php echo of_get_option('urid_tweet'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/twitter.png" alt="Follow us on Twitter" /></a><?php } ?>
-			<?php if (of_get_option('urid_facebook') == true) { ?><a href="<?php echo of_get_option('urid_facebook'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/fb.png" alt="Visit our Facebook page" /></a><?php } ?>
-			<?php if (of_get_option('urid_google') == true) { ?><a href="<?php echo of_get_option('urid_google'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/gplus.png" alt="Add us to your circle!" /></a><?php } ?>
-			<?php if (of_get_option('urid_youtube') == true) { ?><a href="<?php echo of_get_option('urid_youtube'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/utube.png" alt="Subscribe to our Youtube channel!" /></a><?php } ?>
+			<?php if (of_get_option('urid_tweet') == true) { ?><a href="http://www.twitter.com/<?php echo of_get_option('urid_tweet'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/twitter.png" alt="Twitter" /></a><?php } ?>
+			<?php if (of_get_option('urid_instagram') == true) { ?><a href="<?php echo of_get_option('urid_instagram'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/instagram.png" alt="Instagram" /></a><?php } ?>
+			<?php if (of_get_option('urid_facebook') == true) { ?><a href="<?php echo of_get_option('urid_facebook'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/fb.png" alt="Facebook" /></a><?php } ?>
+			<?php if (of_get_option('urid_google') == true) { ?><a href="<?php echo of_get_option('urid_google'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/gplus.png" alt="Google+" /></a><?php } ?>
+			<?php if (of_get_option('urid_youtube') == true) { ?><a href="<?php echo of_get_option('urid_youtube'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/youtube.png" alt="Youtube" /></a><?php } ?>
+			<?php if (of_get_option('urid_linkedin') == true) { ?><a href="<?php echo of_get_option('urid_linkedin'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/linkedin.png" alt="LinkedIn" /></a><?php } ?>
 		</div>
 
 	<!-- for extra content under the menu -->

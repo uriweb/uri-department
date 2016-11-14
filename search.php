@@ -1,6 +1,7 @@
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-9">
 	<div class="subcol" style="padding-right: 24px; border-right: 1px solid #ccc;">
@@ -50,6 +51,8 @@
 	</div>
 </div> <!-- end grid 11 -->
 
-<?php include (STYLESHEETPATH . '/sidebar2.php'); ?>
+<?php
+	get_template_part( 'sidebar2' );
+?>
 
 <?php get_footer(); ?>

@@ -60,9 +60,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#urisearch">Skip to search</a></div><!-- end screen reader -->
 
-<!-- Site wide alerts if they exist -->
 
 <?php 
+// Site wide alerts if they exist
 /* This fopen disabled 2015-08-13 by Chi Shen -- doesn't not seem to function,
    and as a result it generates a lot of unecessary error messages in the 
    server logs.  Sarah Couch and Lisa Chen aware of change. */
@@ -78,7 +78,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="firstlayer">
 	<div id="top">
 
-		<?php require_once ( get_stylesheet_directory() . '/global-header.php' ); ?>
+		<?php	
+			get_template_part( 'templates/partials/global-header' );
+		?>
 
 		<div id="head" class="sub">
 			<div class="wrapper">
