@@ -143,17 +143,9 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => 'Google+ URL',
-		'desc' => 'If you have a Google+ account, enter your full profile url here including http',
-		'id' => 'urid_google',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Youtube Channel URL',
-		'desc' => 'If you have a Youtube account, enter your full channel url here including http',
-		'id' => 'urid_youtube',
+		'name' => 'Instagram URL',
+		'desc' => 'If you have an Instagram account, enter your full profile url here including http',
+		'id' => 'urid_instagram',
 		'std' => '',
 		'type' => 'text'
 	);
@@ -175,9 +167,17 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
-		'name' => '<img src="" alt="Instagram"> Instagram URL',
-		'desc' => 'If you have an Instagram account, enter your full profile url here including http',
-		'id' => 'urid_instagram',
+		'name' => 'Youtube Channel URL',
+		'desc' => 'If you have a Youtube account, enter your full channel url here including http',
+		'id' => 'urid_youtube',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Google+ URL',
+		'desc' => 'If you have a Google+ account, enter your full profile url here including http',
+		'id' => 'urid_google',
 		'std' => '',
 		'type' => 'text'
 	);
