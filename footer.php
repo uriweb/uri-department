@@ -26,7 +26,7 @@
 
 <div class="mobilewordmark"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/mobilewatermark.png" alt="Think Big, We Do." /></div>
 
-<div class="mobilefooter"><a href="http://www.uri.edu/home/services/">A-Z</a> &ndash; <a href="http://www.uri.edu/home/dir/">Directory</a> &ndash; <a href="http://www.uri.edu/home/dir/contact.html">Contact Us</a> &ndash; <a href="#top">Jump to top</a></div>
+<div class="mobilefooter"><a href="http://web.uri.edu/about/services/">A-Z</a> &ndash; <a href="http://directory.uri.edu/">Directory</a> &ndash; <a href="http://web.uri.edu/about/contact">Contact Us</a> &ndash; <a href="#top">Jump to top</a></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
 

@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="grid-5">
 						<div class="quick">
-							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/rhodynet_icon_white_sm.png" alt="RhodyNet" />RhodyNet</a>
+							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/rhodynet.png" alt="RhodyNet" />RhodyNet</a>
 						</div>
 					</div>
 					<div style="clear:both;"></div>
