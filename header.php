@@ -60,9 +60,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#urisearch">Skip to search</a></div><!-- end screen reader -->
 
-<!-- Site wide alerts if they exist -->
 
 <?php 
+// Site wide alerts if they exist
 /* This fopen disabled 2015-08-13 by Chi Shen -- doesn't not seem to function,
    and as a result it generates a lot of unecessary error messages in the 
    server logs.  Sarah Couch and Lisa Chen aware of change. */
@@ -78,7 +78,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="firstlayer">
 	<div id="top">
 
-		<?php require_once ( get_stylesheet_directory() . '/global-header.php' ); ?>
+		<?php	
+			get_template_part( 'templates/partials/global-header' );
+		?>
 
 		<div id="head" class="sub">
 			<div class="wrapper">
@@ -113,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="grid-5">
 						<div class="quick">
-							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/rhodynet_icon_white_sm.png" alt="RhodyNet" />RhodyNet</a>
+							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/rhodynet.png" alt="RhodyNet" />RhodyNet</a>
 						</div>
 					</div>
 					<div style="clear:both;"></div>

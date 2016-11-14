@@ -4,20 +4,22 @@
  */
 ?>
 
-<?php get_header(); ?>
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-11">
 	<div class="subcol">
 		<div id="content_start" style="display : none ; "></div>
 
 		<?php
-			get_template_part( 'templates/partials', 'alert' );
+			get_template_part( 'templates/partials/alert' );
 			if (have_posts()) : while (have_posts()) : the_post();
 			$tagline = get_post_meta($post->ID, 'tagline', $single = true);
 			$side = get_post_meta($post->ID, 'side', $single = true);
 
-			get_template_part( 'templates/partials', 'title' );
+			get_template_part( 'templates/partials/title' );
 
 		?>
 

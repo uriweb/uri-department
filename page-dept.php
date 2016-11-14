@@ -4,20 +4,21 @@
  */
 ?>
 
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
-
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 <div class="grid-11">
 	<div class="subspace">
 		<div class="subcol" style="padding-left: 0px; border-left: 0px;">
 			<?php
-				get_template_part( 'templates/partials', 'alert' );			?>
+				get_template_part( 'templates/partials/alert' );
+			?>
 			<div class="subl1"><!-- layer one, full width -->
 				<div id="content_start" style="display : none ; "></div>
 
 				<?php
-					get_template_part( 'templates/partials', 'title' );
+					get_template_part( 'templates/partials/title' );
 				?>
 				<?php if (of_get_option('urid_pagecontent') == true) : ?>
 					<div class="post" id="post-<?php the_ID(); ?>">

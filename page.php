@@ -1,12 +1,13 @@
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-9">
 	<div class="two">
 		<div id="content_start" style="display : none ; "></div>
 		<?php
-			get_template_part( 'templates/partials', 'alert' );		?>
+			get_template_part( 'templates/partials/alert' );		?>
 		<?php
 			if (have_posts()) : while (have_posts()) : the_post();
 			$tagline = get_post_meta($post->ID, 'tagline', $single = true);
@@ -14,7 +15,7 @@
 		?>
 
 		<?php
-			get_template_part( 'templates/partials', 'title' );
+			get_template_part( 'templates/partials/title' );
 		?>
 
 		<div class="post" id="post-<?php the_ID(); ?>">
@@ -35,7 +36,9 @@
 	</div><!-- /end two column -->
 </div><!-- /end this middle column -->
 
-<?php include (STYLESHEETPATH . '/sidebar2.php'); ?>
+<?php
+	get_template_part( 'sidebar2' );
+?>
 <?php endwhile; endif; ?>
 <!-- Above line ends the loop. Calls in Sidebar2 where the call to the custom field "side" will be made -->
 

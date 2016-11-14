@@ -1,12 +1,13 @@
-<?php get_header(); ?>
-
-<?php include (STYLESHEETPATH . '/sidebar1.php'); ?>
+<?php
+	get_header();
+	get_template_part( 'sidebar1' );
+?>
 
 <div class="grid-9">
 	<div class="subcol" style="padding-right: 24px; border-right: 1px solid #ccc;">
 		<div id="content_start" style="display : none ; "></div>
 			<?php
-				get_template_part( 'templates/partials', 'alert' );			?>
+				get_template_part( 'templates/partials/alert' );			?>
 		<div class="title">
 			<h1>
 				<?php
@@ -30,7 +31,7 @@
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('people-thumb'); ?></a>
 					<?php else: ?>
-						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/defaultsmall.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
+						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/default/uri80.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
 					<?php endif; ?>
 
 					<h2><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -50,6 +51,8 @@
 	</div>
 </div> <!-- end grid 11 -->
 
-<?php include (STYLESHEETPATH . '/sidebar2.php'); ?>
+<?php
+	get_template_part( 'sidebar2' );
+?>
 
 <?php get_footer(); ?>

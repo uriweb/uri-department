@@ -20,7 +20,7 @@
 		<?php if ( has_post_thumbnail() ) : ?>
 		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('people-thumb', array( 'class' => 'u-photo' )); ?></a>
 		<?php else : ?>
-		<a href="<?php the_permalink() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/defaultsmall.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
+		<a href="<?php the_permalink() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/default/uri80.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
 		<?php endif; ?>
 
 		<p><?php the_field('peopletitle'); ?></p>

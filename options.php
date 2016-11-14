@@ -136,7 +136,7 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => 'Twitter Username',
-		'desc' => 'If you have a twitter account, enter your user name here.',
+		'desc' => 'If you have a Twitter account, enter your user name here.',
 		'id' => 'urid_tweet',
 		'std' => '',
 		'type' => 'text'
@@ -162,6 +162,22 @@ function optionsframework_options() {
 		'name' => 'Facebook URL',
 		'desc' => 'If you have a Facebook account, enter your full profile url here including http',
 		'id' => 'urid_facebook',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'LinkedIn URL',
+		'desc' => 'If you have a LinkedIn account, enter your full profile url here including http',
+		'id' => 'urid_linkedin',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => '<img src="" alt="Instagram"> Instagram URL',
+		'desc' => 'If you have an Instagram account, enter your full profile url here including http',
+		'id' => 'urid_instagram',
 		'std' => '',
 		'type' => 'text'
 	);

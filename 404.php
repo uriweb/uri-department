@@ -3,8 +3,8 @@
 	get_header();
 
 	global $blog_id;
-	if($blog_id != 1) {
-		include (STYLESHEETPATH . '/sidebar1.php');
+	if($blog_id != 1) { // this is apparently old code from a multisite install -- jp 2016-11-14
+		get_template_part( 'sidebar1' );
 	} else {
 		include (TEMPLATEPATH . '/sidebar-singleleft.php');
 	}
