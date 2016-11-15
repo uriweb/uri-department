@@ -7,8 +7,15 @@
 		$misc[] = '<span class="p-tel">' . get_field('peoplephone') . '</span>';
 	}
 	if(get_field('peopleemail')) {
-		$misc[] = '<a href="mailto:' . get_field('peopleemail') . '" class="u-email">' . get_field('peopleemail') . '</a>';
+		$misc[] = '<a class="u-email" href="mailto:' . get_field('peopleemail') . '">' . get_field('peopleemail') . '</a>';
 	}
+	
+	// uncomment the below to add website after phone and email
+	/*
+	if(get_field('peopleurl')) {
+		$misc[] = '<span class="u-url"><a href="' . get_field('peopleurl') . '">website</a></p>';
+	}
+	*/
 	
 	$misc = implode( ' &ndash; ', $misc );
 	
