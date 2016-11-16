@@ -156,7 +156,7 @@ if(function_exists('register_field_group')) {
 				'label' => 'Sort Name',
 				'name' => 'sortname',
 				'type' => 'text',
-				'instructions' => 'Enter the Sort Name',
+				'instructions' => 'People are sorted alphabetically by this field, and then by post date if this field is the same. This field is not displayed.',
 				'required' => '0',
 				'default_value' => '',
 				'formatting' => 'none',
