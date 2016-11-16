@@ -4,7 +4,7 @@ Theme URI:      http://www.uri.edu
 Description:    The theme for URI colleges and departments.
 Author:         URI
 Author URI:     http://www.uri.edu
-Version:        3.1.3
+Version:        3.1.4
 */
 
 body {
@@ -1045,9 +1045,9 @@ margin-bottom: 15px;
 .bluebox {
 	float: right;
 	width: 30%;
-	background-color: #e0e8ff;
-	border: 1px solid #999;
-	box-shadow: 3px 3px 5px #999;
+	background-color: #F7FCFF;
+	border-top: 4px solid #e6f5ff;
+	border-bottom: 2px solid #e6f5ff;
 	padding: 10px;
 	margin: 10px;
 }
@@ -1931,6 +1931,9 @@ Various extra classes which can make in-page content look a whole lot better whe
 	margin-bottom: 15px;
 	border-bottom: 2px dotted #D79800;
 	padding-bottom: 15px;
+}
+.entry .archiveitem:last-of-type, #mainpage .subcol .entry .archiveitem:last-of-type {
+	border-bottom: 0;
 }
 .entry .postpic img, #mainpage .subcol .entry .postpic img {
 	width: 35%;
@@ -2901,6 +2904,7 @@ html[xmlns] .slides {
 	margin-bottom: 50px;
 }
 .buttoncol a {
+	/*
 	background-image: linear-gradient(top, #FFD147 27%, #E8B82A 79%);
 	background-image: -o-linear-gradient(top, #FFD147 27%, #E8B82A 79%);
 	background-image: -moz-linear-gradient(top, #FFD147 27%, #E8B82A 79%);
@@ -2909,33 +2913,98 @@ html[xmlns] .slides {
 	background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.27, #FFD147), color-stop(0.79, #E8B82A) );
 	box-shadow: 3px 3px 8px #ccc;
 	border-radius : 15px;
-	text-align : center;
+	border : 1px solid #D5B987;
+
 	-webkit-box-shadow: 3px 3px 3px #aaa;
 	-moz-box-shadow: 3px 3px 3px #aaa;
 	box-shadow: 3px 3px 3px #aaa;
+	text-shadow : 1px 1px 2px #999;
+	*/
 	-webkit-transition:all 0.25s ease-in-out;
 	-moz-transition:all 0.25s ease-in-out;
 	-o-transition:all 0.25s ease-in-out;
 	-ms-transition:all 0.25s ease-in-out;
-	transition:all 0.25s ease-in-out;
+	transition:all 0.1s ease-in-out;
+
+	text-align : center;
 	display : block;
-	border-radius : 15px;
-	-moz-border-radius : 15px;
-	border : 1px solid #D5B987;
 	font-size : 1.4em;
 	font-weight : bold;
-	padding : 8px 5px 8px 5px;
+	padding : 12px 8px;
 	text-decoration : none;
 	color : #002147;
-	background-color : #F6D69C;
-	margin-bottom : 20px;
-	font-family: 'museo-slab';
-	text-shadow : 1px 1px 2px #999;
+	color : #fff;
+	background-color : #FFDD22;
+	background-color : #1b356a;
+	border-radius : 4px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-top: 4px solid #D9B535;
+	margin-bottom : 16px;
+
+	text-shadow : 0px 0px 2px #000;
+
+}
+
+.chunk {
+	border : 1px solid #999 ;
+	border-radius : 15px ;
+	background-color : #fafafa ;
+	box-shadow : 3px 3px 5px #999 ;
+	padding : 20px ;
+	margin : 20px 0px ;
+	line-height : 1.2 ; 
+}
+.super-chunk {
+	background-color : #fafafa ;
+	border : 0 ;
+	border-top : 4px solid #ccc ;
+	border-bottom : 4px solid #ccc ;
+	padding : 20px ;
+	margin : 20px 0px ;
+	line-height : 1.2 ; 
+}
+
+.sub_nav, .sub-nav {
+	width : 100% !important ;
+	border : 1px solid ;  
+	background-color : #efefef ;  
+	margin-bottom : 20px ;
+	border-radius : 5px ;
+	text-align : center ;
+}
+
+.sub_nav a, .sub-nav a {
+	width : 90px ;
+	display : inline-block ;
+	text-decoration : none ;
+	font-size : 10pt ;
+	font-weight : bold ;
+	color : #002147 ; 
+	padding : 8px ;
+	margin-left : 8px  ;
+	vertical-align: middle ;
+	transition:all 0.1s ease-in-out;
+}
+
+.sub_nav a:hover, .sub-nav a:hover {
+	color : #D79800 ;
+}
+
+
+
+.buttoncol .harrington_button {
+	background: transparent;
 }
 .buttoncol a:hover {
+	/*
 	-webkit-box-shadow: 9px 9px 7px #aaa;
 	-moz-box-shadow: 9px 9px 7px #aaa;
 	box-shadow: 9px 9px 7px #aaa;
+	*/
+	background-color : #D9B535;
+	color: #000;
+	text-shadow : none;
 }
 .buttoncol blockquote:before {
 	content : url('images/ldquo.png');
@@ -3011,8 +3080,10 @@ z-index: 500;
 	width:  98%;
 	padding: 1%;
 	height: auto;
+	/*
 	box-shadow : 3px 3px 5px #ccc;
-	border:  1px solid #ccc;
+	*/
+	border:  1px solid #e6f5ff;
 	margin-bottom: 15px;
 }
 .slideshow img {
@@ -3054,7 +3125,7 @@ z-index: 500;
 	padding-bottom: 5px;
 }
 .slideshow .slidecaption h3 {
-	color: #fac801;
+	color: #002147;
 	margin: 0px;
 	padding: 0px;
 	font-size: 1.7em;
@@ -3094,18 +3165,14 @@ z-index: 500;
 
 .rpwidget {
 	float : left;
-	border: 1px solid #E0E8FF;
-	background-image: linear-gradient(bottom, white 18%, #FFFBEF 65%);
-	background-image: -o-linear-gradient(bottom, white 18%, #FFFBEF 65%);
-	background-image: -moz-linear-gradient(bottom, white 18%, #FFFBEF 65%);
-	background-image: -webkit-linear-gradient(bottom, white 18%, #FFFBEF 65%);
-	background-image: -ms-linear-gradient(bottom, white 18%, #FFFBEF 65%);
-	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.18, white), color-stop(0.65, #FFFBEF) );
+	background-color: #F7FCFF;
+	border-top: 4px solid #e6f5ff;
+	border-bottom: 2px solid #e6f5ff;
 	width: 96%;
 	padding: 2%;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
+	/*
 	box-shadow: 3px 3px 3px #999;
+	*/
 	margin-bottom: 10px;
 }
 .rpwidget h2 {
@@ -3114,7 +3181,9 @@ z-index: 500;
 	line-height: 1.2;
 	text-align: center;
 	color: #002147;
+	/*
 	text-shadow: 1px 1px 2px #999;
+	*/
 	font-size: 18pt;
 	margin: 0px;
 	padding: 0px;
@@ -3141,7 +3210,6 @@ z-index: 500;
 .image_container h3 {
 	font-size: 1.2em;
 	font-weight : bold;
-	font-family : Arial;
 	margin: 0px;
 	padding: 0px;
 	line-height: 1;
@@ -3155,7 +3223,7 @@ z-index: 500;
 }
 .image_container p {
 	font-size: 1.1em;
-	color: #777;
+	color: #333;
 	line-height: 1.4;
 	margin: 0px;
 	padding: 0px;
@@ -4316,9 +4384,6 @@ padding-bottom: 10px;
  .bluebox {
 float: none;
 width: auto;
-background-color: #e0e8ff;
-border: 1px solid #999;
-box-shadow: 3px 3px 5px #999;
 padding: 10px;
 margin: 0px;
 margin-bottom: 10px;
