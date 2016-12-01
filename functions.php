@@ -3,6 +3,13 @@
  * Theme settings and functions
  */
 
+/**
+ * Get the version number, as a string, to serve as a cachebuster.
+ * @return str
+ */
+function uri_department_cachebuster() {
+	return '414';
+}
 
 /**
  * Establish theme settings settings
@@ -128,7 +135,7 @@ add_filter('wp_enqueue_scripts','uri_department_insert_jquery');
  * Add JS
  */
 function uri_department_scripts_method() {
-	$version = '20161024';
+	$version = uri_department_cachebuster();
 	wp_enqueue_script(
 		'slider',
 		get_template_directory_uri() . '/js/slide.js',
@@ -154,9 +161,10 @@ add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
  * Add CSS
  */
 function uri_department_styles() { 
-	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), '313', 'all' );
-	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), '313', 'all' );
-	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), '313', 'all' );
+	$version = uri_department_cachebuster();
+	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), $version, 'all' );
+	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), $version, 'all' );
+	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
 
 	// enqueing:
 	wp_enqueue_style( 'inuit' );
