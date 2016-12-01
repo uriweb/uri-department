@@ -8,7 +8,7 @@
  * @return str
  */
 function uri_department_cachebuster() {
-	return '414';
+	return '314';
 }
 
 /**
