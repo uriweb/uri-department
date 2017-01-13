@@ -85,13 +85,13 @@ a img {
 }
 #header .logo .urilogo {
 	text-indent: -99999px;
-	background-image: url(images/logo.png);
+	background-image: url(images/logo-125.png);
 	display: block;
 	width: 171px;
 	height: 56px;
 }
 #header .logo .urilogo:hover {
-	background-position: 171px 0;
+	background-position: -171px 0;
 }
 #header .tb {
 	float: left;
@@ -2503,13 +2503,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', end
 }
 #head .logo .urilogo {
 	text-indent: -99999px;
-	background-image: url(images/logo.png);
+	background-image: url(images/logo-125.png);
 	display: block;
 	width: 171px;
 	height: 56px;
 }
 #head .logo .urilogo:hover {
-	background-position: 171px 0;
+	background-position: -171px 0;
 }
 #head .tb {
 	float: left;

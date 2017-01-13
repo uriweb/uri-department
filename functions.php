@@ -8,8 +8,22 @@
  * @return str
  */
 function uri_department_cachebuster() {
-	return '314';
+	static $cache_buster;
+	if(empty($cache_buster)) {
+		$cache_buster = wp_get_theme()->get('Version');
+		$cache_buster = date(time());
+	}
+	return $cache_buster;
 }
+
+/**
+ * Suppress the version number of WordPress
+ * @return str
+ */
+function uri_department_remove_version() {
+	return '';
+}
+add_filter('the_generator', 'uri_department_remove_version');
 
 /**
  * Establish theme settings settings
