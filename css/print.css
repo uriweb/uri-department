@@ -27,6 +27,10 @@
 		border: 0px;
 	}
 
+	a:link:after, a:visited:after {
+		content: "" !important; /** override the bit in inuit.css that prints the href after links **/
+	}
+
 	/* prevent messy page breaks */
 
 	h1, h2, h3, h4, h5, h6 {
@@ -43,6 +47,7 @@
 	ul, ol, dl {
 		page-break-before:avoid
 	}
+
 
 	/* Turn things off */
 
@@ -168,6 +173,10 @@
 	#subcol ul li a:visited, .two ul li a:visited {
 		color: #1e6b9c;
 		border-bottom: 1px dotted #1e6b9c;
+	}
+
+	.wmtop p {
+		background-color: transparent !important;
 	}
 
 }
