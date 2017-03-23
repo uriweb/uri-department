@@ -431,3 +431,16 @@ add_filter( 'searchwp_init', 'uri_department_searchwp_init' );
 
 //********************************************************/
 
+
+// adds the featured image to the RSS feed
+// https://duogeek.com/blog/add-featured-images-as-enclosures-in-wordpress-rss-feeds/
+function uri_department_add_featured_image_in_rss() {
+	$thumbnail_ID = get_post_thumbnail_id( $post->ID );
+	$thumbnail = wp_get_attachment_image_src($thumbnail_ID, array(200, 200));
+
+	$url = ( ! empty( $thumbnail ) ) ? $thumbnail[0] : get_template_directory_uri() . '/images/default/uri80.gif';
+	echo "\t" . '<enclosure url="' . $url . '" />' . "\n";
+}
+add_action( 'rss2_item', 'uri_department_add_featured_image_in_rss' );
+
+
