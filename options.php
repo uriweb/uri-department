@@ -29,6 +29,12 @@ function optionsframework_options() {
 		'everywhere' => 'On all pages',
 		'homeonly' => 'Only on the homepage'
 	);
+    
+    // Skin Choices
+	$skin_choices = array(
+		'legacy' => 'Legacy'
+    );
+    
 	// Language Data
 	$options_langs = array(
 		'en' => 'English',
@@ -89,6 +95,15 @@ function optionsframework_options() {
 		'name' => 'Basic Options',
 		'type' => 'heading'
 	);
+    
+    $options[] = array(
+        'name' => 'Skin',
+        'desc' => 'Choose a skin for the theme.',
+        'id' => 'urid_skin',
+        'std' => 'legacy',
+        'type' => 'radio',
+        'options' => $skin_choices
+    );
 
 	$options[] = array(
 		'name' => 'Site Identifier',
