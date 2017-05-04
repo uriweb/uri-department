@@ -1,0 +1,73 @@
+/* Single Post */
+
+.bluebox {
+	float: right;
+	width: 30%;
+	background-color: #F7FCFF;
+	border-top: 4px solid #e6f5ff;
+	border-bottom: 2px solid #e6f5ff;
+	padding: 10px;
+	margin: 10px;
+}
+
+.metabar {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #eaf7fc;
+	border: 1px solid #9fd6ed;
+	font-size: .895em;
+	margin-bottom: 15px;
+	padding: 4px;
+}
+#mainpage .metabar p {
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+	color: #232323;
+}
+.metabar img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.metabar p a {
+	color: #1b6483;
+	border-bottom: 1px dotted #1b6483;
+}
+.metabar p a:hover {
+	color: #268cb6;
+	border-bottom: 1px dotted #268cb6;
+}
+#mainpage .entry p a {
+	color: #0a6dd0;
+	border-bottom: 1px solid #fff;
+}
+#mainpage .entry p a:hover {
+	color: #024a92;
+	border-bottom: 1px solid #024a92;
+}
+#mainpage .entry p a img {
+	border-bottom: 1px solid #fff;
+	display: block;
+}
+#mainpage .entry p a:hover img {
+	border-bottom: 1px solid #fff;
+}
+#mainpage .entry blockquote {
+	margin: 0px;
+	padding: 0px;
+	border-top: 5px solid #ddb93a;
+	padding-top: 5px;
+	width: 400px;
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+#mainpage .entry blockquote p {
+	color: #ddb93a;
+	font-size: 1.4em;
+	line-height: 1.6;
+	margin: 0px;
+	padding: 0px;
+	font-weight: bold;
+}

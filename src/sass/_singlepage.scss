@@ -1,0 +1,57 @@
+/* Single Page Content - Bottom Widget Area */
+
+.bottomcontent .postlist {
+border: 0px;
+padding: 0px;
+margin: 0px;
+}
+
+#mainpage .two .bottomcontent .postlist ul, #mainpage .subcol .bottomcontent .postlist ul {
+margin: 0px;
+padding: 0px;
+list-style-type: none;
+}
+
+#mainpage .two .bottomcontent .postlist ul li, #mainpage .subcol .bottomcontent .postlist ul li {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+float: left;
+display: inline-block;
+width: 30%;
+}
+
+#mainpage .two .bottomcontent .postlist ul li.midbox, #mainpage .subcol .bottomcontent .postlist ul li.midbox {
+margin-right: 5%;
+margin-left: 5%;
+}
+
+#mainpage .two .bottomcontent .postlist ul li p, #mainpage .subcol .bottomcontent .postlist ul li p {
+font-size: 1em;
+line-height: 1.6;
+color: #444;
+margin: 0px;
+padding: 0px;
+}
+
+#mainpage .two .bottomcontent .postlist ul li h4, #mainpage .subcol .bottomcontent .postlist ul li h4 {
+font-size: 1.3em;
+margin: 0px;
+padding: 0px;
+margin-bottom: 5px;
+line-height: 1.1;
+}
+
+.bottomcontent .postlist ul li img {
+max-width: 100%;
+margin-bottom: 10px;
+}
+
+.bottomcontent .postlist ul li a img {
+border: 0px;
+}
+
+#mainpage .two .bottomcontent .postlist ul li a, #mainpage .subcol .bottomcontent .postlist ul li a {
+border: 0px;
+text-decoration: none;
+}

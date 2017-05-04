@@ -1,0 +1,101 @@
+/* Search Bar (Up Top) */
+
+#header .sf {
+	margin-top: 15px;
+	width: 360px;
+	float: left;
+	vertical-align: middle;
+	padding: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #fff;
+	-webkit-box-shadow: inset 0px -2px 2px 2px #dadfea;
+	-moz-box-shadow: inset 0px -2px 2px 2px #dadfea;
+	box-shadow: inset 0px -2px 2px 2px #dadfea;
+        background-image: url(../images/searchbg.gif);
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+.sf label {
+	display: none;
+}
+.sf form {
+	margin: 0px;
+	padding: 0px;
+}
+.sf input {
+	margin: 0px;
+	padding: 0px;
+}
+.sf input[type="text"] {
+	font-size: 1.2em;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+	display: inline;
+	width: 300px;
+	border: 0px;
+	color: #555;
+	background-color: transparent;
+}
+.sf input.submit {
+	vertical-align: middle;
+	padding-left: 10px;
+	border-left: 1px solid #999;
+	padding-right: 5px;
+	float: right;
+}
+
+/* Widget search form styling */
+
+#searchform {
+	margin-bottom: 15px;
+}
+#searchform label {
+	margin-bottom: 8px;
+	color: #666;
+	font-size: 1em;
+}
+#searchform input[type=text] {
+	width: 95%;
+	border: 1px solid #0b4d64;
+	background-color: #f8f8f8;
+	padding: 4px;
+	font-size: 1.1em;
+	display: block;
+	margin-bottom: 5px;
+}
+#searchform input[type=text]:focus {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+#searchform input[type=submit] {
+	margin-bottom: 15px;
+	color: #fff;
+	background-color: #09465b;
+	padding: 4px;
+	font-size: 1.1em;
+	display: inline;
+	outline: 0;
+	border: 0px;
+}
+
+/* new search button */
+
+#head .sf input[type=submit] {
+font-weight: bold;
+border: 1px solid #F0DB3C;
+display: inline;
+width: 16%;
+padding-right: 1%;
+padding-left: 1%;
+background-color: #FAEF98;
+color: #0976BA;
+cursor: pointer;
+-webkit-appearance: none;
+}
+
+#head .sf input[type=submit]:hover, #head .sf input[type=submit]:focus {
+background-color: #fff;
+}

@@ -25,6 +25,9 @@ var autoprefixerOptions = {
 gulp.task('scripts', scripts);
 
 function scripts(done) {
+    
+  var banner = ['// Gulp compiles scripts and puts them here.',''].join('\n');
+    
   gulp.src('./src/js/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
@@ -32,6 +35,7 @@ function scripts(done) {
     .pipe(concat('scripts.built.js'))
     //.pipe(stripDebug())
     .pipe(uglify())
+    .pipe(header(banner))
     .pipe(gulp.dest('./js/'));
     
 	done();
@@ -94,7 +98,7 @@ function watcher(done) {
 	done();
 }
 
-gulp.task( 'default',
+gulp.task('default',
 	gulp.parallel('scripts', 'styles', 'watcher', function(done){
 		done();
 	})

@@ -1,0 +1,155 @@
+/* Sidebar Tweet Widget */
+
+.tweetwidget ul.tweetbox {
+list-style-type: none;
+margin: 0px;
+padding: 0px;
+}
+
+#mainpage .three .tweetwidget ul.tweetbox li, .tweetwidget ul.tweetbox li {
+list-style-type: none;
+margin: 0px;
+padding-bottom: 5px;
+border-bottom: 1px dashed #999;
+margin-bottom: 5px;
+color: #222;
+line-height: 1.4;
+}
+
+.tweetwidget ul.tweetbox li:last-child {
+margin: 0px;
+}
+
+.tweetwidget ul.tweetbox li a {
+color: #0D3C8F;
+}
+
+.tweetwidget ul.tweetbox li a:hover {
+color: #222;
+}
+
+.tweetwidget h4 {
+font-size: 1.2em;
+font-weight: bold;
+margin: 0px;
+line-height: 1;
+}
+
+.tweetwidget h4 a {
+color: #0D3C8F;
+}
+
+.tweetwidget h4 a:hover {
+color: #222;
+}
+
+.tweetwidget img {
+width: 20px;
+height: 20px;
+margin-right: 5px;
+vertical-align: middle;
+}
+
+.tweetwidget p.bio {
+margin: 0px;
+padding: 0px;
+line-height: 1.1;
+color: #555;
+}
+
+.tweetwidget ul.tweetbox li span.date {
+color: #777;
+}
+
+.tweetwidget .tweettitle {
+margin-bottom: 5px;
+clear: both;
+display: block;
+padding: 5px;
+border: 1px solid #ccc;
+background-color: #f7f7f7;
+text-align: center;
+}
+
+/* Sidebar Post list custom widget - department homepage styling */
+
+.postlist {
+	border: 1px solid #e2e2e2;
+	padding: 5%;
+}
+.postlist ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.postlist ul li {
+	margin-bottom: 20px;
+}
+.postlist ul li:last-child {
+	margin: 0px;
+}
+.postlist p {
+	font-size: 1em;
+	color: #333;
+	line-height: 1.5;
+	margin: 0px;
+	padding: 0px;
+}
+.postlist h4 {
+	font-size: 1.1em;
+	color: #555;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+}
+.postlist h4 a {
+	color: #011a40 !important;
+        border-bottom: 1px dotted #011a40;
+}
+.postlist h4 a:hover {
+	color: #222;
+        border-bottom: 1px dotted #222;
+}
+/* Sidebar post list - third column */
+
+.three .postlist {
+	border: 0px;
+	padding: 0px;
+}
+.three .postlist ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.three .postlist ul li {
+	margin-bottom: 10px;
+	border-bottom: 1px solid #e2e2e2;
+}
+.three .postlist ul li:last-child {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+.three .postlist ul li:last-child p {
+	margin: 0px;
+}
+.three .postlist p {
+	font-size: 1.1em;
+	color: #444;
+	line-height: 1.5;
+	padding: 0px;
+	margin-bottom: 10px;
+}
+.three .postlist h4 {
+	font-size: 1.1em;
+	color: #555;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+}
+.three .postlist h4 a {
+	color: #0069b3;
+}
+.three .postlist h4 a:hover {
+	color: #01243d;
+}
