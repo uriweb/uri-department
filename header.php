@@ -177,6 +177,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				?>
 
 				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+
+				<p id="dept-description"><?php bloginfo('description'); ?></p>
+
 				<?php if ( ! empty ( $address ) ): ?>
 					<p id="dept-address"><?php echo $address ?></p>
 				<?php endif; ?>

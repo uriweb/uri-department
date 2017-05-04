@@ -103,16 +103,7 @@ function uri_department_notice_customizer($wp_customize) {
  */
 function uri_department_department_customizer($wp_customize) {
 
-	$section = 'uri_department_department_options';
 	$panel = 'uri_department_department';
-
-	$wp_customize->add_section($section, array(
-    'priority'       => 10,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '',
-    'title'          => 'URI Department',
-    'description'    => '',
-	));
 
 	$wp_customize->add_panel($panel, array(
     'priority'       => 10,
@@ -123,28 +114,25 @@ function uri_department_department_customizer($wp_customize) {
 	));
 
 
-	$wp_customize->add_panel($section, array(
+	$section = 'uri_department_department_options';
+	$wp_customize->add_section($section, array(
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => 'Contact Information',
     'description'    => '',
+    'panel'          => $panel,
 	));
 
-	$elements = array();
-	$elements[] = array(
-		'name' => 'uri_department_department_foo',
-		'options' => array(),
-		'control' => array(
-			'label'    => __( 'FOO', 'uri-department' ),
-			'section'  => 'uri_department_department_contact',
-		)
-	);
-
-	foreach($elements as $el) {
-		uri_department_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
-	}
-
+	$section_social = 'uri_department_department_social_media';
+	$wp_customize->add_section($section_social, array(
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+    'title'          => 'Social Media',
+    'description'    => '',
+    'panel'          => $panel,
+	));
 
 
 	$elements = array();
@@ -178,9 +166,56 @@ function uri_department_department_customizer($wp_customize) {
 		)
 	);
 
+	$elements[] = array(
+		'name' => 'uri_department_department_twitter',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'Twitter', 'uri-department' ),
+			'description' => __( 'Just the handle.  Like @universityofri', 'uri-department'),
+			'section'  => $section_social,
+		)
+	);
+	$elements[] = array(
+		'name' => 'uri_department_department_instagram',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'Instagram URL', 'uri-department' ),
+			'description' => __( 'The entire URL including https', 'uri-department'),
+			'section'  => $section_social,
+		)
+	);
+	$elements[] = array(
+		'name' => 'uri_department_department_facebook',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'Facebook URL', 'uri-department' ),
+			'description' => __( 'The entire URL including https', 'uri-department'),
+			'section'  => $section_social,
+		)
+	);
+	$elements[] = array(
+		'name' => 'uri_department_department_linkedin',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'LinkedIn URL', 'uri-department' ),
+			'description' => __( 'The entire URL including https', 'uri-department'),
+			'section'  => $section_social,
+		)
+	);
+	$elements[] = array(
+		'name' => 'uri_department_department_youtube',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'YouTube URL', 'uri-department' ),
+			'description' => __( 'The entire URL including https', 'uri-department'),
+			'section'  => $section_social,
+		)
+	);
+
 	foreach($elements as $el) {
 		uri_department_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
 	}
+
 
 
 }

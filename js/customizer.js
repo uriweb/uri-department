@@ -44,16 +44,42 @@
 		});
 	});
 
+	wp.customize( 'uri_department_department_twitter', function( value ) {
+		value.bind( function( to ) {
+			$( '#dept-twitter' ).attr( 'href', 'http://www.twitter.com/' + to );
+		});
+	});
+	wp.customize( 'uri_department_department_instagram', function( value ) {
+		value.bind( function( to ) {
+			$( '#dept-instagram' ).attr( 'href',  to );
+		});
+	});
+	wp.customize( 'uri_department_department_facebook', function( value ) {
+		value.bind( function( to ) {
+			$( '#dept-facebook' ).attr( 'href',  to );
+		});
+	});
+	wp.customize( 'uri_department_department_youtube', function( value ) {
+		value.bind( function( to ) {
+			$( '#dept-youtube' ).attr( 'href',  to );
+		});
+	});
+	wp.customize( 'uri_department_department_linkedin', function( value ) {
+		value.bind( function( to ) {
+			$( '#dept-linkedin' ).attr( 'href',  to );
+		});
+	});
+
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+			$( '#deptsec h1 a' ).eq(0).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+			$( '#dept-description' ).text( to );
 		} );
 	} );
 
