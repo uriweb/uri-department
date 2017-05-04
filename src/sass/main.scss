@@ -12,12 +12,12 @@ body {
 	font-size: 10px;
 	margin: 0px;
 	padding: 0px;
-	background-image: url(images/sbbot.gif);
+	background-image: url(../images/sbbot.gif);
 	background-repeat: repeat;
 }
 
 body.singlebody {
-	background-image: url(images/sbbot.gif);
+	background-image: url(../images/sbbot.gif);
 	background-repeat: repeat;
 }
 a {
@@ -47,7 +47,7 @@ a img {
 	background-color: #6e9dc5;
 }
 #container .insidebg {
-	background-image: url(images/bg04.jpg);
+	background-image: url(../images/bg04.jpg);
 	background-position: top;
 	background-repeat: repeat-x;
 	padding-bottom: 10px;
@@ -55,7 +55,7 @@ a img {
 /* Who's Who Custom */
 
 .whoswho {
-	background-image: url(images/catwho-bg.jpg);
+	background-image: url(../images/catwho-bg.jpg);
 	background-repeat: repeat-x;
 }
 /* back to basics */
@@ -85,7 +85,7 @@ a img {
 }
 #header .logo .urilogo {
 	text-indent: -99999px;
-	background-image: url(images/logo-125.png);
+	background-image: url(../images/logo-125.png);
 	display: block;
 	width: 171px;
 	height: 56px;
@@ -123,7 +123,7 @@ a img {
 
 
 #nav {
-	background-image: url(images/navbarbg.gif);
+	background-image: url(../images/navbarbg.gif);
 	/*
 	background-image: linear-gradient(bottom, #D6B231 11%, #DDBA3B 56%, #E5C245 78%);
 	background-image: -o-linear-gradient(bottom, #D6B231 11%, #DDBA3B 56%, #E5C245 78%);
@@ -194,7 +194,7 @@ a img {
 /* Navbar for smaller screens, with new responsive design */
 
 #navhandheld {
-	background-image: url(images/navbarbg.gif);
+	background-image: url(../images/navbarbg.gif);
 	/*
 	background-image: linear-gradient(bottom, #D6B231 11%, #DDBA3B 56%, #E5C245 78%);
 	background-image: -o-linear-gradient(bottom, #D6B231 11%, #DDBA3B 56%, #E5C245 78%);
@@ -240,7 +240,7 @@ background-repeat: repeat-x;
 #panel {
 	display: none;
 	background-color: #f9e6a2;
-	background-image: url(images/topbg.gif);
+	background-image: url(../images/topbg.gif);
 	background-position: bottom;
 	background-repeat: repeat-x;
 	border-bottom: 1px solid #bc9509;
@@ -279,7 +279,7 @@ background-repeat: repeat-x;
  *display:inline;
 }
 #panel ul:hover {
-	background-image: url(images/ulhover.gif);
+	background-image: url(../images/ulhover.gif);
 	background-position: center bottom;
 	background-repeat: repeat-x;/*border : 1px solid #666 ;*/
 }
@@ -322,7 +322,7 @@ background-repeat: repeat-x;
 /* Close the drawer */
 
 a.but {
-	background-image: url(images/close.png);
+	background-image: url(../images/close.png);
 	background-repeat: no-repeat;
 	height: 16px;
 	width: 16px;
@@ -345,7 +345,7 @@ a.but {
 	text-indent: -9999px;
 }
 a.hpbut {
-	background-image: url(images/close.png);
+	background-image: url(../images/close.png);
 	background-repeat: no-repeat;
 	height: 16px;
 	width: 16px;
@@ -380,7 +380,7 @@ a.hpbut {
 	-webkit-box-shadow: inset 0px -2px 2px 2px #dadfea;
 	-moz-box-shadow: inset 0px -2px 2px 2px #dadfea;
 	box-shadow: inset 0px -2px 2px 2px #dadfea;
-        background-image: url(images/searchbg.gif);
+        background-image: url(../images/searchbg.gif);
 	background-position: right center;
 	background-repeat: no-repeat;
 }
@@ -453,7 +453,7 @@ a.hpbut {
 
 #mc {
 	width: 1000px;
-	background-image: url(images/fauxbg.png);
+	background-image: url(../images/fauxbg.png);
 	background-repeat: repeat-y;
 	padding-bottom: 10px;
 	border-bottom: 1px solid #3f6fbb;
@@ -538,7 +538,7 @@ a.hpbut {
 	color: #fff;
 }
 .col1 ul li a:hover {
-	background-image: url(images/col.gif);
+	background-image: url(../images/col.gif);
 	background-repeat: repeat-y;
 	color: #201c1c;
 }
@@ -548,7 +548,7 @@ a.hpbut {
 	margin-right: 35px;
 }
 .col2 .head {
-	background-image: url(images/col2head.png);
+	background-image: url(../images/col2head.png);
 	width: 100%;
 	height: 26px;
 	background-repeat: no-repeat;
@@ -560,7 +560,7 @@ a.hpbut {
 	margin-right: 35px;
 }
 .col3 .head {
-	background-image: url(images/col3head.png);
+	background-image: url(../images/col3head.png);
 	width: 100%;
 	height: 26px;
 	background-repeat: no-repeat;
@@ -571,7 +571,7 @@ a.hpbut {
 	float: right;
 }
 .col4 .head {
-	background-image: url(images/col4head.png);
+	background-image: url(../images/col4head.png);
 	width: 100%;
 	height: 26px;
 	background-repeat: no-repeat;
@@ -606,7 +606,7 @@ a.hpbut {
 #deptbanner a.deptpic {
 	/*width: 190px;*/
 	max-width: 190px;
-        background-image: url(images/headers/path.jpg);
+        background-image: url(../images/headers/path.jpg);
 	height: 90px;
 	border: 2px solid #fff;
 	display: block;
@@ -614,13 +614,13 @@ a.hpbut {
 	background-repeat: no-repeat;
 }
 #deptbanner .uribs {
-	background-image: url(images/uribigstory.jpg);
+	background-image: url(../images/uribigstory.jpg);
 }
 #deptbanner .uridefault {
-	background-image: url(images/uri-minidefault.jpg);
+	background-image: url(../images/uri-minidefault.jpg);
 }
 #deptbanner .uribt {
-	background-image: url(images/uribigthinkers.jpg);
+	background-image: url(../images/uribigthinkers.jpg);
 }
 #deptsec {
 	color: #fff;
@@ -1305,13 +1305,13 @@ margin-bottom: 15px;
 	padding-bottom: 10px;
 }
 #footer .center {
-	background-image: url(images/wmend.png);
+	background-image: url(../images/wmend.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding-top: 10px;
 }
 #footer .reflection {
-	background-image: url(images/wmend.png);
+	background-image: url(../images/wmend.png);
 	background-repeat: no-repeat;
 	background-position: 20px 0px;
 	padding-top: 10px;
@@ -1366,7 +1366,7 @@ margin-bottom: 15px;
 /* Wordmark */
 
 .wmtop {
-	background-image: url(images/wmtop.png);
+	background-image: url(../images/wmtop.png);
 	height: 42px;
 	background-repeat: no-repeat;
 	background-position: left bottom;
@@ -1382,7 +1382,7 @@ margin-bottom: 15px;
 	margin-top: 25px;
 }
 .wmhtop {
-	background-image: url(images/wmhtop.png);
+	background-image: url(../images/wmhtop.png);
 	height: 42px;
 	background-repeat: no-repeat;
 	background-position: left bottom;
@@ -1526,7 +1526,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', end
 	border-radius: 4px;
 	padding: 6px;
 	margin-bottom: 15px;
-        background-image: url(images/sitealert.png);
+        background-image: url(../images/sitealert.png);
         background-position: left center;
         background-repeat: no-repeat;
 }
@@ -1711,7 +1711,7 @@ color: #022972;
 	display: block;
 	width: 16px;
 	height: 16px;
-	background-image: url(images/todayfeed.png);
+	background-image: url(../images/todayfeed.png);
 	float: right;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -1722,7 +1722,7 @@ color: #022972;
 	display: block;
 	width: 16px;
 	height: 16px;
-	background-image: url(images/youplay.png);
+	background-image: url(../images/youplay.png);
 	float: right;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -1733,7 +1733,7 @@ color: #022972;
 	display: block;
 	width: 16px;
 	height: 16px;
-	background-image: url(images/lightbulb.png);
+	background-image: url(../images/lightbulb.png);
 	float: right;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -1744,7 +1744,7 @@ color: #022972;
 	display: block;
 	width: 16px;
 	height: 16px;
-	background-image: url(images/news.png);
+	background-image: url(../images/news.png);
 	float: right;
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -2287,7 +2287,7 @@ Single post styles
 /* New Layered Look */
 
 #firstlayer {
-	background-image: url(images/toplayerbg.gif);
+	background-image: url(../images/toplayerbg.gif);
 	background-repeat: repeat-x;
 	background-position: bottom;
 	background-color: #1a3162;
@@ -2295,7 +2295,7 @@ Single post styles
 	padding: 0px;
 }
 #subpagetop {
-	background-image: url(images/sbtop.gif);
+	background-image: url(../images/sbtop.gif);
 	background-repeat: repeat-x;
 	border-top: 1px solid #07132a;
 	padding-top: 5px;
@@ -2503,7 +2503,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', end
 }
 #head .logo .urilogo {
 	text-indent: -99999px;
-	background-image: url(images/logo-125.png);
+	background-image: url(../images/logo-125.png);
 	display: block;
 	width: 171px;
 	height: 56px;
@@ -2697,7 +2697,7 @@ html[xmlns] .slides {
 	height: 39px;
 	margin: -20px 0 0;
 	display: block;
-	background: url(images/bg_direction_nav.png) no-repeat 0 0;
+	background: url(../images/bg_direction_nav.png) no-repeat 0 0;
 	position: absolute;
 	top: 50%;
 	cursor: pointer;
@@ -3014,7 +3014,7 @@ html[xmlns] .slides {
 	font-size : 10pt;
 	font-family : Georgia;
 	text-shadow : 1px 1px 1px #fff;
-	background-image: url(images/blockbg.jpg);
+	background-image: url(../images/blockbg.jpg);
 	background-repeat: repeat;
 	line-height: 1.4;
 	padding: 20px;
@@ -3061,7 +3061,7 @@ html[xmlns] .slides {
 .deptslide {
 	min-height: 100%;
 	max-height: 100%;
-	background-image: url(images/loading.gif);
+	background-image: url(../images/loading.gif);
 	background-position: center center;
 	background-repeat: no-repeat;
 }
@@ -4273,7 +4273,7 @@ padding: 0px;
  padding: 0px;
  font-size: 1em;
  margin-bottom: 10px !important;
- width: 100%
+ width: 100%;
  -webkit-column-count: 2;
  -webkit-column-gap: 1em;
  -moz-column-count: 2;

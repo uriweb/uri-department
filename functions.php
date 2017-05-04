@@ -165,6 +165,14 @@ function uri_department_scripts_method() {
 		$version,
 		TRUE
 	);
+    
+    wp_enqueue_script(
+		'scripts',
+		get_template_directory_uri() . '/js/scripts.built.js',
+		array( 'jquery' ),
+		$version,
+		TRUE
+	);
 
 }
 add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
@@ -179,7 +187,7 @@ function uri_department_styles() {
 	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), $version, 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), $version, 'all' );
     wp_register_style( 'gridcols', get_template_directory_uri() . '/css/gridcols.css', array(), $version, 'all' );
-	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
+	wp_register_style( 'basestyle', get_template_directory_uri() . '/css/styles.built.css', array(), $version, 'all' );
 
 	// enqueing:
 	wp_enqueue_style( 'inuit' );
