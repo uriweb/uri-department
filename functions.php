@@ -44,9 +44,9 @@ add_theme_support( 'automatic-feed-links' );
 
 
 /**
- * Include the custom post types
+ * Include the custom post types plugin
  */
-require_once ( get_stylesheet_directory() . '/inc/post-types.php' );
+require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
 
 
 /**
