@@ -405,3 +405,38 @@ margin-bottom: 15px;
 #mainpage .three ul li a:hover {
 	color: #0c5e9e;
 }
+
+/* Back and forth page navigation */
+
+#mainpage .navigation a {
+	background-color: #e1e7ec;
+	padding: 4px;
+	color: #1286e0;
+	font-weight: bold;
+}
+#mainpage .navigation a:hover {
+	background-color: #def0fb;
+	color: #021a46;
+}
+#mainpage .navigation {
+	text-align: center;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: double #e2e2e2;
+	border-bottom: double #e2e2e2;
+}
+#mainpage .navigation .alignleft {
+	float: left;
+}
+#mainpage .navigation .alignright {
+	float: right;
+}
+
+/* Tag Links */
+
+#mainpage .two .entry .taglist p, #mainpage .subcol .entry .taglist p {
+	color: #666;
+	font-weight: bold;
+}

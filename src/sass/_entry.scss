@@ -102,3 +102,31 @@
 	margin: 0px;
 	padding: 0px;
 }
+
+/* Who bio */
+
+#mainpage .entry .whoimage img {
+	padding: 2px;
+	border: 1px solid #e2e2e2;
+	margin: 0px;
+	margin-bottom: 5px;
+	float: right;
+	margin-left: 15px;
+}
+#mainpage .entry ul.wholist {
+	color: #555;
+	font-size: 1.2em;
+	line-height: 1.6;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 15px;
+	border-left: 3px solid #f2c21b;
+}
+#mainpage .entry ul.wholist li {
+	list-style-type: square;
+	color: #444;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+	margin-left: 25px;
+}

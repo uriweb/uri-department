@@ -1,0 +1,63 @@
+/* Archive Stuff */
+
+#mainpage .subcol .archiveitem {
+	width: 100%;
+	margin-bottom: 15px;
+	border-bottom: 1px dotted #e2e2e2;
+	padding-bottom: 15px;
+}
+#mainpage .subcol .archiveitem img {
+float: right;
+margin-left: 5%;
+}
+#mainpage .subcol .archiveitem h2 {
+	font-size: 1.5em;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 5px;
+	line-height: normal;
+}
+#mainpage .subcol .archiveitem h2 a {
+	color: #b7910b;
+}
+#mainpage .subcol .archiveitem h2 a:hover, #mainpage .subcol .archiveitem p a:hover {
+	color: #102244;
+}
+#mainpage .subcol .archiveitem p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.3em;
+	line-height: 1.6;
+	color: #333;
+}
+#mainpage .subcol .archiveitem p a {
+	color: #0a6dd2;
+}
+#mainpage .subcol h1.archivetitle {
+	margin-bottom: 15px;
+}
+#mainpage .subcol .bottomlinks {
+	text-align: center;
+}
+#mainpage .subcol .bottomlinks a {
+	padding: 4px;
+	color: #3b548d;
+	border: 1px solid #ccc;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#mainpage .subcol .bottomlinks a:hover {
+	border: 1px solid #333;
+	color: #102244;
+	background-color: #fcebad;
+}
+/* Tags and Archive Paragraph Links */
+
+#mainpage #sresults .resultitem p a {
+	color: #0a6dd0;
+	border-bottom: 1px solid #fff;
+}
+#mainpage #sresults .resultitem p a:hover {
+	color: #024a92;
+	border-bottom: 1px solid #024a92;
+}

@@ -71,3 +71,37 @@
 	padding: 0px;
 	font-weight: bold;
 }
+
+/* New Layered Look */
+
+#firstlayer {
+	background-image: url(../images/toplayerbg.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-color: #1a3162;
+	margin: 0px;
+	padding: 0px;
+}
+#subpagetop {
+	background-image: url(../images/sbtop.gif);
+	background-repeat: repeat-x;
+	border-top: 1px solid #07132a;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#subpagetop .middle {
+	width: 1020px;
+	margin: 0 auto;
+}
+#inbanner .caption h1 {
+	color: #fff;
+	font-family: "liberation-serif-1", "liberation-serif-2", serif;
+	font-size: 3em;
+	margin: 0px;
+	padding: 0px;
+	width: 320px;
+	display: block;
+	font-weight: normal;
+	letter-spacing: 2px;
+	float: right;
+}
