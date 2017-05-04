@@ -48,6 +48,18 @@ add_theme_support( 'automatic-feed-links' );
  */
 require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
 
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+
+
 
 /**
  * Include the business logic for features that belong in their own plugins
