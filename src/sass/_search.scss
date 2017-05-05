@@ -6,14 +6,10 @@
 	float: left;
 	vertical-align: middle;
 	padding: 5px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
 	border-radius: 2px;
 	background-color: #fff;
-	-webkit-box-shadow: inset 0px -2px 2px 2px #dadfea;
-	-moz-box-shadow: inset 0px -2px 2px 2px #dadfea;
 	box-shadow: inset 0px -2px 2px 2px #dadfea;
-        background-image: url(../images/searchbg.gif);
+    background-image: url(../images/searchbg.gif);
 	background-position: right center;
 	background-repeat: no-repeat;
 }
@@ -84,16 +80,15 @@
 /* new search button */
 
 #head .sf input[type=submit] {
-font-weight: bold;
-border: 1px solid #F0DB3C;
-display: inline;
-width: 16%;
-padding-right: 1%;
-padding-left: 1%;
-background-color: #FAEF98;
-color: #0976BA;
-cursor: pointer;
--webkit-appearance: none;
+    font-weight: bold;
+    border: 1px solid #F0DB3C;
+    display: inline;
+    width: 16%;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: #FAEF98;
+    color: #0976BA;
+    cursor: pointer;
 }
 
 #head .sf input[type=submit]:hover, #head .sf input[type=submit]:focus {

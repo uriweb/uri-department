@@ -3,7 +3,7 @@
 // Helpful for CSS cleaning.
 
 // Run this?
-var List_CSS_Selectors = false;
+var List_CSS_Selectors = true;
 
 //===========================//
 
