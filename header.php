@@ -144,7 +144,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					// check for new customizer header image
 					$background_image = get_header_image();
 					// good stuff to know about: get_custom_header()->width and get_custom_header()->height 
-					if($background_image === NULL) {
+
+					if($background_image === NULL || $background_image == '') {
 						// check for legacy header image
 						$background_image = of_get_option('urid_ident');
 					}
