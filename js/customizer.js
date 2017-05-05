@@ -11,19 +11,12 @@
 	// Notice section
 	wp.customize( 'uri_department_notice_text', function( value ) {
 		value.bind( function( to ) {
-			if($( '.site-notice' ).length == 0) {
-				$('#uri-header').after('<div class="site-notice-wrapper"><div class="marginator"><div class="site-notice"></div></div></div>');
-			}
-			if(to == ''){
-				$( '.site-notice' ).remove();
-			}
-			var decoded = $("<textarea/>").html(to).text();
-			$( '.site-notice' ).html( decoded );
+			$( '#dept-notice' ).text( to );
 		});
 	});
 	wp.customize( 'uri_department_notice_type', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-notice-wrapper' ).attr('class', 'site-notice-wrapper').addClass( to );
+			$( '#dept-notice' ).attr('class', '').addClass( to );
 		} );
 	});
 
