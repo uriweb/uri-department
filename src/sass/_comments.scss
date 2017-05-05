@@ -5,6 +5,7 @@
 	font-size: 1em;
 	list-style-type: none;
 }
+
 #mainpage #comments p {
 	line-height: 1.5;
 	margin: 0px;
@@ -12,17 +13,20 @@
 	font-size: 1.1em;
 	margin-bottom: 10px;
 }
+
 #mainpage #comments p.cauthor {
 	margin-bottom: 8px;
 	font-weight: bold;
 	color: #666;
 	line-height: normal;
 }
+
 #mainpage #comments p.cmeta {
 	font-size: 1em;
 	color: #777;
 	line-height: normal;
 }
+
 #mainpage .cheader {
 	font-size: 1.2em;
 	font-weight: bold;
@@ -33,6 +37,7 @@
 	border-bottom: double #e2e2e2;
 	margin-bottom: 10px;
 }
+
 #mainpage ol.commentlist {
 	list-style-type: none;
 	margin: 0px;
@@ -40,29 +45,35 @@
 	font-size: 1em;
 	margin-bottom: 20px;
 }
+
 #mainpage ol.commentlist li {
 	list-style-type: none;
 	margin: 0px;
 	padding: 5px;
 	border: 1px solid #e2e2e2;
 }
+
 #mainpage ol.commentlist li.alt {
 	background-color: #f9f9f9;
 }
+
 #mainpage ol.commentlist li .grav {
 	width: 50px;
 	float: right;
 	margin-left: 50px;
 }
+
 #mainpage ol.commentlist li p a {
 	border-bottom: 1px dashed #024a92;
 }
+
 #mainpage #comments form {
 	margin: 0px;
 	padding: 0px;
 	background-color: #f9f7d8;
 	padding: 10px;
 }
+
 #mainpage #comments input[type=text] {
 	padding: 4px;
 	border: 1px solid #ccc;
@@ -72,16 +83,16 @@
 	color: #444;
 	width: 60%;
 }
+
 #mainpage #comments input[type=text]:hover {
 	border: 1px solid #2075bd;
 }
+
 #mainpage #comments input[type=text]:focus {
 	border: 1px solid #2075bd;
 	box-shadow: inset 0px 3px 2px #dcf3fe;
-	-moz-box-shadow: inset 0px 3px 2px #dcf3fe;
-	-webkit-box-shadow: inset 0px 3px 2px #dcf3fe;
-	-o-box-shadow: inset 0px 3px 2px #dcf3fe;
 }
+
 #mainpage #comments textarea {
 	padding: 5px;
 	border: 1px solid #ccc;
@@ -92,27 +103,29 @@
 	width: 96%;
 	height: 100px;
 }
+
 #mainpage #comments textarea:hover {
 	border: 1px solid #2075bd;
 }
+
 #mainpage #comments textarea:focus {
 	border: 1px solid #2075bd;
 	box-shadow: inset 0px 3px 2px #dcf3fe;
-	-moz-box-shadow: inset 0px 3px 2px #dcf3fe;
-	-webkit-box-shadow: inset 0px 3px 2px #dcf3fe;
-	-o-box-shadow: inset 0px 3px 2px #dcf3fe;
 }
+
 #mainpage #comments fieldset {
 	margin: 0px;
 	padding: 0px;
 	border: 0px;
 	outline: 0;
 }
+
 #mainpage #comments label {
 	font-size: 1.1em;
 	font-weight: bold;
 	color: #09204c;
 }
+
 #mainpage #comments small {
 	font-size: 1em;
 	line-height: 1.8;

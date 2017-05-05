@@ -1,15 +1,22 @@
+/* HEADER */
+
+/* NOT SURE IF THESE ARE USED...
+
 #header {
 	width: 100%;
 	vertical-align: middle;
 }
+
 #header.singlepage {
 	margin: 0px;
 	padding-bottom: 20px;
 }
+
 #header .center {
 	width: 1000px;
 	margin: 0 auto;
 }
+
 #header .logo {
 	float: left;
 	width: 173px;
@@ -17,6 +24,7 @@
 	border-right: 1px solid #0e356b;
 	padding-right: 20px;
 }
+
 #header .logo .urilogo {
 	text-indent: -99999px;
 	background-image: url(../images/logo-125.png);
@@ -24,9 +32,11 @@
 	width: 171px;
 	height: 56px;
 }
+
 #header .logo .urilogo:hover {
 	background-position: -171px 0;
 }
+
 #header .tb {
 	float: left;
 	width: 231px;
@@ -35,47 +45,58 @@
 	padding-left: 20px;
 	margin-right: 20px;
 }
+
 #header .quick {
 	width: 300px;
 	float: right;
 	text-align: right;
 	margin-top: 20px;
 }
+
 #header .quick img {
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
 #header .quick a {
 	color: #fff;
 	padding: 6px;
 	margin-right: 10px;
 }
+
 #header .quick a:hover {
 	color: #ddb93a;
 }
+
+*/
 
 #head {
 	width: 100%;
 	vertical-align: middle;
 }
+
 .homepage {
 	padding-top: 20px;
 	padding-bottom: 10px;
 	margin-bottom: 10px;
 }
+
 .sub {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	margin: 0px;
 }
+
 #head.singlepage {
 	margin: 0px;
 	padding-bottom: 20px;
 }
+
 #head .center {
 	width: 1000px;
 	margin: 0 auto;
 }
+
 #head .logo .urilogo {
 	text-indent: -99999px;
 	background-image: url(../images/logo-125.png);
@@ -83,9 +104,11 @@
 	width: 171px;
 	height: 56px;
 }
+
 #head .logo .urilogo:hover {
 	background-position: -171px 0;
 }
+
 #head .tb {
 	float: left;
 	width: 231px;
@@ -94,22 +117,27 @@
 	padding-left: 20px;
 	margin-right: 20px;
 }
+
 #head .quick {
 	text-align: right !important;
 	margin-top: 20px;
 }
+
 #head .quick img {
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
 #head .quick a {
 	color: #fff;
 	padding: 6px;
 	margin-right: 10px;
 }
+
 #head .quick a:hover {
 	color: #ddb93a;
 }
+
 #head .sf {
 	margin-top: 15px;
 	vertical-align: middle;
@@ -123,14 +151,15 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 #head .sf input {
 	margin: 0px;
 	padding: 0px;
 }
 
 #head .sf input[type=submit] {
-float: right;
-display: inline;
+    float: right;
+    display: inline;
 }
 
 #head .sf input[type="text"] {

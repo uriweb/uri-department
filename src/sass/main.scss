@@ -21,15 +21,6 @@ a img {
 	outline: 0;
 }
 
-#top {
-	background-color: transparent;
-}
-.index#top {
-	background-color: transparent;
-}
-.bumped#top {
-	background-color: transparent;/*padding-top: 20px;*/
-}
 #container {
 	width: 1020px;
 	margin: 0 auto;
@@ -131,7 +122,6 @@ Various extra classes which can make in-page content look a whole lot better whe
 }
 
 @import 'entry';
-@import 'blogarchives';
 @import 'comments';
 @import 'archives';
 @import 'announcement';

@@ -1,27 +1,33 @@
 /* Footer */
 
-.mobilefooter, .mobilewordmark {
+.mobilefooter,
+.mobilewordmark {
 	display: none;
 }
+
 #footer {
 	padding-bottom: 10px;
 }
+
 #footer .center {
 	background-image: url(../images/wmend.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 	padding-top: 10px;
 }
+
 #footer .reflection {
 	background-image: url(../images/wmend.png);
 	background-repeat: no-repeat;
 	background-position: 20px 0px;
 	padding-top: 10px;
 }
+
 #footer img {
 	vertical-align: middle;
 	margin-left: 5px;
 }
+
 #footer p {
 	margin: 0px;
 	padding: 0px;
@@ -30,27 +36,33 @@
 	margin-bottom: 4px;
 	color: #014a6c;
 }
+
 #footer .left {
 	width: 45%;
 	float: left;
 	margin-top: 38px;
 }
+
 #footer .right {
 	float: right;
 	width: 45%;
 	text-align: right;
 }
+
 #footer .left p a {
 	color: #0b4093;
 	font-weight: bold;
 }
+
 #footer .left p a:hover {
 	color: #fff;
 }
+
 #footer .right p a {
 	font-weight: bold;
 	color: #0d3343;
 }
+
 #footer .right p a:hover {
 	color: #111;
 }

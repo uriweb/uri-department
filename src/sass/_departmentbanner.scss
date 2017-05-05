@@ -2,27 +2,31 @@
 
 
 #deptbanner a.deptpic {
-	/*width: 190px;*/
 	max-width: 190px;
-        background-image: url(../images/headers/path.jpg);
+    background-image: url(../images/headers/path.jpg);
 	height: 90px;
 	border: 2px solid #fff;
 	display: block;
 	text-indent: -99999px;
 	background-repeat: no-repeat;
 }
+
 #deptbanner .uribs {
 	background-image: url(../images/uribigstory.jpg);
 }
+
 #deptbanner .uridefault {
 	background-image: url(../images/uri-minidefault.jpg);
 }
+
 #deptbanner .uribt {
 	background-image: url(../images/uribigthinkers.jpg);
 }
+
 #deptsec {
 	color: #fff;
 }
+
 #deptsec h1 {
 	font-size: 2.7em;
 	margin: 0px;
@@ -33,26 +37,29 @@
 	font-weight: normal;
 	font-family: trajan-pro, sans-serif;
 }
+
 #deptsec h1 a {
 	color: #d9b535;
 }
+
 #deptsec h1 a:hover {
 	color: #fff;
 }
+
 #deptsec h1 img {
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
 #deptsec h1 a img {
 	opacity: .7;
 }
+
 #deptsec h1 a:hover img {
 	opacity: 1;
- -webkit-transition: opacity .25s ease-in;
- -moz-transition: opacity .25s ease-in;
- -o-transition: opacity .25s ease-in;
- transition: opacity .25s ease-in;
+    transition: opacity .25s ease-in;
 }
+
 #deptsec p {
 	margin: 0px;
 	padding: 0px;
@@ -60,16 +67,20 @@
 	font-size: 1em;
 	line-height: 1.4;
 }
+
 #deptsec p a {
 	color: #fff;
 }
+
 #deptsec p a:hover {
 	color: #f7f7f7;
 }
+
 #extrabutton {
 	margin-top: 40px;
 	float: right !important;
 }
+
 #extrabutton a {
 	background-color: #415b94;
 	padding: 5px;
@@ -80,13 +91,12 @@
 	font-weight: bold;
 	display: block;
 }
+
 #extrabutton a:hover {
 	opacity: 1;
- -webkit-transition: all .20s ease-in;
- -moz-transition: all .20s ease-in;
- -o-transition: all .20s ease-in;
- transition: all .20s ease-in;
+    transition: all .20s ease-in;
 }
+
 #extrabutton a img {
 	vertical-align: middle;
 	margin-right: 8px;

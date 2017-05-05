@@ -34,7 +34,7 @@ function scripts(done) {
 	gulp.src('./src/js/*.js')
     .pipe(concat('scripts.built.js'))
     //.pipe(stripDebug())
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(header(banner))
     .pipe(gulp.dest('./js/'));
     

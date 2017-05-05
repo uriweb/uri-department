@@ -1,5 +1,8 @@
 /* Main Layout */
 
+
+/* NOT SURE IF THESE ARE USED...
+
 #mc {
 	width: 1000px;
 	background-image: url(../images/fauxbg.png);
@@ -150,10 +153,13 @@
 	background-color: #bfe2ee;
 }
 
+*/
+
 #mainpage {
 	width: 100%;
 	padding-top: 20px;
 }
+
 #mainpage .wrap {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -163,51 +169,70 @@
 	border: 1px solid #dcdbdb;
 	background-color: #fff;
 }
+
 .hpes {
 	padding-right: 5%;
 	padding-left: 5%;
 }
-#mainpage .one .expandnav, #mainpage .onefull .expandnav {
+
+#mainpage .one .expandnav,
+#mainpage .onefull .expandnav {
 	display: none;
 }
-#mainpage .one ul, #mainpage .onefull ul {
+
+#mainpage .one ul, 
+#mainpage .onefull ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
 	font-size: 1.3em;
 	font-family: Arial, sans-serif;
-        margin-left: 10px;
+    margin-left: 10px;
 }
-#mainpage .one ul li, #mainpage .onefull ul li {
+
+#mainpage .one ul li, 
+#mainpage .onefull ul li {
 	list-style-type: none;
 	border-bottom: 1px dotted #ccc;
 	margin-bottom: 1px;
-        text-indent: -10px;
+    text-indent: -10px;
 }
-#mainpage .one ul li:last-child, #mainpage .onefull ul li:last-child {
-border-bottom: 0px;
+
+#mainpage .one ul li:last-child, 
+#mainpage .onefull ul li:last-child {
+    border-bottom: 0px;
 }
-#mainpage .one ul li ul.sub-menu, #mainpage .onefull ul li ul.sub-menu {
-font-size: .9em;
-margin: 0px;
-padding: 0px;
+
+#mainpage .one ul li ul.sub-menu,
+#mainpage .onefull ul li ul.sub-menu {
+    font-size: .9em;
+    margin: 0px;
+    padding: 0px;
 }
-#mainpage .one ul li ul.sub-menu li, #mainpage .onefull ul li ul.sub-menu li {
-border: 0px;
-list-style-type: none;
-margin-bottom: 5px;
-margin: 0px;
+
+#mainpage .one ul li ul.sub-menu li, 
+#mainpage .onefull ul li ul.sub-menu li {
+    border: 0px;
+    list-style-type: none;
+    margin-bottom: 5px;
+    margin: 0px;
 }
-#mainpage .one ul li a, #mainpage .onefull ul li a {
+
+#mainpage .one ul li a, 
+#mainpage .onefull ul li a {
 	display: block;
 	padding: 5px;
 	color: #1a4e63;
 	font-weight: bold;
 }
-#mainpage .one ul li a:hover, #mainpage .onefull ul li a:hover {
+
+#mainpage .one ul li a:hover, 
+#mainpage .onefull ul li a:hover {
 	color: #04729f;
 }
-#mainpage .one h2, #mainpage .onefull h2 {
+
+#mainpage .one h2, 
+#mainpage .onefull h2 {
 	font-size: 1.2em;
 	margin: 0px;
 	padding: 0px;
@@ -216,7 +241,9 @@ margin: 0px;
 	font-weight: normal;
 	text-shadow: 1px 1px white, -1px -1px #444;
 }
-#mainpage .one h4, #mainpage .onefull h4 {
+
+#mainpage .one h4, 
+#mainpage .onefull h4 {
     border-bottom: 1px solid #E8E8E8;
     color: #D9AA00;
     font-size: 1.4em;
@@ -224,27 +251,34 @@ margin: 0px;
     margin: 0;
     padding-bottom: 5px;
 }
-#mainpage .one .box, #mainpage .onefull .box {
-margin-top: 15px;
-margin-bottom: 15px;
+
+#mainpage .one .box, 
+#mainpage .onefull .box {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
+
 #mainpage .two {
 	padding-left: 24px;
 	border-left: 1px solid #ccc;
 	padding-right: 24px;
 	border-right: 1px solid #ccc;
 }
+
 #mainpage .subcol {
-	/*width: 755px;
-	float: right;*/
 	padding-left: 24px;
-	/*padding-right: 25px;*/
 	border-left: 1px solid #ccc;
 }
-#mainpage .two .title, #mainpage .subcol .title, #mainpage .fullcol .title {
+
+#mainpage .two .title, 
+#mainpage .subcol .title, 
+#mainpage .fullcol .title {
 	margin-bottom: 5px;
 }
-#mainpage .two h1, #mainpage .subcol h1, #mainpage .fullcol h1 {
+
+#mainpage .two h1, 
+#mainpage .subcol h1, 
+#mainpage .fullcol h1 {
 	font-family: 'trajan-pro', Lucida Grande, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 2.6em;
 	line-height: 1.7;
@@ -254,7 +288,10 @@ margin-bottom: 15px;
 	color: #0d3343;
 	text-transform: lowercase;
 }
-#mainpage .two h2, #mainpage .subcol h2, #mainpage .fullcol h2 {
+
+#mainpage .two h2, 
+#mainpage .subcol h2, 
+#mainpage .fullcol h2 {
 	font-family: 'trajan-pro', Lucida Grande, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 2em;
 	line-height: 1.7;
@@ -265,7 +302,10 @@ margin-bottom: 15px;
 	color: #0d3343;
 	text-transform: lowercase;
 }
-#mainpage .two h3, #mainpage .subcol h3, #mainpage .fullcol h3 {
+
+#mainpage .two h3, 
+#mainpage .subcol h3, 
+#mainpage .fullcol h3 {
 	font-family: 'trajan-pro', Lucida Grande, Geneva, Arial, Helvetica, sans-serif;
 	color: #b7910b;
 	font-size: 1.8em;
@@ -274,7 +314,9 @@ margin-bottom: 15px;
 	margin-bottom: 8px;
 	text-transform: lowercase;
 }
-#mainpage .two .tagline, #mainpage .subcol .tagline {
+
+#mainpage .two .tagline, 
+#mainpage .subcol .tagline {
 	font-family: "liberation-serif-1", "liberation-serif-2", serif;
 	font-size: 1.8em;
 	color: #555;
@@ -284,7 +326,9 @@ margin-bottom: 15px;
 	letter-spacing: 1px;
 	margin-top: 5px;
 }
-#mainpage .two p, #mainpage .subcol p {
+
+#mainpage .two p, 
+#mainpage .subcol p {
 	font-size: 1.2em;
 	line-height: 1.8;
 	color: #002147;
@@ -292,7 +336,9 @@ margin-bottom: 15px;
 	padding: 0px;
 	margin-bottom: 10px;
 }
-#mainpage .two p.wp-caption-text, #mainpage .subcol p.wp-caption-text {
+
+#mainpage .two p.wp-caption-text, 
+#mainpage .subcol p.wp-caption-text {
 	font-size: 1em;
 	font-style: italic;
 	font-weight: bold;
@@ -301,50 +347,73 @@ margin-bottom: 15px;
 	line-height: 1.4;
 	margin-top: 5px;
 }
-#mainpage .two ul, #mainpage .subcol ul, #mainpage .two ol, #mainpage .subcol ol {
+
+#mainpage .two ul, 
+#mainpage .subcol ul, 
+#mainpage .two ol, 
+#mainpage .subcol ol {
 	margin: 0px;
 	padding: 0px;
 	margin-left: 25px;
 	margin-bottom: 20px;
 	font-size: 1.2em;
 }
-#mainpage .two ul li, #mainpage .subcol ul li, #mainpage .two ol li, #mainpage .subcol ol li {
-	/*list-style-type: square;*/
+
+#mainpage .two ul li, 
+#mainpage .subcol ul li, 
+#mainpage .two ol li, 
+#mainpage .subcol ol li {
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 5px;
 	color: #333;
 	line-height: 1.8;
 }
-#mainpage .two ul li a, #mainpage .subcol ul li a, #mainpage .two ol li a, #mainpage .subcol ol li a {
+
+#mainpage .two ul li a, 
+#mainpage .subcol ul li a, 
+#mainpage .two ol li a, 
+#mainpage .subcol ol li a {
 	color: #0a6dd0;
 	border-bottom: 1px solid #0a6dd0;
 }
-#mainpage .two ul li a:hover, #mainpage .subcol ul li a:hover, #mainpage .two ol li a:hover, #mainpage .subcol ol li a:hover {
+
+#mainpage .two ul li a:hover, 
+#mainpage .subcol ul li a:hover, 
+#mainpage .two ol li a:hover, 
+#mainpage .subcol ol li a:hover {
 	color: #024a92;
 	border-bottom: 1px solid #024a92;
 }
-#mainpage .two .entry .alignright, #mainpage .subcol .entry .alignright {
+
+#mainpage .two .entry .alignright, 
+#mainpage .subcol .entry .alignright {
 	float: right;
 	margin-left: 25px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	display: inline-block;
 }
-#mainpage .two .entry .alignleft, #mainpage .subcol .entry .alignleft {
+
+#mainpage .two .entry .alignleft, 
+#mainpage .subcol .entry .alignleft {
 	float: left;
 	margin-right: 25px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	display: inline-block;
 }
-#mainpage .two .entry .aligncenter, #mainpage .subcol .entry .aligncenter {
+
+#mainpage .two .entry .aligncenter, 
+#mainpage .subcol .entry .aligncenter {
 	display: block;
 	margin: 0 auto;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
-#mainpage .two .entry p.notice, #mainpage .subcol .entry p.notice {
+
+#mainpage .two .entry p.notice, 
+#mainpage .subcol .entry p.notice {
 	-webkit-border-radius: 04px;
 	-moz-border-radius: 04px;
 	border-radius: 04px;
@@ -352,7 +421,9 @@ margin-bottom: 15px;
 	background-color: #f2e7c1;
 	padding: 4px;
 }
-#mainpage .two .title a.ical, #mainpage .subcol .title a.ical {
+
+#mainpage .two .title a.ical, 
+#mainpage .subcol .title a.ical {
 	color: #fff;
 	background-color: #8ec734;
 	padding: 4px;
@@ -362,12 +433,15 @@ margin-bottom: 15px;
 	float: right;
 	font-size: .8em;
 }
+
 #mainpage .three .sidebarwidget {
 	margin-bottom: 10px;
 }
+
 #mainpage .three li {
 	list-style-type:  none;
 }
+
 #mainpage .three h3 {
 	background-color: #e6bd29;
 	display: block;
@@ -378,33 +452,41 @@ margin-bottom: 15px;
 	padding: 4px;
 	font-size: 1.2em;
 }
+
 #mainpage .three p {
 	line-height: 1.7;
 	color: #002147;
 }
+
 #mainpage .three p a {
 	color: #1771eb;
 }
+
 #mainpage .three p a:hover {
 	color: #0c5e9e;
 }
+
 #mainpage .three ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
 }
+
 #mainpage .three ul li {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 10px;
 }
+
 #mainpage .three ul li a {
 	color: #1771eb;
 }
+
 #mainpage .three ul li a:hover {
 	color: #0c5e9e;
 }
+
 
 /* Back and forth page navigation */
 
@@ -414,10 +496,12 @@ margin-bottom: 15px;
 	color: #1286e0;
 	font-weight: bold;
 }
+
 #mainpage .navigation a:hover {
 	background-color: #def0fb;
 	color: #021a46;
 }
+
 #mainpage .navigation {
 	text-align: center;
 	margin-bottom: 20px;
@@ -427,16 +511,20 @@ margin-bottom: 15px;
 	border-top: double #e2e2e2;
 	border-bottom: double #e2e2e2;
 }
+
 #mainpage .navigation .alignleft {
 	float: left;
 }
+
 #mainpage .navigation .alignright {
 	float: right;
 }
 
+
 /* Tag Links */
 
-#mainpage .two .entry .taglist p, #mainpage .subcol .entry .taglist p {
+#mainpage .two .entry .taglist p, 
+#mainpage .subcol .entry .taglist p {
 	color: #666;
 	font-weight: bold;
 }
