@@ -86,6 +86,16 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 
 
 /**
+ * When Options framework is removed, we'll want to ensure that stray
+ * calls to of_get_option() don't break the site.
+ */
+if ( !function_exists( 'of_get_option' ) ) {
+	function of_get_option() {
+		return FALSE;
+	}
+}
+
+/**
  * Set up sidebar areas
  */
 register_sidebar( array(

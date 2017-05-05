@@ -68,7 +68,7 @@ function uri_department_notice_customizer($wp_customize) {
 		'name' => 'uri_department_notice_text',
 		'options' => array(),
 		'control' => array(
-			'label'    => __( 'Enter a notification for this site.', 'uri-department' ),
+			'label'    => __( 'Enter a notification / alert for this site.', 'uri-department' ),
 			'description' => __( 'Keep it short.', 'uri-department'),
 			'section'  => $section,
 		)
@@ -116,7 +116,7 @@ function uri_department_department_customizer($wp_customize) {
 	$panel = 'uri_department_department';
 
 	$wp_customize->add_panel($panel, array(
-    'priority'       => 10,
+    'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => 'URI Department',
@@ -140,6 +140,16 @@ function uri_department_department_customizer($wp_customize) {
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => 'Social Media',
+    'description'    => '',
+    'panel'          => $panel,
+	));
+
+	$section_theme = 'uri_department_department_theme_options';
+	$wp_customize->add_section($section_theme, array(
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+    'title'          => 'Theme Options',
     'description'    => '',
     'panel'          => $panel,
 	));
@@ -221,6 +231,19 @@ function uri_department_department_customizer($wp_customize) {
 			'section'  => $section_social,
 		)
 	);
+
+
+	$elements[] = array(
+		'name' => 'uri_department_department_theme_skin',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'Skin', 'uri-department' ),
+			'section'  => $section_theme,
+	 		'type' => 'select',
+	 		'choices' => array('' => 'Select a Skin', 'legacy' => 'Legacy (default)', 'legacy' => 'Legacy'),
+		)
+	);
+
 
 	foreach($elements as $el) {
 		uri_department_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
