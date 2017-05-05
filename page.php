@@ -7,7 +7,8 @@
 	<div class="two">
 		<div id="content_start" style="display : none ; "></div>
 		<?php
-			get_template_part( 'templates/partials/alert' );		?>
+			get_template_part( 'templates/partials/alert' );
+		?>
 		<?php
 			if (have_posts()) : while (have_posts()) : the_post();
 			$tagline = get_post_meta($post->ID, 'tagline', $single = true);

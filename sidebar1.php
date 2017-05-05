@@ -13,12 +13,46 @@
 		</div><!-- end sbnav -->
 
 		<div class="socialize">
-			<?php if (of_get_option('urid_tweet') == true) { ?><a href="http://www.twitter.com/<?php echo of_get_option('urid_tweet'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/twitter.png" alt="Twitter" /></a><?php } ?>
-			<?php if (of_get_option('urid_instagram') == true) { ?><a href="<?php echo of_get_option('urid_instagram'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/instagram.png" alt="Instagram" /></a><?php } ?>
-			<?php if (of_get_option('urid_facebook') == true) { ?><a href="<?php echo of_get_option('urid_facebook'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/fb.png" alt="Facebook" /></a><?php } ?>
-			<?php if (of_get_option('urid_google') == true) { ?><a href="<?php echo of_get_option('urid_google'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/gplus.png" alt="Google+" /></a><?php } ?>
-			<?php if (of_get_option('urid_youtube') == true) { ?><a href="<?php echo of_get_option('urid_youtube'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/youtube.png" alt="Youtube" /></a><?php } ?>
-			<?php if (of_get_option('urid_linkedin') == true) { ?><a href="<?php echo of_get_option('urid_linkedin'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/social/linkedin.png" alt="LinkedIn" /></a><?php } ?>
+
+			<?php 
+				// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
+				// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
+				$twitter = get_option('uri_department_department_twitter');
+				$instagram = get_option('uri_department_department_instagram');
+				$facebook = get_option('uri_department_department_facebook');
+				$linkedin = get_option('uri_department_department_linkedin');
+				$youtube = get_option('uri_department_department_youtube');
+								
+				// check for legacy values
+				if ( empty ( $twitter ) ) {
+					$twitter = of_get_option('urid_tweet');
+				}
+				if ( empty( $instagram ) ) {
+					$instagram = of_get_option('urid_instagram');
+				}
+				if ( empty( $facebook ) ) {
+					$facebook = of_get_option('urid_facebook');
+				}
+				if ( empty( $linkedin ) ) {
+					$linkedin = of_get_option('urid_linkedin');
+				}
+				if ( empty( $youtube ) ) {
+					$youtube = of_get_option('urid_youtube');
+				}
+				if ( empty( $google ) ) {
+					$google = of_get_option('urid_google');
+				}
+				
+				$social_icon_dir = get_bloginfo('stylesheet_directory') . '/images/social/';
+									
+			?>
+
+			<?php if ( ! empty( $twitter ) ) : ?><a href="http://www.twitter.com/<?php echo $twitter; ?>" id="dept-twitter"><img src="<?php echo $social_icon_dir; ?>twitter.png" alt="Twitter" /></a><?php endif; ?>
+			<?php if ( ! empty( $instagram ) ) : ?><a href="<?php echo of_get_option('urid_instagram'); ?>" id="dept-instagram"><img src="<?php echo $social_icon_dir; ?>instagram.png" alt="Instagram" /></a><?php endif; ?>
+			<?php if ( ! empty( $facebook ) ) : ?><a href="<?php echo of_get_option('urid_facebook'); ?>" id="dept-facebook"><img src="<?php echo $social_icon_dir; ?>fb.png" alt="Facebook" /></a><?php endif; ?>
+			<?php if ( ! empty( $google ) ) : ?><a href="<?php echo of_get_option('urid_google'); ?>" id="dept-google"><img src="<?php echo $social_icon_dir; ?>gplus.png" alt="Google+" /></a><?php endif; ?>
+			<?php if ( ! empty( $youtube ) ) : ?><a href="<?php echo of_get_option('urid_youtube'); ?>" id="dept-youtube"><img src="<?php echo $social_icon_dir; ?>youtube.png" alt="Youtube" /></a><?php endif; ?>
+			<?php if ( ! empty( $linkedin ) ) : ?><a href="<?php echo of_get_option('urid_linkedin'); ?>" id="dept-linkedin"><img src="<?php echo $social_icon_dir; ?>linkedin.png" alt="LinkedIn" /></a><?php endif; ?>
 		</div>
 
 	<!-- for extra content under the menu -->

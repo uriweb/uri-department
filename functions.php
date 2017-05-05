@@ -44,9 +44,21 @@ add_theme_support( 'automatic-feed-links' );
 
 
 /**
- * Include the custom post types
+ * Include the custom post types plugin
  */
-require_once ( get_stylesheet_directory() . '/inc/post-types.php' );
+require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+
 
 
 /**
@@ -72,6 +84,16 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
 }
 
+
+/**
+ * When Options framework is removed, we'll want to ensure that stray
+ * calls to of_get_option() don't break the site.
+ */
+if ( !function_exists( 'of_get_option' ) ) {
+	function of_get_option() {
+		return FALSE;
+	}
+}
 
 /**
  * Set up sidebar areas
