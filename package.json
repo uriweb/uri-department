@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "John Pennypacker <jpennypacker@uri.edu>",
+  "author1": "John Pennypacker <jpennypacker@uri.edu>",
+  "author2": "Brandon Fuller <bjcfuller@uri.edu>",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.8",

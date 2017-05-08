@@ -62,12 +62,9 @@ function styles(done) {
   'Tags:',
   '',
   '@version v<%= pkg.version %>',
+  '@author <%= pkg.author1 %>',
+  '@author <%= pkg.author2 %>',                
   '',
-  '===========================================',
-  '',
-  'THIS IS THE DEVELOPMENT VERSION OF THE THEME.',
-  '',
-  '==============================================',
   '*/',
   ''].join('\n')
 

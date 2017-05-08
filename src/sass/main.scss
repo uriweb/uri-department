@@ -1,3 +1,5 @@
+// SETUP
+
 body {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
 	font-size: 10px;
@@ -6,7 +8,6 @@ body {
 	background-image: url(../images/sbbot.gif);
 	background-repeat: repeat;
 }
-
 body.singlebody {
 	background-image: url(../images/sbbot.gif);
 	background-repeat: repeat;
@@ -17,10 +18,9 @@ a {
 a img {
 	border: 0;
 }
-* :focus {
+*:focus {
 	outline: 0;
 }
-
 #container {
 	width: 1020px;
 	margin: 0 auto;
@@ -33,16 +33,15 @@ a img {
 	background-repeat: repeat-x;
 	padding-bottom: 10px;
 }
-
 .whoswho {
 	background-image: url(../images/catwho-bg.jpg);
 	background-repeat: repeat-x;
 }
-
 #wrap {
-	/*width: 1000px;*/
 	margin: 0 auto;
 }
+
+// IMPORTS
 
 @import 'header';
 @import 'globalnav';
@@ -62,111 +61,15 @@ a img {
 @import 'keypoints';
 @import 'printspecial';
 @import 'singlepage';
-
-/* Extra Classes
-
-++++++++++++++++++++++++++++++++++
-
-Various extra classes which can make in-page content look a whole lot better when applied to various elements, such as tables, etc.
-
-++++++++++++++++++++++++++++++++++
-
-*/
-
-.content_box {
-	float : left;
-	width : 37%;
-	margin : 10px;
-	padding : 10px;
-	border : 1px solid #999;
-	box-shadow : 3px 3px 8px #999;
-	height : 300px;
-}
-.prettypic {
-	width: 45%;
-	height: auto;
-	margin : 20px;
-	padding : 4px;
-	box-shadow : 3px 3px 8px #999;
-}
-.issues {
-	width:100%;
-	background-color:#efefef;
-	padding: 10px;
-	float:left;
-	margin-top:15px;
-	margin-bottom:15px;
-}
-.issues .thumb {
-	float: left;
-	margin: 8px;
-	width:136px;
-	text-align:center;
-	border:solid 1px #333
-}
-.issues .thumb .image {
-	width:130px;
-	height: 169px;
-	margin:3px;
-}
-.issues .footer {
-	text-align:center;
-	width: 136px;
-	border-top:solid 1px #333;
-	color:#999;
-	font-weight:bold;
-	padding-top: 7px;
-	padding-bottom:7px;
-	margin-top: 10px;
-}
-
 @import 'entry';
 @import 'comments';
 @import 'archives';
 @import 'announcement';
-
-/* Wrapper border */
-
-.border {
-	border: 1px solid #dcdbdb;
-	background-color: #fff;
-}
-
 @import 'flexslider';
-
-/* Responsive video elements */
-
-.video-container {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 30px;
-	height: 0;
-	overflow: hidden;
-}
-.video-container iframe, 
-.video-container object, 
-.video-container embed {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-.skiplinks {
-	text-indent: -99999px;
-	display: none;
-}
-
+@import 'responsivevids';
 @import 'pagelinks';
-@import 'depthomepage';
+@import 'homepagelayout';
 @import 'sidebar';
 @import 'localist';
-
-/* content bump */
-
-.contentmain {
-	margin-top: 35px;
-}
-
 @import 'buttons';
 @import 'mobile';

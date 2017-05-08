@@ -65,7 +65,6 @@ html[xmlns] .slides {
 
 .flexslider {
 	position: relative;
-	zoom: 1;
 }
 .flex-viewport {
 	max-height: 2000px;
@@ -73,9 +72,6 @@ html[xmlns] .slides {
 }
 .loading .flex-viewport {
 	max-height: 300px;
-}
-.flexslider .slides {
-	zoom: 1;
 }
 .flex-container {
 	position: relative;
@@ -86,6 +82,8 @@ html[xmlns] .slides {
 
 
 /* Direction Nav */
+
+/* NOT SURE IF THESE ARE USED...
 
 .flex-direction-nav a {
 	width: 36px;
@@ -125,8 +123,12 @@ html[xmlns] .slides {
 	cursor: default;
 }
 
+*/
+
 
 /* Control Nav */
+
+/* NOT SURE IF THESE ARE USED...
 
 .flex-control-nav {
 	width: 100%;
@@ -139,7 +141,6 @@ html[xmlns] .slides {
 .flex-control-nav li {
 	margin: 0 0 0 5px;
 	display: inline-block;
-	zoom: 1;
 }
 
 .flex-control-nav li:first-child {
@@ -192,3 +193,5 @@ html[xmlns] .slides {
 	opacity: 1;
 	cursor: default;
 }
+
+*/

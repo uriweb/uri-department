@@ -67,14 +67,11 @@
 /* Department Alert */
 
 .depalert {
-	background-color: #fff59c;
 	border: 1px solid #fcc93f;
 	border-radius: 4px;
 	padding: 6px;
 	margin-bottom: 15px;
-    background-image: url(../images/sitealert.png);
-    background-position: left center;
-    background-repeat: no-repeat;
+    background: url(../images/sitealert.png) left center no-repeat #fff59c;
 }
 
 .depalert p {

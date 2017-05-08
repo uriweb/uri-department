@@ -2,8 +2,7 @@
 
 
 #nav {
-	background-image: url(../images/navbarbg.gif);
-	background-repeat: repeat-x;
+	background: url(../images/navbarbg.gif) repeat-x;
 	box-shadow: 0px 2px 2px #071939;
 	font-family: 'trajan-pro', georgia, sans-serif;
 	text-rendering: optimizeLegibility;
@@ -25,7 +24,6 @@
 	padding: 0px;
 	list-style-type: none;
 	float: left;
-	zoom: 1;
 }
 
 #nav a {
@@ -43,7 +41,7 @@
 
 #nav a:hover {
 	color: #0E1E4D;
-	-webkit-transition: all 0.15s ease-in;
+	transition: all 0.15s ease-in;
 	box-shadow: inset 0 8px 4px -4px #d7b903;
 }
 
@@ -64,11 +62,10 @@
 /* Navbar for smaller screens, with new responsive design */
 
 #navhandheld {
-	background-image: url(../images/navbarbg.gif);
-    background-repeat: repeat-x;
+	background-image: url(../images/navbarbg.gif) repeat-x;
 	box-shadow:0px 2px 2px #071939;
 	font-family: 'trajan-pro', georgia, sans-serif;
-	text-rendering:optimizeLegibility;
+	text-rendering: optimizeLegibility;
 	text-align: center;
 	display: none;
 	padding-top: 8px;
@@ -96,10 +93,7 @@
 
 #panel {
 	display: none;
-	background-color: #f9e6a2;
-	background-image: url(../images/topbg.gif);
-	background-position: bottom;
-	background-repeat: repeat-x;
+	background: url(../images/topbg.gif) left bottom repeat-x #f9e6a2;
 	border-bottom: 1px solid #bc9509;
 	margin: 0px;
 	padding: 0px;
@@ -137,13 +131,10 @@
 	padding-right: 0px;
 	padding-left: 0px;
 	vertical-align: text-bottom;
-	zoom: 1;
 }
 
 #panel ul:hover {
-	background-image: url(../images/ulhover.gif);
-	background-position: center bottom;
-	background-repeat: repeat-x;
+	background: url(../images/ulhover.gif) center bottom repeat-x;
 }
 
 #panel ul li {
@@ -162,10 +153,7 @@
 	font-size : 1.1em;
 	letter-spacing : 1px;
 	display: block;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	padding-right: 10px;
-	padding-left: 10px;
+	padding: 3px 10px;
 }
 
 #panel ul li a:hover {
@@ -191,34 +179,25 @@
 /* Close the drawer */
 
 a.but {
-	background-image: url(../images/close.png);
-	background-repeat: no-repeat;
+	background: url(../images/close.png) center center no-repeat #dfbe40;
 	height: 16px;
 	width: 16px;
 	cursor: pointer;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 	display: block;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
-	background-color: #dfbe40;
+	border-radius: 0 0 4px 4px;
 	padding: 2px 5px;
-	background-position: center;
-	margin-bottom: 5px;
 	text-indent: -9999px;
 }
 a.hpbut {
-	background-image: url(../images/close.png);
-	background-repeat: no-repeat;
+	background: url(../images/close.png) center center no-repeat #dfbe40;
 	height: 16px;
 	width: 16px;
 	cursor: pointer;
 	z-index: 600;
 	position: relative;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;
-	background-color: #dfbe40;
+	border-radius: 0 0 4px 4px;
 	padding: 2px 5px;
-	background-position: center;
 }
 
 
@@ -226,9 +205,8 @@ a.hpbut {
 
 #topnav {
 	width: 100%;
-	background-color: #f9f1c2;
 	box-shadow: inset 0px -2px 2px #333333;
-	background-image: linear-gradient( center bottom, rgb(222,187,33) 3%, rgb(255,242,59) 52% );
+	background: linear-gradient( center bottom, rgb(222,187,33) 3%, rgb(255,242,59) 52% );
 	padding-top: 5px;
 	padding-bottom: 5px;
 	text-align: center;
