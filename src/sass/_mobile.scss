@@ -618,9 +618,6 @@
 } /* End max-width = 720px */
 
 
-/* custom settings for more narrowed windows */
-
-
 @media (min-width: 721px) and (max-width: 960px) {
     
     .grid-1,
@@ -742,13 +739,6 @@
     }
 } /* End width = 721|---|960px */
 
-
-/* for even smaller screens like tablets and phones */
-
-@media (max-width: 720px) {
-    
-    
-} /* End max-width: 720px */
 
 /* Scale down the gold nav if the viewport is less than the 1000 pixels we need */
 
