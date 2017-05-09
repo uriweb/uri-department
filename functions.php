@@ -206,12 +206,12 @@ add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
  */
 function uri_department_styles() { 
 	$version = uri_department_cachebuster();
-	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), $version, 'all' );
+	wp_register_style( 'reset', get_template_directory_uri() . '/css/reset.css', array(), $version, 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), $version, 'all' );
 	wp_register_style( 'basestyle', get_template_directory_uri() . '/css/styles.built.css', array(), $version, 'all' );
 
 	// enqueing:
-	wp_enqueue_style( 'inuit' );
+	wp_enqueue_style( 'reset' );
 	wp_enqueue_style( 'thegrid' );
 	wp_enqueue_style( 'basestyle' );
 }
