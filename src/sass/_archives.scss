@@ -41,6 +41,72 @@
 	color: #0a6dd2;
 }
 
+/* NEW ARCHIVE CARDS MAY 2017 */
+
+#mainpage #ba-modern {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#mainpage #ba-modern:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+#mainpage #ba-modern .archiveitem-modern {
+    position: relative;
+    flex-basis: 32%;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,.15);
+}
+
+#mainpage #ba-modern .archiveitem-modern h2,
+#mainpage #ba-modern .archiveitem-modern p {
+    padding: 0 1rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern p:last-of-type {
+    margin-bottom: 4rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern h2 {
+    text-transform: initial;
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern img {
+    width: 100%;
+}
+
+#mainpage #ba-modern .archiveitem-modern a.button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    line-height: 3rem;
+    height: 3rem;
+    color: #002147;
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#mainpage #ba-modern .archiveitem-modern a.button:hover {
+    background: #002147;
+    color: #fff;
+}
+
+/* End new archives styles */
+
 #mainpage .subcol h1.archivetitle {
 	margin-bottom: 15px;
 }
