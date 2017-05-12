@@ -2,7 +2,7 @@
 
 
 #nav {
-	background: url(../images/navbarbg.gif) repeat-x;
+	background: url(images/navbarbg.gif) repeat-x;
 	box-shadow: 0px 2px 2px #071939;
 	font-family: 'trajan-pro', georgia, sans-serif;
 	text-rendering: optimizeLegibility;
@@ -62,7 +62,7 @@
 /* Navbar for smaller screens, with new responsive design */
 
 #navhandheld {
-	background-image: url(../images/navbarbg.gif) repeat-x;
+	background-image: url(images/navbarbg.gif) repeat-x;
 	box-shadow:0px 2px 2px #071939;
 	font-family: 'trajan-pro', georgia, sans-serif;
 	text-rendering: optimizeLegibility;
@@ -93,7 +93,7 @@
 
 #panel {
 	display: none;
-	background: url(../images/topbg.gif) left bottom repeat-x #f9e6a2;
+	background: url(images/topbg.gif) left bottom repeat-x #f9e6a2;
 	border-bottom: 1px solid #bc9509;
 	margin: 0px;
 	padding: 0px;
@@ -134,7 +134,7 @@
 }
 
 #panel ul:hover {
-	background: url(../images/ulhover.gif) center bottom repeat-x;
+	background: url(images/ulhover.gif) center bottom repeat-x;
 }
 
 #panel ul li {
@@ -179,7 +179,7 @@
 /* Close the drawer */
 
 a.but {
-	background: url(../images/close.png) center center no-repeat #dfbe40;
+	background: url(images/close.png) center center no-repeat #dfbe40;
 	height: 16px;
 	width: 16px;
 	cursor: pointer;
@@ -190,7 +190,7 @@ a.but {
 	text-indent: -9999px;
 }
 a.hpbut {
-	background: url(../images/close.png) center center no-repeat #dfbe40;
+	background: url(images/close.png) center center no-repeat #dfbe40;
 	height: 16px;
 	width: 16px;
 	cursor: pointer;

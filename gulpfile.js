@@ -73,10 +73,10 @@ function styles(done) {
 		.pipe(sourcemaps.init())
 		.pipe(sass(sassOptions).on('error', sass.logError))
 		.pipe(autoprefixer(autoprefixerOptions))
-		.pipe(concat('styles.built.css'))
+		.pipe(concat('style.css'))
 		.pipe(header(banner, { pkg : pkg } ))
 		.pipe(sourcemaps.write('./map'))
-		.pipe(gulp.dest('./css/'));
+		.pipe(gulp.dest('.'));
 
   done();
   //console.log('styles ran');
