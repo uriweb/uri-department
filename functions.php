@@ -209,11 +209,13 @@ function uri_department_styles() {
 	wp_register_style( 'reset', get_template_directory_uri() . '/css/reset.css', array(), $version, 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), $version, 'all' );
 	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
+    wp_register_style( 'complib', get_template_directory_uri() . '/cl/style.css', array(), $version, 'all' );
 
 	// enqueing:
 	wp_enqueue_style( 'reset' );
 	wp_enqueue_style( 'thegrid' );
 	wp_enqueue_style( 'basestyle' );
+    wp_enqueue_style( 'complib' );
 }
 add_action('wp_enqueue_scripts', 'uri_department_styles');
 
