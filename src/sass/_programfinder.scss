@@ -1,0 +1,26 @@
+/* PROGRAM FINDER */
+
+#program-status {
+    margin: 2rem 0;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+#program-status.results {
+    color: #519d29;
+}
+
+#program-status.empty {
+    color: #9d2929;
+}
+
+#program-status.loading {
+    color: #999;
+}
+
+#program-results {
+    background: #f8f8f8;
+    position: relative;
+    left: -24px;
+    padding: 20px 20px 20px 24px;
+}
