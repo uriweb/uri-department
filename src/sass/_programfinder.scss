@@ -20,7 +20,68 @@
 
 #program-results {
     background: #f8f8f8;
-    position: relative;
-    left: -24px;
     padding: 20px 20px 20px 24px;
+}
+
+#program-results .card {
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in-out;
+}
+
+#program-results .card .badges {
+    position: relative;
+    top: 7px;
+    left: 1.2rem;
+    display: block;
+    z-index: 2;
+    margin-left: 0 !important;
+    margin-bottom: -13px !important;
+}
+
+#program-results .card .badges li {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: .6rem;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-right: 4px;
+    margin-bottom: 0 !important;
+    padding: 0 8px;
+}
+
+#program-results .card .badges li.bs,
+#program-results .card .badges li.ba {
+    background: #30557e;
+    color: #fff;
+}
+
+#program-results .card .badges li.ms,
+#program-results .card .badges li.ma {
+    background: #ffd453;
+    color: #002147;
+}
+
+#program-results .card .badges li.phd {
+    background: #555;
+    color: #fff;
+}
+
+#program-results .card .badges li.cert {
+    background: #3a9137;
+    color: #fff;
+}
+
+#program-results .card .badges li.pro {
+    background: #9f382f;
+    color: #fff;
+}
+
+#program-results .card:hover,
+#program-results .card:focus {
+    top: -2px;
+    box-shadow: 0 .3rem 1rem rgba(0,0,0,.2);
+    cursor: pointer;
 }
