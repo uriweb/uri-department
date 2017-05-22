@@ -29,6 +29,15 @@
     border: 1px solid #4798ea;
 }
 
+@media screen and (max-width: 600px) {
+    .program-finder {
+        padding: 5px 5px 10px;
+    }
+    .program-finder .has-js input {
+        margin-bottom: 10px;
+    }
+}
+
 #program-status {
     padding: 2rem 2rem 0;
     font-size: 1rem;
@@ -66,11 +75,17 @@
 
 #program-results {
     background: #f8f8f8;
-    padding: 20px 20px 20px 24px;
+    padding: 20px;
     border-radius: 0 0 5px 5px;
     border-width: 0 1px 1px;
     border-style: solid;
     border-color: #eee;
+}
+
+@media screen and (max-width: 600px) {
+    #program-results {
+        padding: 20px 5px 10px;
+    }
 }
 
 #program-results .card {
