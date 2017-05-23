@@ -58,9 +58,6 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-
-
-
 /**
  * Include the business logic for features that belong in their own plugins
  */
@@ -258,6 +255,11 @@ function uri_department_quicktags() {
 }
 add_action('admin_print_footer_scripts','uri_department_quicktags');
 
+
+/**
+ * Component library shortcodes.
+ */
+include 'cl/cl-shortcodes.php';
 
 
 
