@@ -1,6 +1,6 @@
 /* PROGRAM FINDER */
 
-.program-finder {
+#program-finder {
     background: linear-gradient(to bottom, #f3f3f3, #eee);
     border-width: 1px;
     border-style: solid;
@@ -10,7 +10,7 @@
     border-radius: 5px 5px 0 0;
 }
 
-.program-finder .has-js input {
+#program-finder .has-js input {
     padding: .5rem;
     font-size: 1rem;
     line-height: 1.2rem;
@@ -20,20 +20,36 @@
     box-shadow: none;
     border: 1px solid #ddd;
     transition: border .2s;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     border-radius: 2px;
 }
 
-.program-finder .has-js input:focus {
+#program-finder .has-js input:focus {
     color: #005ebc;
     border: 1px solid #4798ea;
 }
 
+#program-finder .has-js label {
+    display: inline-block;
+    width: 32%;
+}
+
+#program-finder .has-js label:not(:last-of-type) {
+    margin-right: 2%;
+}
+
+#program-finder .has-js label>span {
+    display: block;
+    margin-bottom: 6px;
+    font-size: .75rem;
+    color: #555;
+}
+
 @media screen and (max-width: 600px) {
-    .program-finder {
+    #program-finder {
         padding: 5px 5px 10px;
     }
-    .program-finder .has-js input {
+    #program-finder .has-js input {
         margin-bottom: 10px;
     }
 }
