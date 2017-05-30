@@ -29,6 +29,10 @@ function uri_today_fetch_posts() {
 	$tags = get_option( 'uri_today_remote_tags' );
 	$after = get_option( 'uri_today_oldest_date', FALSE );
 	
+	if(empty($tags)) { // do nothing unless the admin configured the plugin
+		return FALSE;
+	}
+	
 	$url = $domain . '/wp-json/wp/v2/posts?per_page=10&tags=' . $tags . '&categories=2';
 	if($after !== FALSE) {
 		$url .= '&after=' . $after . 'T00:00:00';
