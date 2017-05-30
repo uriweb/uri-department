@@ -12,13 +12,27 @@ Author URI:
 if ( !defined('ABSPATH') )
 	die('-1');
 
+// set up the admin settings screen
+include_once( 'inc/uri-today-settings.php' );
 
+
+/**
+ * Retrieves posts from URI Today, then processes them to be inserted into the database.
+ * @param arr $post
+ */
 function uri_today_fetch_posts() {
 	// 2 is news
 	// 231 'nursing' or 420 'college of nursing'
 	// 981 commencement
 	
-	$url = 'https://today.uri.edu/wp-json/wp/v2/posts?per_page=10&tags=981+231+420&categories=2';
+	$domain = get_option('uri_today_domain', 'https://today.uri.edu');
+	$tags = get_option( 'uri_today_remote_tags' );
+	$after = get_option( 'uri_today_oldest_date', FALSE );
+	
+	$url = $domain . '/wp-json/wp/v2/posts?per_page=10&tags=' . $tags . '&categories=2';
+	if($after !== FALSE) {
+		$url .= '&after=' . $after . 'T00:00:00';
+	}
 	$data = file_get_contents($url);
 	$data = json_decode($data);
 	
@@ -31,20 +45,28 @@ add_action( 'uri_today_headlines_hook', 'uri_today_fetch_posts' );
 //add_action('init', 'uri_today_fetch_posts');
 
 
+
+/**
+ * Adds a post to the WP database
+ * @param arr $post
+ */
 function uri_today_importer_add_post($post) {
 
-	$category_id = array(2); // news on nursing
+	$category_id = get_option( 'uri_today_local_category' );
+	$post_status = get_option( 'uri_today_post_status', 'draft' );
+
+	//echo '<pre>cat: ', print_r($category_id, TRUE), '</pre>';
 
 	// prime the new post array
 	$new_post = array(
 			'post_title'    => $post['post_title'],
 			'post_content'  => $post['post_excerpt'],
 			'post_excerpt'  => $post['post_excerpt'],
-			'post_status'   => 'publish',
+			'post_status'   => $post_status,
 			'post_date'     => $post['post_date'],
 			//'post_author'   => get_current_user_id(),
 			'post_type'     => 'post',
-			'post_category' => $category_id,
+			'post_category' => array($category_id),
 			'meta_input'   => array(
 				'_links_to' => $post['links_to'],
 				'_uri_today_post_id' => $post['post_id']
@@ -93,9 +115,14 @@ function uri_today_importer_add_post($post) {
 
 
 
+
+/**
+ * Adds a media file to a post if there is one
+ * @param arr $post
+ */
 function uri_today_add_media($post) {
 	$wp_upload_dir = wp_upload_dir();
-	echo '<pre>', print_r($wp_upload_dir, TRUE), '</pre>';
+	//echo '<pre>', print_r($wp_upload_dir, TRUE), '</pre>';
 	
 	if(isset($post['image_square'])) {
 
@@ -138,7 +165,16 @@ function uri_today_add_media($post) {
 
 
 
+/**
+ * Process a JSON post object and convert it to an array
+ * @param arr $data
+ */
 function uri_today_process_posts($data) {
+	
+	if(!is_array($data)) {
+		return FALSE;
+	}
+	
 	foreach($data as $post) {
 	
 		$staged_post = array();
