@@ -1,0 +1,300 @@
+/* Archive Stuff */
+
+#mainpage .subcol .archiveitem {
+	width: 100%;
+	margin-bottom: 15px;
+    padding-bottom: 15px;
+	border-bottom: 1px dotted #e2e2e2;
+}
+
+#mainpage .subcol .archiveitem img {
+    float: right;
+    margin-left: 5%;
+}
+
+#mainpage .subcol .archiveitem h2 {
+	font-size: 1.5em;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 5px;
+	line-height: normal;
+}
+
+#mainpage .subcol .archiveitem h2 a {
+	color: #b7910b;
+}
+
+#mainpage .subcol .archiveitem h2 a:hover, 
+#mainpage .subcol .archiveitem p a:hover {
+	color: #102244;
+}
+
+#mainpage .subcol .archiveitem p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.3em;
+	line-height: 1.6;
+	color: #333;
+}
+
+#mainpage .subcol .archiveitem p a {
+	color: #0a6dd2;
+}
+
+/* NEW ARCHIVE CARDS MAY 2017 */
+
+#mainpage #ba-modern {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#mainpage #ba-modern:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+#mainpage #ba-modern .archiveitem-modern {
+    position: relative;
+    flex-basis: 32%;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 .1rem .3rem rgba(0,0,0,.15);
+}
+
+#mainpage #ba-modern .archiveitem-modern h2,
+#mainpage #ba-modern .archiveitem-modern p {
+    padding: 0 1rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern p:last-of-type {
+    margin-bottom: 4rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern h2 {
+    text-transform: initial;
+    color: #555;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+#mainpage #ba-modern .archiveitem-modern img {
+    width: 100%;
+}
+
+#mainpage #ba-modern .archiveitem-modern a.button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: block;
+    line-height: 3rem;
+    height: 3rem;
+    color: #002147;
+    text-transform: uppercase;
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-align: center;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+#mainpage #ba-modern .archiveitem-modern a.button:hover {
+    background: #002147;
+    color: #fff;
+}
+
+/* End new archives styles */
+
+#mainpage .subcol h1.archivetitle {
+	margin-bottom: 15px;
+}
+
+#mainpage .subcol .bottomlinks {
+	text-align: center;
+}
+
+#mainpage .subcol .bottomlinks a {
+	padding: 4px;
+	color: #3b548d;
+	border: 1px solid #ccc;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+#mainpage .subcol .bottomlinks a:hover {
+	border: 1px solid #333;
+	color: #102244;
+	background-color: #fcebad;
+}
+
+
+/* Blog Archives */
+
+#mainpage #ba h3 {
+	font-size: 1.5em;
+	line-height: 1.2;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 10px;
+}
+
+#mainpage #ba h3 a {
+	color: #268fbb;
+}
+
+#mainpage #ba h3 a:hover {
+	color: #0c506c;
+}
+
+#mainpage #ba p {
+	margin: 0px;
+	padding: 0px;
+	color: #002147;
+}
+
+#mainpage #ba .resultitem {
+	margin-bottom: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#mainpage #ba .resultitem p {
+	margin-bottom: 10px;
+}
+
+#mainpage #ba .resultitem:hover {
+	background-color: #fff;
+}
+
+#mainpage #ba .odd {
+	background-color: #f9f2d9;
+}
+
+#mainpage #ba .even {
+	background-color: #f1f6f8;
+}
+
+#mainpage .resultitem .metabararchives {
+	font-size: .895em;
+	border-top: 1px dotted #ccc;
+	border-bottom: 1px dotted #ccc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#mainpage .resultitem .metabararchives p {
+	margin: 0px;
+	padding: 0px;
+	line-height: 1;
+	color: #777;
+}
+
+#mainpage #ba .metabarba {
+	font-size: .895em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#mainpage #ba .metabarba p {
+	margin: 0px;
+	padding: 0px;
+	line-height: 1;
+	color: #777;
+}
+
+.metabarba p a, .metabararchives p a {
+	color: #1b6483;
+	border-bottom: 1px dotted #1b6483;
+}
+
+.metabarba p a:hover,
+.metabararchives p a:hover {
+	color: #268cb6;
+	border-bottom: 1px dotted #268cb6;
+}
+
+/* People archive */
+
+.peoplesector {
+	margin-bottom: 15px;
+}
+
+#mainpage .subcol h2.peopleterm {
+	margin-bottom: 10px;
+	color: #011a40;
+	border-bottom: 1px dotted #e2e2e2;
+	text-transform: uppercase;
+	font-size: 1.5em;
+	line-height: 1;
+}
+
+.peopleitem {
+	width: 47%;
+	display: inline-block;
+	color: #444;
+	background-color: #fefada;
+	margin-bottom: 15px;
+	margin-right: 2%;
+	vertical-align: top;
+}
+
+.peopleitem .inside {
+	padding: 10px;
+}
+
+.peopleitem img {
+	max-height: 80px;
+	max-width: 80px;
+	float: right;
+	margin-left: 10px;
+	border: 2px solid #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27);
+}
+
+.peopleitem .header {
+	background-color: #fee88e;
+	padding: 5px 10px;
+}
+
+
+#mainpage .subcol .peopleitem p {
+	line-height: 1.5;
+	font-size: 1.2em;
+	margin: 0px;
+	font-weight: normal;
+	color: #555;
+	text-transform: none;
+	margin-bottom: 8px;
+}
+
+#mainpage .subcol .peopleitem p.people-department {
+	color: #555;
+	font-size: 1em;
+	font-style: italic;
+}
+
+
+#mainpage .subcol .peopleitem h3 {
+	font-size: 1.3em;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+	color: #044d7f;
+	margin: 0px;
+	padding: 0px;
+	text-transform: none;
+}
+
+.peopleitem h3 a {
+	color: #044d7f;
+}
+
+.peopleitem h3 a:hover {
+	color: #222;
+}
+
+.gapspacer {
+	width: 100%;
+	height: 20px;
+	display: block;
+}

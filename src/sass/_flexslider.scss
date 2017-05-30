@@ -1,0 +1,197 @@
+/* Flex Slider */
+
+/* Browser Resets */
+
+.flex-container a:active, 
+.flexslider a:active, 
+.flex-container a:focus, 
+.flexslider a:focus {
+	outline: 0;
+}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+
+/* Slider */
+
+.flexslider {
+	margin: 0;
+	padding: 0;
+}
+
+.flexslider .slides > li {
+	display: none; /* Hide the slides before the JS is loaded. Avoids image jumping */
+} 
+
+.flexslider .slides img {
+	width: 100%;
+	display: block;
+}
+
+.flex-pauseplay span {
+	text-transform: capitalize;
+}
+
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+html[xmlns] .slides {
+	display: block;
+}
+
+* html .slides {
+	height: 1%;
+}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+	display: block;
+}
+
+
+/* Default Theme */
+
+.flexslider {
+	position: relative;
+}
+.flex-viewport {
+	max-height: 2000px;
+	transition: all 1s ease;
+}
+.loading .flex-viewport {
+	max-height: 300px;
+}
+.flex-container {
+	position: relative;
+}
+.carousel li {
+	margin-right: 5px
+}
+
+
+/* Direction Nav */
+
+/* NOT SURE IF THESE ARE USED...
+
+.flex-direction-nav a {
+	width: 36px;
+	height: 39px;
+	margin: -20px 0 0;
+	display: block;
+	background: url(../images/bg_direction_nav.png) no-repeat 0 0;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	opacity: 0;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: 0 -39px;
+	right: -36px;
+}
+
+.flex-direction-nav .flex-prev {
+	left: -36px;
+}
+
+.flexslider:hover .flex-next {
+	opacity: 1;
+	right: 0;
+}
+
+.flexslider:hover .flex-prev {
+	opacity: 1;
+	left: 0;
+}
+
+.flex-direction-nav .flex-disabled,
+.flex-direction-nav .disabled {
+	opacity: .3 !important;
+	cursor: default;
+}
+
+*/
+
+
+/* Control Nav */
+
+/* NOT SURE IF THESE ARE USED...
+
+.flex-control-nav {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+	z-index: 500;
+}
+
+.flex-control-nav li {
+	margin: 0 0 0 5px;
+	display: inline-block;
+}
+
+.flex-control-nav li:first-child {
+	margin: 0;
+}
+
+.flex-control-paging li a {
+	width: 9px;
+	height: 9px;
+	display: block;
+	background: #fff;
+	cursor: pointer;
+	text-indent: -9999px;
+	border-radius: 20px;
+}
+
+.flex-control-paging li a:hover {
+	background: #e4be0e;
+}
+
+.flex-control-paging li a.flex-active {
+	background: #e4be0e;
+	cursor: default;
+}
+
+.flex-control-thumbs {
+	margin: 5px 0 0;
+	position: static;
+	overflow: hidden;
+}
+
+.flex-control-thumbs li {
+	width: 25%;
+	float: left;
+	margin: 0;
+}
+
+.flex-control-thumbs img {
+	width: 100%;
+	display: block;
+	opacity: .7;
+	cursor: pointer;
+}
+
+.flex-control-thumbs img:hover {
+	opacity: 1;
+}
+
+.flex-control-thumbs .active {
+	opacity: 1;
+	cursor: default;
+}
+
+*/

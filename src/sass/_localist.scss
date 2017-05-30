@@ -1,0 +1,43 @@
+/* localist */
+
+.localist {
+margin-top: 10px;
+padding: 5%;
+border: 1px solid #f2f2f2;
+}
+
+.localist ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.localist ul li {
+	margin-bottom: 20px;
+}
+
+.localist p {
+	font-size: 1em;
+	color: #333;
+	line-height: 1.5;
+	margin: 0px;
+	padding: 0px;
+}
+
+.localist h3 {
+	font-size: 1.1em;
+	color: #555;
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+}
+
+.localist h3 a {
+	color: #011a40 !important;
+        border-bottom: 1px dotted #011a40;
+}
+
+.localist h3 a:hover {
+	color: #222;
+        border-bottom: 1px dotted #222;
+}

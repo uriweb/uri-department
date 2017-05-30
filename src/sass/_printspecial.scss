@@ -1,0 +1,26 @@
+/* Print Special
+
+++++++++++++++++++++++++++++++++++
+
+Allows us to hide specific elements except when printing. For more information as to what is hidden and what is visible, please see the print.css or print-letterhead.css
+
+++++++++++++++++++++++++++++++++++
+
+*/
+
+
+#printtag {
+	display: none;
+}
+.lhwm {
+	display: none;
+}
+.logoprint {
+	display: none;
+}
+#riseal {
+	display: none;
+}
+#pageinfoprint {
+	display: none;
+}

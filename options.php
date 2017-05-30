@@ -29,6 +29,12 @@ function optionsframework_options() {
 		'everywhere' => 'On all pages',
 		'homeonly' => 'Only on the homepage'
 	);
+    
+    // Skin Choices
+	$skin_choices = array(
+		'legacy' => 'Legacy'
+    );
+    
 	// Language Data
 	$options_langs = array(
 		'en' => 'English',
@@ -85,102 +91,8 @@ function optionsframework_options() {
 
 	$options = array();
 
-	$options[] = array(
-		'name' => 'Basic Options',
-		'type' => 'heading'
-	);
+/** HOMEPAGE OPTIONS **/
 
-	$options[] = array(
-		'name' => 'Site Identifier',
-		'desc' => 'Upload an image 190px wide by 90px high.',
-		'id' => 'urid_ident',
-		'type' => 'upload'
-	);
-
-	$options[] = array(
-		'name' => 'Identifier Custom Alt Text',
-		'desc' => 'Describe the image shown in the identifier icon and note that it links to the department homepage',
-		'id' => 'urid_altcus',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Department Address',
-		'desc' => 'The address to the main office, if it exists',
-		'id' => 'urid_address',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Department Email Address',
-		'desc' => 'The main contact email for the department',
-		'id' => 'urid_email',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Department Phone Number',
-		'desc' => 'The main contact number (office number) for the department',
-		'id' => 'urid_phone',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Social Media',
-		'type' => 'heading'
-	);
-
-	$options[] = array(
-		'name' => 'Twitter Username',
-		'desc' => 'If you have a Twitter account, enter your user name here.',
-		'id' => 'urid_tweet',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Instagram URL',
-		'desc' => 'If you have an Instagram account, enter your full profile url here including http',
-		'id' => 'urid_instagram',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Facebook URL',
-		'desc' => 'If you have a Facebook account, enter your full profile url here including http',
-		'id' => 'urid_facebook',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'LinkedIn URL',
-		'desc' => 'If you have a LinkedIn account, enter your full profile url here including http',
-		'id' => 'urid_linkedin',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Youtube Channel URL',
-		'desc' => 'If you have a Youtube account, enter your full channel url here including http',
-		'id' => 'urid_youtube',
-		'std' => '',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => 'Google+ URL',
-		'desc' => 'If you have a Google+ account, enter your full profile url here including http',
-		'id' => 'urid_google',
-		'std' => '',
-		'type' => 'text'
-	);
 
 	$options[] = array(
 		'name' => 'Homepage Setup',
@@ -211,27 +123,8 @@ function optionsframework_options() {
 		'type' => 'text'
 	);
 
-	$options[] = array(
-		'name' => 'Alert',
-		'type' => "heading"
-	);
 
-	$options[] = array(
-		'name' => __('Alert location', 'options_framework_theme'),
-		'desc' => __('Select the location for the alert system', 'options_framework_theme'),
-		'id' => 'urid_alertspot',
-		'std' => 'everywhere',
-		'type' => 'radio',
-		'options' => $test_array
-	);
-
-	$options[] = array(
-		'name' => 'Department Alert',
-		'desc' => 'Create an alert for display on this department only. Leaving this blank will disable the alert area.',
-		'id' => 'urid_sitealert',
-		'std' => '',
-		'type' => 'editor'
-	);
+/** ADVANCED SETTING OPTIONS **/
 
 	$options[] = array(
 		'name' => 'Advanced Settings',
@@ -285,6 +178,165 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea'
 	);
+
+
+
+/** BASIC OPTIONS **/
+
+	$options[] = array(
+		'name' => 'Basic Options (DEPRECATED)',
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => 'Please Note: This Basic Options panel is going away.',
+		'desc' => __('Site options have been moved to the Customize menu at the top of the front page.', 'options_framework_theme'),
+		'type' => 'info',
+	);
+
+    $options[] = array(
+        'name' => 'Skin',
+        'desc' => 'Choose a skin for the theme.',
+        'id' => 'urid_skin',
+        'std' => 'legacy',
+        'type' => 'radio',
+        'options' => $skin_choices
+    );
+
+	$options[] = array(
+		'name' => 'Site Identifier',
+		'desc' => 'Upload an image 190px wide by 90px high.',
+		'id' => 'urid_ident',
+		'type' => 'upload'
+	);
+
+	$options[] = array(
+		'name' => 'Identifier Custom Alt Text',
+		'desc' => 'Describe the image shown in the identifier icon and note that it links to the department homepage',
+		'id' => 'urid_altcus',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Department Address',
+		'desc' => 'The address to the main office, if it exists',
+		'id' => 'urid_address',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Department Email Address',
+		'desc' => 'The main contact email for the department',
+		'id' => 'urid_email',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Department Phone Number',
+		'desc' => 'The main contact number (office number) for the department',
+		'id' => 'urid_phone',
+		'std' => '',
+		'type' => 'text'
+	);
+	
+
+/** SOCIAL MEDIA OPTIONS **/
+
+
+	$options[] = array(
+		'name' => 'Social Media (DEPRECATED)',
+		'type' => 'heading'
+	);
+
+	$options[] = array(
+		'name' => 'Please Note: This Social Media panel is going away.',
+		'desc' => __('Social Media options have been moved to the Customize menu at the top of the front page.', 'options_framework_theme'),
+		'type' => 'info',
+	);
+
+	$options[] = array(
+		'name' => 'Twitter Username',
+		'desc' => 'If you have a Twitter account, enter your user name here.',
+		'id' => 'urid_tweet',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Instagram URL',
+		'desc' => 'If you have an Instagram account, enter your full profile url here including http',
+		'id' => 'urid_instagram',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Facebook URL',
+		'desc' => 'If you have a Facebook account, enter your full profile url here including http',
+		'id' => 'urid_facebook',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'LinkedIn URL',
+		'desc' => 'If you have a LinkedIn account, enter your full profile url here including http',
+		'id' => 'urid_linkedin',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Youtube Channel URL',
+		'desc' => 'If you have a Youtube account, enter your full channel url here including http',
+		'id' => 'urid_youtube',
+		'std' => '',
+		'type' => 'text'
+	);
+
+	$options[] = array(
+		'name' => 'Google+ URL',
+		'desc' => 'If you have a Google+ account, enter your full profile url here including http',
+		'id' => 'urid_google',
+		'std' => '',
+		'type' => 'text'
+	);
+
+
+/** ALERT OPTIONS **/
+
+
+	$options[] = array(
+		'name' => 'Alert (DEPRECATED)',
+		'type' => "heading",
+	);
+	$options[] = array(
+		'name' => 'Please Note: The Alert panel is going away.',
+		'desc' => __('Alert options have been moved to the Customize menu at the top of the front page.', 'options_framework_theme'),
+		'type' => 'info',
+	);
+
+	$options[] = array(
+		'name' => __('Alert location', 'options_framework_theme'),
+		'desc' => __('Select the location for the alert system', 'options_framework_theme'),
+		'id' => 'urid_alertspot',
+		'std' => 'everywhere',
+		'type' => 'radio',
+		'options' => $test_array
+	);
+
+	$options[] = array(
+		'name' => 'Department Alert',
+		'desc' => 'Create an alert for display on this department only. Leaving this blank will disable the alert area.',
+		'id' => 'urid_sitealert',
+		'std' => '',
+		'type' => 'editor'
+	);
+
+
 
 	return $options;
 }

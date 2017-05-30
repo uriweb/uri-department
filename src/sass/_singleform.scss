@@ -1,0 +1,84 @@
+/* Mainpage Single Page Form */
+
+#mainpage .two #tdomf_form1 {
+	margin: 0px;
+	padding: 0px;
+	background-color: #f9f7d8;
+	padding: 10px;
+}
+#mainpage .two #tdomf_form1 input[type=text] {
+	padding: 4px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	color: #444;
+	width: 90%;
+}
+#mainpage .two #tdomf_form1 input[type=text]:hover {
+	border: 1px solid #2075bd;
+}
+#mainpage .two #tdomf_form1 input[type=text]:focus {
+	border: 1px solid #2075bd;
+	box-shadow: inset 0px 3px 2px #dcf3fe;
+}
+#mainpage .two #tdomf_form1 textarea {
+	padding: 4px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	color: #444;
+	width: 90%;
+}
+#mainpage .two #tdomf_form1 textarea:hover {
+	border: 1px solid #2075bd;
+}
+#mainpage .two #tdomf_form1 textarea:focus {
+	border: 1px solid #2075bd;
+	box-shadow: inset 0px 3px 2px #dcf3fe;
+}
+#mainpage .two #tdomf_form1 fieldset {
+	margin: 0px;
+	padding: 0px;
+}
+#mainpage .two #tdomf_form1 label {
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #09204c;
+}
+#mainpage .two #tdomf_form1 small {
+	font-size: 1em;
+	line-height: 1.8;
+	color: #ca1717;
+}
+#mainpage .two #tdomf_form1 #quicktags {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+#mainpage .two #tdomf_form1 legend {
+	font-size: 1.4em;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 15px;
+}
+#mainpage .two #tdomf_form1 select {
+	padding: 4px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	color: #444;
+	width: 90%;
+	outline: 0;
+}
+#mainpage .two #tdomf_form1 select:hover {
+	border: 1px solid #2075bd;
+	outline: 0;
+}
+#mainpage .two #tdomf_form1 select:focus {
+	border: 1px solid #2075bd;
+	box-shadow: inset 0px 3px 2px #dcf3fe;
+	outline: 0;
+}

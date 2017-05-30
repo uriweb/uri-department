@@ -1,6 +1,19 @@
 <?php
+/*
+Plugin Name: URI Post Types
+Plugin URI: http://www.uri.edu
+Description: Create custom post types for WordPress Department Sites
+Version: 0.1
+Author: John Pennypacker
+Author URI: 
+*/
 
-function uri_department_post_type_maker() {
+// Block direct requests
+if ( !defined('ABSPATH') )
+	die('-1');
+	
+
+function uri_post_types_post_type_maker() {
 
 	register_post_type('people', array(
 		'label' => 'People',
@@ -31,6 +44,7 @@ function uri_department_post_type_maker() {
 			'not_found_in_trash' => 'No People Found in Trash',
 			'parent' => 'Parent Person',
 		),
+		'menu_icon'   => 'dashicons-id-alt',
 	));
 
 	register_taxonomy('peoplegroups', array (
@@ -73,6 +87,7 @@ function uri_department_post_type_maker() {
 			'not_found_in_trash' => 'No Spotlights Found in Trash',
 			'parent' => 'Parent Spotlight',
 		),
+		'menu_icon'   => 'dashicons-media-text',
 	));
 
 	register_post_type('slideshow', array(
@@ -103,6 +118,7 @@ function uri_department_post_type_maker() {
 			'not_found_in_trash' => 'No Slideshow Found in Trash',
 			'parent' => 'Parent Slide',
 		),
+		'menu_icon'   => 'dashicons-images-alt',
 	));
 
 	register_post_type('why', array(
@@ -133,11 +149,11 @@ function uri_department_post_type_maker() {
 			'not_found_in_trash' => 'No Benefits Found in Trash',
 			'parent' => 'Parent Benefit',
 		),
-		)
-	);
+		'menu_icon'   => 'dashicons-index-card',
+	));
 
 }
-add_action('init', 'uri_department_post_type_maker');
+add_action('init', 'uri_post_types_post_type_maker');
 
 
 /**

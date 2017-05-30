@@ -1,0 +1,164 @@
+/* Advanced Inline Item Styles - Imported from Sarah */
+
+.entry .archiveitem, 
+#mainpage .subcol .entry .archiveitem {
+	width: 100%;
+	margin-bottom: 15px;
+	border-bottom: 2px dotted #D79800;
+	padding-bottom: 15px;
+}
+
+.entry .archiveitem:last-of-type, 
+#mainpage .subcol .entry .archiveitem:last-of-type {
+	border-bottom: 0;
+}
+
+.entry .postpic img, 
+#mainpage .subcol .entry .postpic img {
+	width: 35%;
+	height: auto;
+	margin-top: 10px;
+	float: left;
+	box-shadow : 3px 3px 8px #999;
+	border : 0px;
+}
+
+.entry .archiveitem .bc, 
+#mainpage .subcol .entry .archiveitem .bc {
+	float: right;
+	width: 60%;
+	margin-top: 10px;
+}
+
+.entry .archiveitem h2, 
+#mainpage .subcol .entry .archiveitem h2 {
+	font-size: 1.7em !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	line-height: normal !important;
+	margin-bottom: 5px !important;
+	color: #D79800 !important;
+	text-shadow : 1px 1px 2px #CCC;
+}
+
+.entry .archiveitem p a:hover, 
+#mainpage .subcol .entry .archiveitem p a:hover {
+	color: #D79800;
+}
+
+.entry .archiveitem p, 
+#mainpage .subcol .entry .archiveitem p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 1.1em;
+	line-height: 1.5;
+	color: #002147;
+}
+
+.entry .archiveitem p a, 
+#mainpage .subcol .entry .archiveitem p a {
+	color: #102244;
+	font-size: 1.1em;
+}
+
+#mainpage .entry table {
+	font-size: 1.2em;
+}
+
+#mainpage .entry table a {
+	color: #0a6dd0;
+	border-bottom: 1px solid #fff;
+}
+
+#mainpage .entry table a:hover {
+	color: #024a92;
+	border-bottom: 1px solid #024a92;
+}
+
+#mainpage .entry table img {
+	display: block;
+}
+
+#mainpage .entry table a img {
+	border: 0px;
+}
+
+#mainpage .entry table a:hover img {
+	border: 0px;
+}
+
+#mainpage .entry table.white {
+	border: 0px;
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+#mainpage .entry table.white td {
+	padding: 4px;
+	line-height: 1.6;
+}
+
+#mainpage .entry table.light {
+	border: 1px solid #ccc;
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+}
+
+#mainpage .entry table.light tr {
+	background-color: #f7f7f7;
+}
+
+#mainpage .entry table.light tr.odd {
+	background-color: #d8e9ef;
+}
+
+#mainpage .entry table.light td {
+	padding: 5px;
+}
+
+#mainpage .entry table.light td.mid {
+	background-color: #ebf2f9;
+	line-height: 1.6;
+	font-size: .950em;
+}
+
+#mainpage .entry table.light td h3 {
+	font-size: 1.3em;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/* Who bio */
+
+#mainpage .entry .whoimage img {
+	padding: 2px;
+	border: 1px solid #e2e2e2;
+	margin: 0px;
+	margin-bottom: 5px;
+	float: right;
+	margin-left: 15px;
+}
+
+#mainpage .entry ul.wholist {
+	color: #555;
+	font-size: 1.2em;
+	line-height: 1.6;
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 15px;
+	border-left: 3px solid #f2c21b;
+}
+
+#mainpage .entry ul.wholist li {
+	list-style-type: square;
+	color: #444;
+	margin: 0px;
+	padding: 0px;
+	padding-left: 10px;
+	margin-left: 25px;
+}

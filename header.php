@@ -134,11 +134,66 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		<div class="grids">
 		
 			<div id="deptbanner" class="grid-3">
-				<a class="deptpic" title="<?php if (of_get_option('urid_altcus') == true) { ?><?php echo of_get_option('urid_altcus'); ?><?php } else { ?><?php bloginfo('name'); ?><?php } ?>" href="<?php bloginfo('url'); ?>"<?php if (of_get_option('urid_ident') == true) { ?> style="background-image: url(<?php echo of_get_option('urid_ident'); ?>);"<?php } ?>><?php bloginfo('name'); ?></a>
+
+				<?php 
+					// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
+					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
+					$title = ( ! empty ( of_get_option('urid_altcus') ) ) ? of_get_option('urid_altcus') : get_bloginfo('name');
+					// initialize header image as false
+					$background_image = FALSE;
+					// check for new customizer header image
+					$background_image = get_header_image();
+					// good stuff to know about: get_custom_header()->width and get_custom_header()->height 
+
+					if($background_image === NULL || $background_image == '') {
+						// check for legacy header image
+						$background_image = of_get_option('urid_ident');
+					}
+					
+				?>
+				<a rel="home" class="deptpic" title="<?php echo $title; ?>" href="<?php bloginfo('url'); ?>"<?php if ($background_image !== FALSE) { ?> style="background-image: url(<?php echo $background_image; ?>);"<?php } ?>><?php bloginfo('name'); ?></a>
 			</div>
 			
 			<div id="deptsec" class="grid-7">
-				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1><?php if (of_get_option('urid_address') == true) { ?><p><?php echo of_get_option('urid_address'); ?></p><?php } ?><p><a href="mailto:<?php echo of_get_option('urid_email'); ?>"><?php echo of_get_option('urid_email'); ?></a><?php if (of_get_option('urid_phone') == true) { ?> &ndash; <?php echo of_get_option('urid_phone'); ?><?php } ?></p>
+
+				<?php 
+					// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
+					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
+					$address = get_option('uri_department_department_address');
+					$email = get_option('uri_department_department_email');
+					$phone = get_option('uri_department_department_phone');
+					
+					// check for legacy values
+					if ( empty ( $address ) ) {
+						$address = of_get_option('urid_address');
+					}
+					if ( empty( $email ) ) {
+						$email = of_get_option('urid_email');
+					}
+					if ( empty( $phone ) ) {
+						$phone = of_get_option('urid_phone');
+					}
+					
+										
+				?>
+
+				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+
+				<p id="dept-description"><?php bloginfo('description'); ?></p>
+
+				<?php if ( ! empty ( $address ) ): ?>
+					<p id="dept-address"><?php echo $address ?></p>
+				<?php endif; ?>
+				<?php
+					$strings = array();
+					if ( ! empty ( $email ) ) {
+					 	$strings[] = '<a id="dept-email" href="mailto:' . $email . '">' . $email . '</a>';
+					}
+					if ( ! empty ( $phone ) ) {
+					 	$strings[] = '<span id="dept-phone">' . $phone . '</span>';
+					}
+					?>
+					<p><?php echo implode(' &ndash; ', $strings); ?></p>
 			</div>
 			
 			<div class="grid-3">

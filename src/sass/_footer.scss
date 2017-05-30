@@ -1,0 +1,64 @@
+/* Footer */
+
+.mobilefooter,
+.mobilewordmark {
+	display: none;
+}
+
+#footer {
+	padding-bottom: 10px;
+}
+
+#footer .center {
+	background: url(images/wmend.png) left top no-repeat;
+	padding-top: 10px;
+}
+
+#footer .reflection {
+	background: url(images/wmend.png) 20px 0 no-repeat;
+	padding-top: 10px;
+}
+
+#footer img {
+	vertical-align: middle;
+	margin-left: 5px;
+}
+
+#footer p {
+	margin: 0px;
+	padding: 0px;
+	font-size: .950em;
+	line-height: 1.3;
+	margin-bottom: 4px;
+	color: #014a6c;
+}
+
+#footer .left {
+	width: 45%;
+	float: left;
+	margin-top: 38px;
+}
+
+#footer .right {
+	float: right;
+	width: 45%;
+	text-align: right;
+}
+
+#footer .left p a {
+	color: #0b4093;
+	font-weight: bold;
+}
+
+#footer .left p a:hover {
+	color: #fff;
+}
+
+#footer .right p a {
+	font-weight: bold;
+	color: #0d3343;
+}
+
+#footer .right p a:hover {
+	color: #111;
+}

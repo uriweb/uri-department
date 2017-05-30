@@ -44,10 +44,24 @@ add_theme_support( 'automatic-feed-links' );
 
 
 /**
- * Include the custom post types
+ * Include the custom post types plugin
  */
-require_once ( get_stylesheet_directory() . '/inc/post-types.php' );
+require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
 
+/**
+ * Include the URI news importer
+ */
+require_once ( get_stylesheet_directory() . '/plugins/uri-today-importer/uri-today-importer.php' );
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Include the business logic for features that belong in their own plugins
@@ -72,6 +86,16 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
 }
 
+
+/**
+ * When Options framework is removed, we'll want to ensure that stray
+ * calls to of_get_option() don't break the site.
+ */
+if ( !function_exists( 'of_get_option' ) ) {
+	function of_get_option() {
+		return FALSE;
+	}
+}
 
 /**
  * Set up sidebar areas
@@ -165,6 +189,14 @@ function uri_department_scripts_method() {
 		$version,
 		TRUE
 	);
+    
+    wp_enqueue_script(
+		'scripts',
+		get_template_directory_uri() . '/js/scripts.built.js',
+		array( 'jquery' ),
+		$version,
+		TRUE
+	);
 
 }
 add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
@@ -176,14 +208,16 @@ add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );
  */
 function uri_department_styles() { 
 	$version = uri_department_cachebuster();
-	wp_register_style( 'inuit', get_template_directory_uri() . '/css/inuit.css', array(), $version, 'all' );
+	wp_register_style( 'reset', get_template_directory_uri() . '/css/reset.css', array(), $version, 'all' );
 	wp_register_style( 'thegrid', get_template_directory_uri() . '/css/grid.css', array(), $version, 'all' );
 	wp_register_style( 'basestyle', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
+    wp_register_style( 'complib', get_template_directory_uri() . '/cl/cl.built.css', array(), $version, 'all' );
 
 	// enqueing:
-	wp_enqueue_style( 'inuit' );
+	wp_enqueue_style( 'reset' );
 	wp_enqueue_style( 'thegrid' );
 	wp_enqueue_style( 'basestyle' );
+    wp_enqueue_style( 'complib' );
 }
 add_action('wp_enqueue_scripts', 'uri_department_styles');
 
@@ -226,6 +260,11 @@ function uri_department_quicktags() {
 }
 add_action('admin_print_footer_scripts','uri_department_quicktags');
 
+
+/**
+ * Component library shortcodes.
+ */
+include 'cl/cl-shortcodes.php';
 
 
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Archive (not sure where this is used)
+ * Template Name: Archive
  */
 ?>
 
@@ -18,13 +18,13 @@
 			get_template_part( 'templates/partials/title' );
 		?>
 
-		<div id="ba">
+		<div id="ba-modern">
 
 			<?php
 				if (have_posts()) {
 					while (have_posts()) {
 						the_post();
-						get_template_part( 'templates/partials/post', 'archive' );
+						get_template_part( 'templates/partials/post', 'archive-modern' );
 					}
 				}
 			?>

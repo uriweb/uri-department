@@ -1,0 +1,62 @@
+/* page links */
+
+.pagelinks a {
+	display: inline-block;
+	padding: 4px 10px 4px;
+	margin-bottom: 0;
+	font-size: 13px;
+	line-height: 18px;
+	color: #333333;
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	vertical-align: middle;
+	background-color: #f5f5f5;
+	background-image: linear-gradient(top, #ffffff, #e6e6e6);
+	background-repeat: repeat-x;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	border: 1px solid #cccccc;
+	border-bottom-color: #b3b3b3;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+
+.pagelinks a:hover, .pagelinks a.hover, .pagelinks a:active, .pagelinks a.active, .pagelinks a.disabled, .pagelinks a[disabled] {
+	background-color: #e6e6e6;
+}
+
+.pagelinks a:hover, .pagelinks a.hover {
+	color: #333333;
+	text-decoration: none;
+	background-color: #e6e6e6;
+	background-position: 0 -15px;
+	transition: background-position 0.1s linear;
+}
+.pagelinks a:focus {
+	outline: 0;
+}
+.pagelinks a.active, .pagelinks a:active {
+	background-image: none;
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+	background-color: #e6e6e6;
+	outline: 0;
+}
+.pagelinks a.disabled, .pagelinks a[disabled] {
+	cursor: default;
+	background-image: none;
+	background-color: #e6e6e6;
+	opacity: 0.65;
+	box-shadow: none;
+}
+.pagelinks ul {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+.pagelinks ul li {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	margin-right: 8px;
+	display: inline-block;
+}
