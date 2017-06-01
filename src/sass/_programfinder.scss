@@ -14,8 +14,8 @@
     padding: .5rem;
     font-size: 1rem;
     line-height: 1.2rem;
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 80%;
     clear: both;
     box-shadow: none;
     border: 1px solid #ddd;
@@ -45,11 +45,55 @@
     color: #555;
 }
 
+#program-finder .has-js #js-form-reset {
+    background: #3875d7;
+    width: 15%;
+    float: right;
+    color: #fff;
+    font-weight: 600;
+    padding: .67rem 0;
+    text-align: center;
+    border: 1px solid #2f68c3;
+    border-radius: 2px;
+    box-shadow: none;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    transition: all .2s ease-in-out;
+}
+
+#program-finder .has-js #js-form-reset:hover,
+#program-finder .has-js #js-form-reset:focus {
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    top: -2px;
+    transition: all .1s ease-in-out;
+}
+
+#program-finder .has-js #js-form-reset:active {
+    box-shadow: 0 4px 12px rgba(0,0,0,.4);
+    top: -1px;
+}
+
 @media screen and (max-width: 600px) {
     #program-finder {
         padding: 5px 5px 10px;
     }
+    
+    #program-finder .has-js label {
+        width: 100%;
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
     #program-finder .has-js input {
+        margin-bottom: 10px;
+        width: 100%;
+        display: block;
+    }
+    
+    #program-finder .has-js #js-form-reset {
+        float: none;
+        width: 100%;
         margin-bottom: 10px;
     }
 }
