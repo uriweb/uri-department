@@ -49,6 +49,11 @@ add_theme_support( 'automatic-feed-links' );
 require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
 
 /**
+ * Include the URI news importer
+ */
+require_once ( get_stylesheet_directory() . '/plugins/uri-today-importer/uri-today-importer.php' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
@@ -57,6 +62,18 @@ require get_template_directory() . '/inc/custom-header.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Shortcodes additions.
+ */
+require get_template_directory() . '/inc/shortcodes.php';
+
+/**
+ * Component library shortcodes.
+ */
+include get_template_directory() . '/cl/cl-shortcodes.php';
+
+
 
 /**
  * Include the business logic for features that belong in their own plugins
@@ -254,20 +271,6 @@ function uri_department_quicktags() {
 	<?php
 }
 add_action('admin_print_footer_scripts','uri_department_quicktags');
-
-
-/**
- * Component library shortcodes.
- */
-include 'cl/cl-shortcodes.php';
-
-
-
-function uri_department_bluebox_shortcode( $atts, $content = null ) {
-	return '<div class="bluebox">' . $content . '</div>';
-}
-add_shortcode( 'bluebox', 'uri_department_bluebox_shortcode' );
-
 
 
 
