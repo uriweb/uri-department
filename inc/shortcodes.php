@@ -25,7 +25,8 @@ function uri_department_featured_image_shortcode($atts) {
 
 		extract( shortcode_atts( array(
 				'size' => 'thumbnail', // any of the possible post thumbnail sizes - defaults to 'thumbnail'
-				'class' => ''
+				'class' => '',
+                'caption' => 'false'
 			), $atts )
 		);
 				
@@ -36,22 +37,24 @@ function uri_department_featured_image_shortcode($atts) {
     // Image to display
     $thumbnail = get_the_post_thumbnail($post->ID, $size);
 
-    // ID of featured image
-    $thumbnail_id = get_post_thumbnail_id();
-
-    // Caption from featured image's WP_Post
-    $caption = get_post($thumbnail_id)->post_excerpt;
-
-    // Link to attachment page
-    $link = get_permalink($thumbnail_id);
-
-		$class = ' class="' . trim($default_class . ' ' . $class) . '"';
-    // Final output
-    $output = '<figure' . $class . '>' . '<a href="' . $link . '">' . $thumbnail;
-    if(!empty($caption)) {
-	    $output .= '<figcaption>' . $caption . '</figcaption>';
+    if($caption) {
+        
+        // ID of featured image
+        $thumbnail_id = get_post_thumbnail_id();
+        
+        // Caption from featured image's WP_Post
+        $post_excerpt = get_post($thumbnail_id)->post_excerpt;
+        
     }
-    $output .= '</a></figure>';
+
+    $class = ' class="' . trim($default_class . ' ' . $class) . '"';
+    
+    // Final output
+    $output = '<figure' . $class . '>' . $thumbnail;
+    if($caption && !empty($post_excerpt)) {
+	    $output .= '<figcaption>' . $post_excerpt . '</figcaption>';
+    }
+    $output .= '</figure>';
     
     return $output;
 

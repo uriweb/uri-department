@@ -241,3 +241,28 @@
     background: #a0966b;
     color: #fff;
 }
+
+.featured-image.sc.program {
+    display: block;
+    float: right;
+    width: 250px;
+    margin-right: 50px;
+    margin-left: 30px;
+}
+
+.more-box {
+    background-color: #efefef;
+    float: right;
+    margin-right: 50px;
+    padding: 20px;
+    width: 250px;
+}
+
+@media screen and (max-width: 480px) {
+    .featured-image.sc.program,
+    .more-box {
+        float: none;
+        width: 100%;
+        margin: 15px 0;
+    }
+}
