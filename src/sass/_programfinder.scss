@@ -250,12 +250,35 @@
     margin-left: 30px;
 }
 
+.featured-image.sc.program img {
+    border-radius: 2px;
+}
+
 .more-box {
     background-color: #efefef;
     float: right;
     margin-right: 50px;
     padding: 20px;
     width: 250px;
+    border-radius: 2px;
+}
+
+.more-box a {
+    border-bottom: 1px solid #ddd !important;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    transition: all .1s ease-in-out;
+}
+
+.more-box a:hover,
+.more-box a:focus {
+    background: #002147;
+    color: #fff !important;
 }
 
 @media screen and (max-width: 480px) {
