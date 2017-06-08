@@ -9,6 +9,7 @@
  * - Card (Flex)
  * - Card (Detail)
  * - Cutout
+ * - Tiles
  *
  */
 
@@ -49,9 +50,8 @@ function uri_cl_shortcode_card( $atts ) {
             'body' => '',
             'button' => 'Explore',
             'link' => '#',
-            'tooltip' => 'Explore',
-            'clickable' => false
-		), $atts )
+            'tooltip' => 'Explore'
+        ), $atts )
 	);
     
     include 'templates/cl-template-card.php';
@@ -126,3 +126,25 @@ function uri_cl_shortcode_cutout( $atts, $content = null ) {
 
 }
 add_shortcode( 'cl-cutout', 'uri_cl_shortcode_cutout' );
+
+
+/**
+ * Tiles
+ */
+function uri_cl_shortcode_tiles( $atts, $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+            'across' => 3;
+			'square' => false,
+            'animated' => false
+		), $atts )
+	);
+    
+    include 'templates/cl-template-tiles.php';
+    return $output;
+
+}
+add_shortcode( 'cl-tiles', 'uri_cl_shortcode_tiles' );
+
