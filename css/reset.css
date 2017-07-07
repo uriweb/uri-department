@@ -78,6 +78,13 @@ pre{
 	overflow:auto;
 	line-height:24px;
 }
+img,
+object,
+embed,
+video{
+	max-width:100%;
+	height:auto;
+}
 .cf:before,
 .grids:before,
 .media:before,
