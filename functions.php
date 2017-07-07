@@ -54,6 +54,11 @@ require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-ty
 require_once ( get_stylesheet_directory() . '/plugins/uri-today-importer/uri-today-importer.php' );
 
 /**
+ * Include the component library plugin
+ */
+require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
