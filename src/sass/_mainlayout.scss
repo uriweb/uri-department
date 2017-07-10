@@ -322,6 +322,22 @@
 	text-transform: lowercase;
 }
 
+/** style previously unstyled h4-h6 */
+.two, .subcol, .fullcol {
+	h4, h5, h6 {
+		color: #404040;
+		font-size: 1.5em;
+		margin: 0 0 8px;
+		padding: 0;
+	}
+	h5 {
+		font-size: 1.25em;
+	}
+	h6 {
+		font-size: 1em;
+	}
+}
+
 #mainpage .two .tagline, 
 #mainpage .subcol .tagline {
 	font-family: "liberation-serif-1", "liberation-serif-2", serif;
