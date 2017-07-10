@@ -439,16 +439,32 @@
 	list-style-type:  none;
 }
 
-#mainpage .three h3 {
-	background-color: #e6bd29;
-	display: block;
-	margin-bottom: 10px;
-	color: #06234d;
-	font-weight: bold;
-	text-align: center;
-	padding: 4px;
-	font-size: 1.2em;
+#mainpage .three {
+	 h1, h2, h3 h4, h5, h6 {
+		color: #404040;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+	h3 {
+		/*background-color: #e6bd29;*/
+		border-bottom: 1px solid #c4960c;
+		display: block;
+		/* color: #06234d; */
+		font-size: 1.2em;
+		text-align: center;
+		padding: 4px;
+	}
+	h1, h2 {
+		font-size: 1.25em;
+	}
+	h4, h5 {
+		font-size: 1.125em;
+	}
+	h6 {
+		font-size: 1em;
+	}
 }
+
 
 #mainpage .three p {
 	line-height: 1.7;

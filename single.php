@@ -5,7 +5,7 @@
 
 <div class="grid-11">
 	<div class="subcol">
-		<div id="content_start"></div>
+		<div id="content_start" style="display : none ; "></div>
 
 		<?php
 			get_template_part( 'templates/partials/alert' );		?>
