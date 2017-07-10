@@ -10,6 +10,42 @@
 	float: none;
 }
 
+#dept-notice {
+ 	&.hidden {
+ 		display: none;
+ 	}
+	&.blue, &.green, &.yellow, &.orange, &.red {
+		border-color: #E9F2F9;
+		border-style: solid;
+		border-width: 1px;
+ 		display: block;
+		font-size: 14px;
+		margin-bottom: 1em;
+		padding: .75em;
+	}
+	&.blue {
+		background-color: #E9F2F9;
+ 		border-color: #002147;
+ 	}
+	&.green {
+		background-color: #E5F7D2;
+ 		border-color: #78D000;
+ 	}
+	&.yellow {
+		background-color: #F3EACD;
+ 		border-color: #C59700;
+ 	}
+	&.orange {
+		background-color: #FDEDD2;
+ 		border-color: #f6a623;
+ 	}
+	&.red {
+		background-color: #F7CCD1;
+ 		border-color: #d0011b;
+ 	}
+}
+
+
 /* NOT SURE IF THESE ARE USED...
 
 #mc {
