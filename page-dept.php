@@ -8,7 +8,7 @@
 	get_header();
 	get_template_part( 'sidebar1' );
 ?>
-<div class="grid-11">
+<div class="grid-11" id="content_start">
 	<div class="subspace">
 		<div class="subcol" style="padding-left: 0px; border-left: 0px;">
 			<?php

@@ -1,5 +1,14 @@
 /* Main Layout */
 
+.skiplinks {
+	text-indent: -99999px;
+	float: left;
+}
+
+.skiplinks:focus-within {
+	text-indent: 0;
+	float: none;
+}
 
 /* NOT SURE IF THESE ARE USED...
 
