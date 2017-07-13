@@ -28,29 +28,35 @@
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
+
 .metabar p a {
-	color: #1b6483;
-	border-bottom: 1px dotted #1b6483;
+	&:link, &:visited {
+		color: $link;
+		text-decoration: underline;
+	}
+	&:hover {
+		color: $hover;
+		text-decoration: none;
+	}
 }
-.metabar p a:hover {
-	color: #268cb6;
-	border-bottom: 1px dotted #268cb6;
-}
+
 #mainpage .entry p a {
-	color: #0a6dd0;
-	border-bottom: 1px solid #fff;
+	&:link, &:visited {
+		color: #0a6dd0;
+		text-decoration: underline;
+	}
+	&:hover {
+		color: #000;
+		text-decoration: none;
+	}
+	img {
+		border-bottom: 1px solid #fff;
+		display: block;
+	}
 }
-#mainpage .entry p a:hover {
-	color: #024a92;
-	border-bottom: 1px solid #024a92;
-}
-#mainpage .entry p a img {
-	border-bottom: 1px solid #fff;
-	display: block;
-}
-#mainpage .entry p a:hover img {
-	border-bottom: 1px solid #fff;
-}
+
+
 #mainpage .entry blockquote {
 	margin: 0px;
 	padding: 0px;

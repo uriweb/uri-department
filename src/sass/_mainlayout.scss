@@ -10,6 +10,11 @@
 	float: none;
 }
 
+/** hold-over from inuit.css SHARED section **/
+hr, address {
+	margin-bottom: 1.5rem;
+}
+
 #dept-notice {
  	&.hidden {
  		display: none;
@@ -45,6 +50,16 @@
  	}
 }
 
+.quickinfo {
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: center;
+	background-color: #E0ECF8;
+	h2 {
+		margin: 0 0 1.5rem !important;
+	}
+}
 
 /* NOT SURE IF THESE ARE USED...
 
@@ -434,7 +449,7 @@
 #mainpage .two ol li a, 
 #mainpage .subcol ol li a {
 	color: #0a6dd0;
-	border-bottom: 1px solid #0a6dd0;
+	text-decoration: underline;
 }
 
 #mainpage .two ul li a:hover, 
@@ -442,7 +457,7 @@
 #mainpage .two ol li a:hover, 
 #mainpage .subcol ol li a:hover {
 	color: #024a92;
-	border-bottom: 1px solid #024a92;
+	text-decoration: none;
 }
 
 #mainpage .two .entry .alignright, 
@@ -524,11 +539,11 @@
 }
 
 #mainpage .three p a {
-	color: #1771eb;
+	color: $link;
 }
 
 #mainpage .three p a:hover {
-	color: #0c5e9e;
+	color: $hover;
 }
 
 #mainpage .three ul {
@@ -545,11 +560,11 @@
 }
 
 #mainpage .three ul li a {
-	color: #1771eb;
+	color: $link;
 }
 
 #mainpage .three ul li a:hover {
-	color: #0c5e9e;
+	color: $hover;
 }
 
 

@@ -228,10 +228,12 @@
 
 .image_container p.more a {
 	color: #002147;
+	text-decoration: underline;
 }
 
 .image_container p.more a:hover {
-	color: #222;
+	color: #000;
+	text-decoration: none;
 }
 
 
