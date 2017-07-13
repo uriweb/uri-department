@@ -138,7 +138,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<?php 
 					// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
 					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
-					$title = ( ! empty ( of_get_option('urid_altcus') ) ) ? of_get_option('urid_altcus') : get_bloginfo('name');
+					$urid_altcus = of_get_option('urid_altcus');
+					$title = ( ! empty ( $urid_altcus ) ) ? $urid_altcus : get_bloginfo('name');
 					// initialize header image as false
 					$background_image = FALSE;
 					// check for new customizer header image
