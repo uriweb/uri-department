@@ -66,13 +66,13 @@
 }
 
 #mainpage .entry table a {
-	color: #0a6dd0;
-	border-bottom: 1px solid #fff;
+	color: $link;
+	text-decoration: underline;
 }
 
 #mainpage .entry table a:hover {
-	color: #024a92;
-	border-bottom: 1px solid #024a92;
+	color: $hover;
+	text-decoration: none;
 }
 
 #mainpage .entry table img {

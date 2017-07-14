@@ -43,11 +43,11 @@
 
 #mainpage .entry p a {
 	&:link, &:visited {
-		color: #0a6dd0;
+		color: $link;
 		text-decoration: underline;
 	}
 	&:hover {
-		color: #000;
+		color: $hover;
 		text-decoration: none;
 	}
 	img {
