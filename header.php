@@ -47,7 +47,6 @@
 </head>
 
 <body>
-
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-544KHG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -140,8 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
 					$urid_altcus = of_get_option('urid_altcus');
 					$title = ( ! empty ( $urid_altcus ) ) ? $urid_altcus : get_bloginfo('name');
-					// initialize header image as false
-					$background_image = FALSE;
+
 					// check for new customizer header image
 					$background_image = get_header_image();
 					// good stuff to know about: get_custom_header()->width and get_custom_header()->height 
@@ -149,6 +147,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					if($background_image === NULL || $background_image == '') {
 						// check for legacy header image
 						$background_image = of_get_option('urid_ident');
+					}
+
+					if($background_image === NULL || $background_image == '') {
+						// The header image is still empty.  Use a default
+						$background_image = get_stylesheet_directory_uri() . '/images/uri-minidefault.jpg';
 					}
 					
 				?>

@@ -73,6 +73,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/shortcodes.php';
 
+/**
+ * Admin-side additions.
+ */
+require get_template_directory() . '/inc/admin.php';
 
 
 /**
