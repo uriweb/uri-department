@@ -361,7 +361,10 @@ add_action( 'admin_menu', 'uri_today_settings_page' );
  */
 function uri_today_settings_page_html() {
 	// check user capabilities
-	if ( ! current_user_can( 'manage_options' ) ) {
+	// on web.uri, we have to leave this pretty loose
+	// because web com doesn't have admin privileges.
+	//if ( ! current_user_can( 'manage_options' ) ) {
+	if ( ! current_user_can( 'delete_others_posts' ) ) {
 		return;
 	}
 
