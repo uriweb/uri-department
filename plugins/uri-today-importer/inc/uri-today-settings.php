@@ -9,31 +9,31 @@ function uri_today_settings_init() {
 	register_setting(
 		'uri_today',
 		'uri_today_domain',
-		array( 'sanitize_callback' => 'uri_today_sanitize_domain' )
+		'uri_today_sanitize_domain'
 	);
 
 	register_setting(
 		'uri_today',
 		'uri_today_local_category',
-		array( 'sanitize_callback' => 'uri_today_sanitize_int' )
+		'uri_today_sanitize_int'
 	);
 
 	register_setting(
 		'uri_today',
 		'uri_today_remote_tags',
-		array( 'sanitize_callback' => 'uri_today_sanitize_ints' )
+		'uri_today_sanitize_ints'
 	);
 
 	register_setting(
 		'uri_today',
 		'uri_today_post_status',
-		array( 'sanitize_callback' => 'uri_today_sanitize_post_status' )
+		'uri_today_sanitize_post_status'
 	);
 
 	register_setting(
 		'uri_today',
 		'uri_today_oldest_date',
-		array( 'sanitize_callback' => 'uri_today_sanitize_date' )
+		'uri_today_sanitize_date'
 	);
 
 	// register a new section in the "uri_today" page
@@ -363,10 +363,13 @@ function uri_today_settings_page_html() {
 	// check user capabilities
 	// on web.uri, we have to leave this pretty loose
 	// because web com doesn't have admin privileges.
-	//if ( ! current_user_can( 'manage_options' ) ) {
-	if ( ! current_user_can( 'delete_others_posts' ) ) {
+	if ( ! current_user_can( 'manage_options' ) ) {
+		echo '<div id="setting-message-denied" class="updated settings-error notice is-dismissible"> 
+<p><strong>You do not have permission to save this form.</strong></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>';
 		return;
 	}
+
+
 
 	if ( isset( $_GET['settings-updated'] ) ) {
 // 		clear the cache when the form is saved.
