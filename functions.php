@@ -49,11 +49,6 @@ add_theme_support( 'automatic-feed-links' );
 require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
 
 /**
- * Include the URI news importer
- */
-require_once ( get_stylesheet_directory() . '/plugins/uri-today-importer/uri-today-importer.php' );
-
-/**
  * Include the component library plugin
  */
 require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
