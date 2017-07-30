@@ -16,10 +16,7 @@ function uri_department_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
 	uri_department_notice_customizer( $wp_customize );
-	
 	uri_department_department_customizer( $wp_customize );
-
-
 }
 add_action( 'customize_register', 'uri_department_customize_register' );
 
@@ -43,6 +40,7 @@ add_action( 'customize_preview_init', 'uri_department_customize_preview_js' );
  */
 function uri_department_notice_customizer($wp_customize) {
 
+	//set up the panel and section
 	$panel = 'uri_department_notice';
 	$section = 'uri_department_notice_options';
 
@@ -62,6 +60,7 @@ function uri_department_notice_customizer($wp_customize) {
     'description'    => '',
 	));
 
+	//set up the individual settings
 	$elements = array();
 	
 	$elements[] = array(
@@ -96,6 +95,7 @@ function uri_department_notice_customizer($wp_customize) {
 		)
 	);
 	
+	// loop over the settings and add them
 	foreach($elements as $el) {
 		uri_department_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
 	}
@@ -105,7 +105,7 @@ function uri_department_notice_customizer($wp_customize) {
 
 
 /**
- * Creates the Department customizer panel
+ * Creates the URI Department customizer panel
  * Used for contact information and social media information
  * keeping its code in its own container
  *
@@ -113,6 +113,7 @@ function uri_department_notice_customizer($wp_customize) {
  */
 function uri_department_department_customizer($wp_customize) {
 
+	// set up the panel
 	$panel = 'uri_department_department';
 
 	$wp_customize->add_panel($panel, array(
@@ -124,6 +125,7 @@ function uri_department_department_customizer($wp_customize) {
 	));
 
 
+	// set up the sections
 	$section = 'uri_department_department_options';
 	$wp_customize->add_section($section, array(
     'priority'       => 10,
@@ -155,6 +157,8 @@ function uri_department_department_customizer($wp_customize) {
 	));
 
 
+	// set up the individual settings
+	
 	$elements = array();
 	
 	$elements[] = array(
@@ -170,7 +174,9 @@ function uri_department_department_customizer($wp_customize) {
 
 	$elements[] = array(
 		'name' => 'uri_department_department_email',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'sanitize_email',
+		),
 		'control' => array(
 			'label'    => __( 'Department Email Address', 'uri-department' ),
 			'section'  => $section,
@@ -179,7 +185,9 @@ function uri_department_department_customizer($wp_customize) {
 
 	$elements[] = array(
 		'name' => 'uri_department_department_phone',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'sanitize_text_field',
+		),
 		'control' => array(
 			'label'    => __( 'Department Phone Number', 'uri-department' ),
 			'section'  => $section,
@@ -188,7 +196,9 @@ function uri_department_department_customizer($wp_customize) {
 
 	$elements[] = array(
 		'name' => 'uri_department_department_twitter',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'sanitize_text_field',
+		),
 		'control' => array(
 			'label'    => __( 'Twitter', 'uri-department' ),
 			'description' => __( 'Just the handle.  Like @universityofri', 'uri-department'),
@@ -197,7 +207,9 @@ function uri_department_department_customizer($wp_customize) {
 	);
 	$elements[] = array(
 		'name' => 'uri_department_department_instagram',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_url',
+		),
 		'control' => array(
 			'label'    => __( 'Instagram URL', 'uri-department' ),
 			'description' => __( 'The entire URL including https', 'uri-department'),
@@ -206,7 +218,9 @@ function uri_department_department_customizer($wp_customize) {
 	);
 	$elements[] = array(
 		'name' => 'uri_department_department_facebook',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_url',
+		),
 		'control' => array(
 			'label'    => __( 'Facebook URL', 'uri-department' ),
 			'description' => __( 'The entire URL including https', 'uri-department'),
@@ -215,7 +229,9 @@ function uri_department_department_customizer($wp_customize) {
 	);
 	$elements[] = array(
 		'name' => 'uri_department_department_linkedin',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_url',
+		),
 		'control' => array(
 			'label'    => __( 'LinkedIn URL', 'uri-department' ),
 			'description' => __( 'The entire URL including https', 'uri-department'),
@@ -224,7 +240,9 @@ function uri_department_department_customizer($wp_customize) {
 	);
 	$elements[] = array(
 		'name' => 'uri_department_department_youtube',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_url',
+		),
 		'control' => array(
 			'label'    => __( 'YouTube URL', 'uri-department' ),
 			'description' => __( 'The entire URL including https', 'uri-department'),
@@ -235,7 +253,9 @@ function uri_department_department_customizer($wp_customize) {
 
 	$elements[] = array(
 		'name' => 'uri_department_department_theme_skin',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_skin',
+		),
 		'control' => array(
 			'label'    => __( 'Skin', 'uri-department' ),
 			'section'  => $section_theme,
@@ -245,11 +265,10 @@ function uri_department_department_customizer($wp_customize) {
 	);
 
 
+	// loop over the elements 
 	foreach($elements as $el) {
 		uri_department_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
 	}
-
-
 
 }
 
@@ -270,7 +289,10 @@ function uri_department_add_customizer_element( $wp_customize, $name, $options=a
 	$default_options = array(
 		'type' => 'option',
 		'default' => '',
-		'transport' => 'postMessage'
+		'transport' => 'postMessage',
+		'options' => array(
+			'sanitize_callback' => 'sanitize_textarea_field',
+		),
 	);
 	$args = array_merge($default_options, $options);
 	$wp_customize->add_setting( $name, $args );
@@ -291,4 +313,38 @@ function uri_department_add_customizer_element( $wp_customize, $name, $options=a
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $name, $args ));
 
+}
+
+
+/**
+ * Sanitizes a URL
+ * esc_url_raw() could also do it, but the UX is less robust.  
+ * This function improves on esc_url_raw in that it
+ * provides feedback when URLs are invalid
+ *
+ * @param str $url is the URL to test
+ * @return str on success; NULL on failure
+ */
+function uri_department_sanitize_url( $url ) {
+	$out = filter_var($url, FILTER_VALIDATE_URL);
+	if( ! empty($url) && $out === FALSE ) {
+		// returning NULL triggers the WP UI to show that the value is unacceptable
+		return NULL;
+	} else {
+		return $out;
+	}
+}
+
+/**
+ * Sanitizes a "skin"
+ * a possible way forward for theme updates in the event that
+ * outright replacement is too difficult
+ *
+ * since there is currently one option, return the one option
+ *
+ * @param str $url is the URL to test
+ * @return str 'legacy'
+ */
+function uri_department_sanitize_skin( $skin ) {
+	return 'legacy';
 }
