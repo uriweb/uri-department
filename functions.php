@@ -25,12 +25,13 @@ function uri_department_remove_version() {
 }
 add_filter('the_generator', 'uri_department_remove_version');
 
+
 /**
  * Establish theme settings settings
  */
+add_theme_support( 'title-tag' );
 
 add_theme_support( 'post-thumbnails' );
-
 set_post_thumbnail_size( 650, 350, true ); // hard crop mode
 
 add_image_size( 'people', 300, 150, false );
@@ -38,6 +39,7 @@ add_image_size( 'home-thumb', 290, 140, true );
 add_image_size( 'who-thumb', 125, 125, true );
 add_image_size( 'people-thumb', 80, 80, false );
 add_image_size( 'people-big', 300, 300, false );
+
 
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
@@ -294,11 +296,20 @@ function string_limit_wordsdept($string, $word_limit) {
 }
 
 
+
 /**
+ * DEPRECATED
+ * if, for whatever reason, this theme is used on older WP, 
+ * this function will be called from line 9 (or so) of header.php.
+ * Otherwise, the theme uses the now standard add_theme_support()
+ *
+ * @see uri_department_title_separator()
+ * @see uri_department_title_parts()
  * Calculates the page title.  As in HTML <title> title
  * @return str
  */
 function uri_department_get_page_title() {
+	// DEPRECATED
 	global $page, $paged;
 	wp_title( '|', true, 'right' );
 	bloginfo( 'name' );
@@ -310,6 +321,38 @@ function uri_department_get_page_title() {
 		return ' | ' . sprintf( __( 'Page %s', 'uridepartment' ), max( $paged, $page ) );
 	}
 }
+
+
+/**
+ * Sets the title separator to the pipe character
+ * it's a separator | it gets the job done.
+ * @return str
+ */
+function uri_department_title_separator() {
+	return '|';
+}
+add_filter( 'document_title_separator', 'uri_department_title_separator' );
+
+
+/**
+ * Rearranges the page title elements into the URI order (pagination after site title)
+ * @param arr the title elements from WP
+ * @return arr
+ */
+function uri_department_title_parts($parts) {
+	// $out lists site before page.
+	$out = array(
+		'title' => $parts['title'],
+		'site' => $parts['site'],
+		'page' => $parts['page'],
+		'tagline' => $parts['tagline'],
+	);
+	// the tagline is sometimes used for contact info... keep that out of the title
+	unset ( $out['tagline'] );
+	return $out;
+}
+add_filter( 'document_title_parts', 'uri_department_title_parts' );
+
 
 /**
  * adds custom per page styling if it exists in the page meta

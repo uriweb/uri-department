@@ -6,7 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=3.0" />
 
-	<title><?php print uri_department_get_page_title(); ?></title>
+	<?php
+	if ( ! function_exists( '_wp_render_title_tag' ) ) {
+		// this shouldn't happen unless we're using WP < 4.1
+		// otherwise, the the <title> element is printed in wp_head()
+		echo '<title>', uri_department_get_page_title(), '</title>';
+	}
+	?>
 
 	<?php wp_head(); ?>
 	<?php
