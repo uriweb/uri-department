@@ -75,18 +75,22 @@ function uri_department_notice_customizer($wp_customize) {
 	
 	$elements[] = array(
 		'name' => 'uri_department_notice_type',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_notice_type',
+		),
 		'control' => array(
 			'label'    => __( 'Type of notice', 'uri-department' ),
 			'section'  => $section,
 	 		'type' => 'select',
-	 		'choices' => array('' => 'Select a type', 'blue' => 'Blue', 'green' => 'Green', 'yellow' => 'Yellow', 'orange' => 'Orange', 'red' => 'Red'),
-		)
+	 		'choices' => uri_department_get_notice_types()
+	 	)
 	);
 
 	$elements[] = array(
 		'name' => 'uri_department_notice_show_on_all_pages',
-		'options' => array(),
+		'options' => array(
+			'sanitize_callback' => 'uri_department_sanitize_checkbox',
+		),
 		'control' => array(
 			'label'    => __( 'Show on every page', 'uri-department' ),
 			'description' => __( 'Leave unchecked to display on front page only', 'uri-department'),
@@ -197,11 +201,11 @@ function uri_department_department_customizer($wp_customize) {
 	$elements[] = array(
 		'name' => 'uri_department_department_twitter',
 		'options' => array(
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'uri_department_sanitize_url',
 		),
 		'control' => array(
 			'label'    => __( 'Twitter', 'uri-department' ),
-			'description' => __( 'Just the handle.  Like @universityofri', 'uri-department'),
+			'description' => __( 'The entire Twitter URL including https', 'uri-department'),
 			'section'  => $section_social,
 		)
 	);
@@ -317,13 +321,54 @@ function uri_department_add_customizer_element( $wp_customize, $name, $options=a
 
 
 /**
+ * Returns an array of notice types
+ * @return arr
+ */
+function uri_department_get_notice_types() {
+	return array('' => 'Select a type', 'blue' => 'Blue', 'green' => 'Green', 'yellow' => 'Yellow', 'orange' => 'Orange', 'red' => 'Red');
+}
+
+/**
+ * Sanitizes a notice type
+ *
+ * @param str $url is the URL to test
+ * @return mixed: str on success; NULL on failure
+ */
+function uri_department_sanitize_notice_type( $option ) {
+	$valid_options = uri_department_get_notice_types();
+	if( array_key_exists ( $option, $valid_options ) ) {
+		return $option;
+	} else {
+		return NULL;
+	}
+}
+
+
+
+/**
+ * Sanitizes a checkbox
+ *
+ * @param mixed $value
+ * @return mixed: str on success; NULL on failure
+ */
+function uri_department_sanitize_checkbox( $value ) {	
+	if( is_bool( $value ) ) {
+		return $value;
+	} else {
+		return NULL;
+	}
+}
+
+/**
  * Sanitizes a URL
  * esc_url_raw() could also do it, but the UX is less robust.  
  * This function improves on esc_url_raw in that it
- * provides feedback when URLs are invalid
+ * provides feedback when URLs are invalid 
+ * (mostly, that is. One can still fool the validator to add sanitized but malformed URLs
+ * like https://twitter.comuniversityofri but TLDs are hard to validate these days.)
  *
  * @param str $url is the URL to test
- * @return str on success; NULL on failure
+ * @return mixed: str on success; NULL on failure
  */
 function uri_department_sanitize_url( $url ) {
 	$out = filter_var($url, FILTER_VALIDATE_URL);

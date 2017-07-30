@@ -26,6 +26,10 @@
 				// check for legacy values
 				if ( empty ( $twitter ) ) {
 					$twitter = of_get_option('urid_tweet');
+					if ( ! empty ( $twitter ) ) { 
+						// only do this if empty, because we test if twitter is empty upon display
+						$twitter = 'https://www.twitter.com/' . str_replace('@', '', $twitter);
+					}
 				}
 				if ( empty( $instagram ) ) {
 					$instagram = of_get_option('urid_instagram');
@@ -42,15 +46,12 @@
 				if ( empty( $google ) ) {
 					$google = of_get_option('urid_google');
 				}
-				
-				// remove the @ just in case
-				$twitter = str_replace('@', '', $twitter);
-				
+								
 				$social_icon_dir = get_bloginfo('stylesheet_directory') . '/images/social/';
 									
 			?>
 
-			<?php if ( ! empty( $twitter ) ) : ?><a href="https://www.twitter.com/<?php echo $twitter; ?>" id="dept-twitter"><img src="<?php echo $social_icon_dir; ?>twitter.png" alt="Twitter" /></a><?php endif; ?>
+			<?php if ( ! empty( $twitter ) ) : ?><a href="<?php echo $twitter; ?>" id="dept-twitter"><img src="<?php echo $social_icon_dir; ?>twitter.png" alt="Twitter" /></a><?php endif; ?>
 			<?php if ( ! empty( $instagram ) ) : ?><a href="<?php echo $instagram; ?>" id="dept-instagram"><img src="<?php echo $social_icon_dir; ?>instagram.png" alt="Instagram" /></a><?php endif; ?>
 			<?php if ( ! empty( $facebook ) ) : ?><a href="<?php echo $facebook; ?>" id="dept-facebook"><img src="<?php echo $social_icon_dir; ?>fb.png" alt="Facebook" /></a><?php endif; ?>
 			<?php if ( ! empty( $google ) ) : ?><a href="<?php echo $google; ?>" id="dept-google"><img src="<?php echo $social_icon_dir; ?>gplus.png" alt="Google+" /></a><?php endif; ?>
