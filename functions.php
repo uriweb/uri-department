@@ -369,6 +369,22 @@ function uri_department_get_page_css() {
 
 
 /**
+ * Disables the wpautop() on a post by post (or page by page) basis.
+ * @param str
+ * @return str
+ */
+function uri_department_bypass_auto_formatting($content) {
+	global $post;
+	if( get_post_meta($post->ID, 'autop_disable', true) == 1) {
+		remove_filter('the_content', 'wpautop');
+	}
+	return $content;   
+}
+add_filter( 'the_content', 'uri_department_bypass_auto_formatting', 1 );
+
+
+
+/**
  * Print a list of people
  * @param arr $args @see https://codex.wordpress.org/Class_Reference/WP_Query
  */

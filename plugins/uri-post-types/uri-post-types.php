@@ -438,6 +438,16 @@ if(function_exists('register_field_group')) {
 				'message' => 'If checked the standard page title will not be used and you can use your own in the body content of the page.',
 				'order_no' => '0',
 			),
+			array (
+				'key' => 'field_502b9eb29fc46',
+				'label' => 'Use Manual Formatting?',
+				'name' => 'autop_disable',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => '0',
+				'message' => 'If checked WordPress will not autoformat your HTML and you will be expected to create your own linebreaks and paragraphs in HTML.',
+				'order_no' => '0',
+			),
 		),
 		'location' => array (
 			'rules' => array (
