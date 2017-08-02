@@ -47,7 +47,7 @@
 					$google = of_get_option('urid_google');
 				}
 								
-				$social_icon_dir = get_bloginfo('stylesheet_directory') . '/images/social/';
+				$social_icon_dir = get_template_directory_uri() . '/images/social/';
 									
 			?>
 

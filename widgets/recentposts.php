@@ -15,15 +15,15 @@ class RecentPosts extends WP_Widget {
 		$ppp = $instance['ppp'];
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('titletext'); ?>"><?php _e('Widget title text'); ?></label>
+			<label for="<?php echo $this->get_field_id('titletext'); ?>"><?php _e('Widget title text', 'uri-department'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('titletext'); ?>" name="<?php echo $this->get_field_name('titletext'); ?>" type="text" value="<?php echo $titletext; ?>" /><small>Give the widget a title if needed.</small>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Category slug to take posts from'); ?></label>
+			<label for="<?php echo $this->get_field_id('text'); ?>"><?php _e('Category slug to take posts from', 'uri-department'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>" type="text" value="<?php echo $text; ?>" /><small>Use the category slug for the intended category. For example, if the category is News Post the slug is likely to be /news-posts, so enter it in as news-posts.</small>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('ppp'); ?>"><?php _e('Posts to show'); ?></label>
+			<label for="<?php echo $this->get_field_id('ppp'); ?>"><?php _e('Posts to show', 'uri-department'); ?></label>
 			<input class="widefat" id="<?php echo $this->get_field_id('ppp'); ?>" name="<?php echo $this->get_field_name('ppp'); ?>" type="text" value="<?php echo $ppp; ?>" /><small>Recommend count is 3, but it can be whatever you want.</small>
 		</p>
 		<?php

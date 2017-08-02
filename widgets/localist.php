@@ -14,7 +14,7 @@ class Localist extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'text' => '' ) );
 
 		$content = '<p>';
-		$content .= '<label for="' . $this->get_field_id('text') . '">' . _e('Localist Javascript code') . '</label>';
+		$content .= '<label for="' . $this->get_field_id('text') . '">' . _e('Localist Javascript code', 'uri-department') . '</label>';
 		$content .= '<textarea class="widefat" rows="8" id="' . $this->get_field_id('text') . '" name="' . $this->get_field_name('text') . '">' . $instance['text'] . '</textarea>';
 		$content .= '<small>Generate your code <a href="http://events.uri.edu/help/widget">here</a> paste it into the box below. <strong>Recommended setting: Javascript</strong></small>';
 		$content .= '</p>';

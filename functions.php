@@ -41,6 +41,11 @@ add_image_size( 'people-thumb', 80, 80, false );
 add_image_size( 'people-big', 300, 300, false );
 
 
+// themecheck states that this variable is required.  
+if ( ! isset( $content_width ) ) {
+	$content_width = 1000;
+}
+
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
 
@@ -89,12 +94,12 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 	/* Options Framework Theme
 	/*-----------------------------------------------------------------------------------*/
 	/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
-	if ( STYLESHEETPATH == TEMPLATEPATH ) {
-		define('OPTIONS_FRAMEWORK_URL', TEMPLATEPATH . '/admin/');
-		define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/');
+	if ( get_stylesheet_directory() == get_template_directory() ) {
+		define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/');
+		define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
 	} else {
-		define('OPTIONS_FRAMEWORK_URL', STYLESHEETPATH . '/admin/');
-		define('OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('stylesheet_directory') . '/admin/');
+		define('OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/admin/');
+		define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
 	}
 	require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
 }
@@ -114,9 +119,9 @@ if ( !function_exists( 'of_get_option' ) ) {
  * Set up sidebar areas
  */
 register_sidebar( array(
-	'name' => __( 'Right Department Sidebar', 'uri' ),
+	'name' => __( 'Right Department Sidebar', 'uri-department' ),
 	'id' => 'mainsidebar',
-	'description' => __( 'Right sidebar content for department', 'uri' ),
+	'description' => __( 'Right sidebar content for department', 'uri-department' ),
 	'before_widget' => '<div class="sidebarwidget">',
 	'after_widget'  => '</div>',
 	'before_title' => '<h3>',
@@ -156,7 +161,7 @@ register_sidebar(array(
  */
 // This theme uses wp_nav_menu() in one location.
 register_nav_menus( array(
-	'department' => __( 'Primary Department Navigation', 'uri' ),
+	'department' => __( 'Primary Department Navigation', 'uri-department' ),
 ) );
 
 unregister_nav_menu( 'col1-menu' );
@@ -318,7 +323,7 @@ function uri_department_get_page_title() {
 		return ' | ' . $site_description;
 	}
 	if ( $paged >= 2 || $page >= 2 ) {
-		return ' | ' . sprintf( __( 'Page %s', 'uridepartment' ), max( $paged, $page ) );
+		return ' | ' . sprintf( __( 'Page %s', 'uri-department' ), max( $paged, $page ) );
 	}
 }
 
@@ -381,7 +386,6 @@ function uri_department_bypass_auto_formatting($content) {
 	return $content;   
 }
 add_filter( 'the_content', 'uri_department_bypass_auto_formatting', 1 );
-
 
 
 /**

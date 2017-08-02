@@ -21,43 +21,31 @@
 
 <div id="comments">
 
+
 <?php if ($comments) : ?>
+
+<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+	<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'uri-department' ); ?></h2>
+	<div class="nav-links">
+
+		<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'uri-department' ) ); ?></div>
+		<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'uri-department' ) ); ?></div>
+
+	</div><!-- .nav-links -->
+</nav><!-- #comment-nav-above -->
+<?php endif; // Check for comment navigation. ?>
 
 <div class="cheader"><?php comments_number('Nothing yet', 'One response left', '% responses left' );?></div>
 
-	<ol class="commentlist">
-
-	<?php foreach ($comments as $comment) : ?>
-
-		<li <?php echo $oddcomment; ?>id="comment-<?php comment_ID() ?>">
-
-<div class="chold">
-			<div class="grav"><?php echo get_avatar( $comment, 40 ); ?></div>
-
-<div class="ctext">
-
-<p class="cauthor"><?php comment_author_link() ?></p>
-
-<?php comment_text() ?>
-
-<p class="cmeta"><?php if ($comment->comment_approved == '0') : ?><span style="color:#ca1717;">Your comment is awaiting moderation. There is no need to repost. &mdash;</span><?php else: ?> <?php comment_date('F jS, Y') ?> at <?php comment_time() ?></p><?php endif; ?></p>
-
-</div>
-
-<div style="clear: both"></div>
-
-</div>
-
-		</li>
-
-	<?php
-		/* Changes every other comment to a different class */
-		$oddcomment = ( empty( $oddcomment ) ) ? 'class="alt" ' : '';
-	?>
-
-	<?php endforeach; /* end for each comment */ ?>
-
-	</ol>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'      => 'ol',
+					'short_ping' => true,
+				) );
+			?>
+		</ol><!-- .comment-list -->
 
  <?php else : // this is displayed if there are no comments so far ?>
 
@@ -68,6 +56,8 @@
 
 	<?php endif; ?>
 <?php endif; ?>
+
+
 
 
 <?php if ('open' == $post->comment_status) : ?>

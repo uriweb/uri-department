@@ -19,7 +19,7 @@
 			get_template_part( 'templates/partials/title' );
 		?>
 
-		<div class="post" id="post-<?php the_ID(); ?>">
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry">
 				<?php the_content('<p class="serif">Read the rest of this page &raquo;</p>'); ?>
 				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>

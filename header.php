@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-<html lang="<?php echo of_get_option('urid_lang'); ?>" dir="ltr">
+<html <?php language_attributes(); ?>>
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=3.0" />
-
-	<?php
-	if ( ! function_exists( '_wp_render_title_tag' ) ) {
-		// this shouldn't happen unless we're using WP < 4.1
-		// otherwise, the the <title> element is printed in wp_head()
-		echo '<title>', uri_department_get_page_title(), '</title>';
-	}
-	?>
 
 	<?php wp_head(); ?>
 	<?php
@@ -28,9 +20,9 @@
 	?>
 
 
-	<link rel="icon" type="image/gif" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />
-	<link rel="shortcut icon" type="image/x-icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.gif" />
-	<link rel="stylesheet" type="text/css" media="print" href="<?php bloginfo('stylesheet_directory'); ?>/css/print.css" />
+	<link rel="icon" type="image/gif" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/favicon.gif" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/favicon.gif" />
+	<link rel="stylesheet" type="text/css" media="print" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/css/print.css" />
 
 
 	<?php if (of_get_option('urid_css')) { ?>
@@ -52,7 +44,7 @@
 
 </head>
 
-<body>
+<body <?php body_class( $class ); ?>>
 <!-- Google Tag Manager -->
 <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-544KHG"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -107,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 							<?php else: ?>
 
-								<form method="get" action="<?php bloginfo('url'); ?>/index.php" name="global_general_search_form">
+								<form method="get" action="<?php echo esc_url( home_url() ); ?>/index.php" name="global_general_search_form">
 									<label for="s">Search:</label>
 									<input name="s" id="s" value="<?php print (isset($_GET['s'])) ? htmlentities($_GET['s']) : '' ?>" placeholder="Search The University of Rhode Island" type="text" />
 									<input name="searchsubmit" class="searchsubmit" type="submit" value="Search" />
@@ -120,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="grid-5">
 						<div class="quick">
-							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/quick/rhodynet.png" alt="RhodyNet" />RhodyNet</a>
+							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/rhodynet.png" alt="RhodyNet" />RhodyNet</a>
 						</div>
 					</div>
 					<div style="clear:both;"></div>
@@ -161,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					}
 					
 				?>
-				<a rel="home" class="deptpic" title="<?php echo $title; ?>" href="<?php bloginfo('url'); ?>"<?php if ($background_image !== FALSE) { ?> style="background-image: url(<?php echo $background_image; ?>);"<?php } ?>><?php bloginfo('name'); ?></a>
+				<a rel="home" class="deptpic" title="<?php echo $title; ?>" href="<?php echo esc_url( home_url() ); ?>"<?php if ($background_image !== FALSE) { ?> style="background-image: url(<?php echo $background_image; ?>);"<?php } ?>><?php bloginfo('name'); ?></a>
 			</div>
 			
 			<div id="deptsec" class="grid-7">
@@ -187,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										
 				?>
 
-				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+				<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
 
 				<p id="dept-description"><?php bloginfo('description'); ?></p>
 
@@ -208,7 +200,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			
 			<div class="grid-3">
 				<div id="extrabutton">
-					<a href="<?php echo get_site_option('uri_gohome'); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/urihome.png" alt="Go back to the URI Homepage" />URI Homepage</a>
+					<a href="<?php echo get_site_option('uri_gohome'); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/urihome.png" alt="Go back to the URI Homepage" />URI Homepage</a>
 				</div>
 			</div>
 

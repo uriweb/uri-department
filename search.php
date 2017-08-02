@@ -12,11 +12,11 @@
 			<h1>
 				<?php
 					if ( is_day() ) {
-						printf( __( 'Daily Archives: %s', 'twentyeleven' ), '<span>' . get_the_date() . '</span>' );
+						printf( __( 'Daily Archives: %s', 'uri-department' ), '<span>' . get_the_date() . '</span>' );
 					} elseif ( is_month() ) {
-						printf( __( 'Monthly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentyeleven' ) ) . '</span>' );
+						printf( __( 'Monthly Archives: %s', 'uri-department' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'uri-department' ) ) . '</span>' );
 					} elseif ( is_year() ) {
-						printf( __( 'Yearly Archives: %s', 'twentyeleven' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentyeleven' ) ) . '</span>' );
+						printf( __( 'Yearly Archives: %s', 'uri-department' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'uri-department' ) ) . '</span>' );
 					} else {
 						single_cat_title();
 					}
@@ -31,7 +31,7 @@
 					<?php if ( has_post_thumbnail() ) : ?>
 						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail('people-thumb'); ?></a>
 					<?php else: ?>
-						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/default/uri80.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
+						<a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/default/uri80.gif" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" /></a>
 					<?php endif; ?>
 
 					<h2><a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>

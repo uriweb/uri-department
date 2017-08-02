@@ -24,7 +24,7 @@
 	</div><!-- /end wrapper -->
 </div><!-- /end #footer -->
 
-<div class="mobilewordmark"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/mobilewatermark.png" alt="Think Big, We Do." /></div>
+<div class="mobilewordmark"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/mobilewatermark.png" alt="Think Big, We Do." /></div>
 
 <div class="mobilefooter"><a href="http://web.uri.edu/about/services/">A-Z</a> &ndash; <a href="http://directory.uri.edu/">Directory</a> &ndash; <a href="http://web.uri.edu/about/contact">Contact Us</a> &ndash; <a href="#top">Jump to top</a></div>
 

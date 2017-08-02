@@ -7,10 +7,11 @@
  */
  
 function optionsframework_option_name() {
-	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
-	$themename = $themename['Name'];
-	$themename = preg_replace("/\W/", "", strtolower($themename) );
+	// This gets the theme name from the stylesheet (lowercase and without spaces or hyphens)
+	
+	$themeinfo = wp_get_theme();
+	$themename = preg_replace("/\W|-/", "", strtolower($themeinfo->Name) );
+
 	$optionsframework_settings = get_option('optionsframework');
 	$optionsframework_settings['id'] = $themename;
 	update_option('optionsframework', $optionsframework_settings);
@@ -87,7 +88,7 @@ function optionsframework_options() {
 	}
 
 	// If using image radio buttons, define a directory path
-	$imagepath =  get_bloginfo('stylesheet_directory') . '/images/';
+	$imagepath =  get_template_directory_uri() . '/images/';
 
 	$options = array();
 

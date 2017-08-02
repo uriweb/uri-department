@@ -17,7 +17,7 @@
 			get_template_part( 'templates/partials/title' );
 		?>
 
-		<div class="post" id="post-<?php the_ID(); ?>">
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			 <div class="entry">
 				<div class="whoimage"><?php the_post_thumbnail('people-big'); ?></div>
 				<ul class="wholist">

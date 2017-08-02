@@ -21,7 +21,7 @@
 					get_template_part( 'templates/partials/title' );
 				?>
 				<?php if (of_get_option('urid_pagecontent') == true) : ?>
-					<div class="post" id="post-<?php the_ID(); ?>">
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 						<div class="entry">
 						 <?php
 							$contentoutput = of_get_option('urid_pagecontent');

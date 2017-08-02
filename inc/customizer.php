@@ -288,18 +288,17 @@ function uri_department_department_customizer($wp_customize) {
  * @param arr $control The control args
  */
 
-function uri_department_add_customizer_element( $wp_customize, $name, $options=array(), $control=array() ) {
+function uri_department_add_customizer_element( $wp_customize_object, $name, $options=array(), $control=array() ) {
 
 	$default_options = array(
 		'type' => 'option',
 		'default' => '',
 		'transport' => 'postMessage',
-		'options' => array(
-			'sanitize_callback' => 'sanitize_textarea_field',
-		),
+		'sanitize_callback' => 'sanitize_textarea_field',
 	);
 	$args = array_merge($default_options, $options);
-	$wp_customize->add_setting( $name, $args );
+		
+	$wp_customize_object->add_setting( $name, $args );
 
 	$default_control = array(
 		'label'    => __( 'URI Field', 'uri-department' ),
@@ -315,7 +314,7 @@ function uri_department_add_customizer_element( $wp_customize, $name, $options=a
 	
 	$args = array_merge( $default_control, $control );
 
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $name, $args ));
+	$wp_customize_object->add_control( new WP_Customize_Control( $wp_customize_object, $name, $args ));
 
 }
 
