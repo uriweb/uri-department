@@ -1,9 +1,10 @@
 <?php
 
 class RecentPosts2 extends WP_Widget {
-	function RecentPosts2() {
+
+	function __construct() {
 		$widget_ops = array('classname' => 'RecentPosts2', 'description' => 'Recent posts with optional thumbnail' );
-		$this->WP_Widget('RecentPosts2', 'Recent Posts In Page', $widget_ops);
+		parent::__construct('RecentPosts2', 'Recent Posts In Page', $widget_ops);
 	}
 	
 	function form($instance) {

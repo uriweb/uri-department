@@ -347,10 +347,10 @@ add_filter( 'document_title_separator', 'uri_department_title_separator' );
 function uri_department_title_parts($parts) {
 	// $out lists site before page.
 	$out = array(
-		'title' => $parts['title'],
-		'site' => $parts['site'],
-		'page' => $parts['page'],
-		'tagline' => $parts['tagline'],
+		'title' => (isset($parts['title'])) ? $parts['title'] : '',
+		'site' => (isset($parts['site'])) ? $parts['site'] : '',
+		'page' => (isset($parts['page'])) ? $parts['page'] : '',
+		'tagline' => (isset($parts['tagline'])) ? $parts['tagline'] : '',
 	);
 	// the tagline is sometimes used for contact info... keep that out of the title
 	unset ( $out['tagline'] );

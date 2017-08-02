@@ -2,9 +2,9 @@
 
 class RecentPosts extends WP_Widget {
 
-  function RecentPosts() {
+  function __construct() {
 		$widget_ops = array('classname' => 'RecentPosts', 'description' => 'Displays a random post with thumbnail' );
-		$this->WP_Widget('RecentPosts', 'Recent Posts with Thumbnail', $widget_ops);
+		parent::__construct('RecentPosts', 'Recent Posts with Thumbnail', $widget_ops);
 	}
  
 

@@ -2,9 +2,9 @@
 
 class Localist extends WP_Widget {
 
-	function Localist() {
+	function __construct() {
 		$widget_ops = array('classname' => 'Localist', 'description' => 'Drop in a localist calendar' );
-		$this->WP_Widget('Localist', 'Localist Events', $widget_ops);
+		parent::__construct('Localist', 'Localist Events', $widget_ops);
 	}
 
 	/**
