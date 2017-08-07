@@ -41,9 +41,9 @@ add_image_size( 'people-thumb', 80, 80, false );
 add_image_size( 'people-big', 300, 300, false );
 
 
-// themecheck states that this variable is required.  
+// Sets the maximum width of embedded content
 if ( ! isset( $content_width ) ) {
-	$content_width = 1000;
+	$content_width = 500;
 }
 
 // Add default posts and comments RSS feed links to head
