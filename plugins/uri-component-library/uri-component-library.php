@@ -31,3 +31,8 @@ add_action( 'wp_enqueue_scripts', 'uri_cl_enqueues' );
 
 // Include shortcodes
 include( plugin_dir_path( __FILE__ ) . 'inc/cl-shortcodes.php');
+
+// Enable styles in the WYSIWYG Editor
+if ( is_admin() ){
+	add_editor_style( get_template_directory_uri() . '/plugins/uri-component-library/css/cl.built.css' );
+}
