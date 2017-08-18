@@ -344,6 +344,8 @@ hr, address {
 	padding: 0px;
 	font-weight: bold;
 	color: #0d3343;
+}
+.wf-active #mainpage .fullcol h1 {
 	text-transform: lowercase;
 }
 
@@ -358,8 +360,13 @@ hr, address {
 	margin-bottom: 15px;
 	font-weight: bold;
 	color: #0d3343;
+}
+.wf-active #mainpage .two h2, 
+.wf-active #mainpage .subcol h2, 
+.wf-active #mainpage .fullcol h2 {
 	text-transform: lowercase;
 }
+
 
 #mainpage .two h3, 
 #mainpage .subcol h3, 
@@ -370,6 +377,10 @@ hr, address {
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 8px;
+}
+.wf-active #mainpage .two h3, 
+.wf-active #mainpage .subcol h3, 
+.wf-active #mainpage .fullcol h3 {
 	text-transform: lowercase;
 }
 

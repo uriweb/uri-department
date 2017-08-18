@@ -10,13 +10,15 @@
 #announcement h4 {
 	font-family: 'trajan-pro', Lucida Grande, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 1.4em;
-	text-transform: lowercase;
 	margin: 0px;
 	padding: 0px;
 	margin-bottom: 5px;
 	font-weight: bold;
 	color: #022972;
 	line-height: normal;
+}
+.wf-active #announcement h4 {
+	text-transform: lowercase;
 }
 
 #announcement h4 a {
