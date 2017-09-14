@@ -28,7 +28,7 @@
 		<li class="parentcat">Academics</li>
 		<li><a class="odd" href="http://web.uri.edu/academics/">Academics Home</a></li>
 		<li><a href="http://web.uri.edu/advising/majors/">Majors</a></li>
-		<li><a class="odd" href="http://web.uri.edu/graduate-school/degree-plans/">Graduate Programs</a></li>
+		<li><a class="odd" href="http://web.uri.edu/graduate-school/">Graduate Programs</a></li>
 		<li><a href="http://web.uri.edu/catalog/">Course Catalog</a></li>
 		<li><a class="odd" href="http://web.uri.edu/about/departments/">Colleges, Schools, and Departments</a></li>
 		<li><a href="http://web.uri.edu/career/">Career and Internships</a></li>
