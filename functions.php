@@ -58,7 +58,9 @@ require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-ty
 /**
  * Include the component library plugin
  */
-require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
+if ( !function_exists( 'uri_cl_enqueues' ) ) {
+    require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
+}
 
 /**
  * Implement the Custom Header feature.
