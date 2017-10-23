@@ -55,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-544KHG');</script>
 <!-- End Google Tag Manager -->
 
-<!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#s">Skip to search</a></div><!-- end screen reader -->
+<!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#urisearch">Skip to search</a></div><!-- end screen reader -->
 
 
 <?php 
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="grid-5">
 						<div class="quick">
-							<a href="http://web.uri.edu/its/uri-email/"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/mail.png" alt="Email" />Email</a><a href="http://www.uri.edu/ecampus"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/ecampus.png" alt="eCampus" />eCampus</a><a href="http://sakai.uri.edu"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/sakai.png" alt="Sakai at URI" />Sakai</a><a href="http://rhodynet.uri.edu"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/quick/rhodynet.png" alt="RhodyNet" />RhodyNet</a>
+							<a href="http://web.uri.edu/its/uri-email/" class="mail">Email</a><a href="http://www.uri.edu/ecampus" class="ecampus">eCampus</a><a href="http://sakai.uri.edu" class="sakai">Sakai</a><a href="http://rhodynet.uri.edu" class="rhodynet">RhodyNet</a>
 						</div>
 					</div>
 					<div style="clear:both;"></div>

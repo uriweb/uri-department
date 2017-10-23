@@ -201,9 +201,9 @@ a.hpbut {
 }
 
 
-/* Top nav for mobile */
+/* Top nav for mobile #topnav */
 
-#topnav {
+.m-nav {
 	width: 100%;
 	box-shadow: inset 0px -2px 2px #333333;
 	background: linear-gradient(to bottom, rgb(222,187,33) 3%, rgb(255,242,59) 52%);
@@ -213,45 +213,78 @@ a.hpbut {
 	font-size: medium;
 	vertical-align: middle;
 	display:  none;
-}
 
-#topnav a img {
-	width: 24px;
-	height: 24px;
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 3px;
-}
+	a {
+		background-position: 50% 0;
+		background-repeat: no-repeat;
+		background-size: auto 24px;
+		border-right: 1px dashed #e9ca1e;
+		color: #0757a9;
+		padding: 26px 1% 0;
+		text-decoration: none;
+		display: inline-block;
+		font-size: x-small;
+		text-align: center;
+		font-weight: bold;
 
-#topnav a {
-	color: #0757a9;
-	padding-right: 1%;
-	padding-left: 1%;
-	text-decoration: none;
-	display: inline-block;
-	font-size: x-small;
-	text-align: center;
-	font-weight: bold;
-	border-right: 1px dashed #e9ca1e;
-}
+		&.first {
+			padding-left: 0px;
+		}
 
-#topnav a.first {
-	padding-left: 0px;
-}
+		&.last {
+			padding-right: 0px;
+			border-right: 0px;
+		}
 
-#topnav a.last {
-	padding-right: 0px;
-	border-right: 0px;
-}
+		&:visited {
+			color: #0757a9;
+		}
 
-#topnav a:visited {
-	color: #0757a9;
-}
+		&:hover {
+			color: #222;
+		}
 
-#topnav a:hover {
-	color: #222;
-}
+		&:focus {
+			color: #222;
+		}
 
-#topnav a:focus {
-	color: #222;
+		img {
+			width: 24px;
+			height: 24px;
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 3px;
+		}
+
+		&.home {
+			background-image: url(images/mobile/home.png);
+		}
+		&.browse {
+			background-image: url(images/mobile/browse.png);
+		}
+		&.close {
+			background-image: url(images/mobile/close.png);
+		}
+		&.events {
+			background-image: url(images/mobile/events.png);
+		}
+		&.maps {
+			background-image: url(images/mobile/maps.png);
+		}
+		&.email {
+			background-image: url(images/mobile/email.png);
+		}
+		&.sakai {
+			background-image: url(images/mobile/sakai.png);
+		}
+		&.ecampus {
+			background-image: url(images/mobile/ecampus.png);
+		}
+		&.rhodynet {
+			background-image: url(images/mobile/rhodynet_icon_dark.png);
+		}
+
+	}
+	
+
 }

@@ -8,15 +8,14 @@
 	get_header();
 	get_template_part( 'sidebar1' );
 ?>
-<div class="grid-11" id="content_start">
+<div class="grid-11">
+	<div id="content_start" style="display : none ; "></div>
 	<div class="subspace">
 		<div class="subcol" style="padding-left: 0px; border-left: 0px;">
 			<?php
 				get_template_part( 'templates/partials/alert' );
 			?>
 			<div class="subl1"><!-- layer one, full width -->
-				<div id="content_start" style="display : none ; "></div>
-
 				<?php
 					get_template_part( 'templates/partials/title' );
 				?>

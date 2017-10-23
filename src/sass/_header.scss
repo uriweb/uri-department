@@ -118,25 +118,38 @@
 	margin-right: 20px;
 }
 
-#head .quick {
+.quick {
 	text-align: right !important;
 	margin-top: 20px;
+
+	a {
+		background-position: 0 50%;
+		background-repeat: no-repeat;
+		color: #fff;
+		padding: 6px;
+		padding-left: 22px;
+		margin-right: 10px;
+
+		&:hover {
+			color: #ddb93a;
+		}
+	}
+
+	.mail {
+		background-image: url(images/quick/mail.png);
+	}
+	.sakai {
+		background-image: url(images/quick/sakai.png);
+	}
+	.rhodynet {
+		background-image: url(images/quick/rhodynet.png);
+	}
+	.ecampus {
+		background-image: url(images/quick/ecampus.png);
+	}
 }
 
-#head .quick img {
-	vertical-align: middle;
-	margin-right: 5px;
-}
 
-#head .quick a {
-	color: #fff;
-	padding: 6px;
-	margin-right: 10px;
-}
-
-#head .quick a:hover {
-	color: #ddb93a;
-}
 
 #head .sf {
 	margin-top: 15px;
