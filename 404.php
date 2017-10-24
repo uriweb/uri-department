@@ -15,7 +15,7 @@
 
 		<div class="post">
 			<div class="entry">
-				<p>The page you were looking for is not available.</p>
+				<p></p>
 				
 				<h2>Try a new search</h2>
 				<?php
