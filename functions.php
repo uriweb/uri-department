@@ -11,7 +11,7 @@ function uri_department_cachebuster() {
 	static $cache_buster;
 	if(empty($cache_buster)) {
 		$cache_buster = wp_get_theme()->get('Version');
-		//$cache_buster = date(time());
+		$cache_buster = date(time());
 	}
 	return $cache_buster;
 }
@@ -367,7 +367,7 @@ add_filter( 'document_title_parts', 'uri_department_title_parts' );
  */
 function uri_department_get_page_css() {
 	global $wp_query;
-	$postid = $wp_query->post->ID;
+	$postid = ( isset($wp_query->post) && isset($wp_query->post->ID) ) ? $wp_query->post->ID : NULL;
 	$meta = get_post_meta($postid,'_my_meta',TRUE);
 	if (isset($meta['pagecss']) && $meta['pagecss'] === true) {
 		return '<style type="text/css">' . $meta['pagecss'] . '</style>';

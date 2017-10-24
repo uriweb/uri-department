@@ -9,7 +9,7 @@
 	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 	vertical-align: middle;
 	background-color: #f5f5f5;
-	background-image: linear-gradient(top, #ffffff, #e6e6e6);
+	background-image: linear-gradient(to top, #ffffff, #e6e6e6);
 	background-repeat: repeat-x;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	border: 1px solid #cccccc;
@@ -96,7 +96,7 @@
 
 .btn-primary {
 	background-color: #0074cc;
-	background-image: linear-gradient(top, #0088cc, #0055cc);
+	background-image: linear-gradient(to top, #0088cc, #0055cc);
 	background-repeat: repeat-x;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
@@ -115,11 +115,35 @@
 	background-color: #004099 \9;
 }
 
-.btn-saffron-umbrella-5 { text-shadow: 0px -1px 0px #e09600; color: #ffffff; background-color: #FEB41C; background-image: -moz-linear-gradient(top, #ffd23a, #e09600); background-image: -ms-linear-gradient(top, #ffd23a, #e09600); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffd23a), to(#e09600)); background-image: -webkit-linear-gradient(top, #ffd23a, #e09600); background-image: -o-linear-gradient(top, #ffd23a, #e09600); background-image: linear-gradient(top, #ffd23a, #e09600); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd23a', endColorstr='#e09600', GradientType=0); border-color: #FEB41C #e09600 #e09600 #FEB41C; border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.25); }
-.btn-saffron-umbrella-5:hover, .btn-saffron-umbrella-5:active, .btn-saffron-umbrella-5.active, .btn-saffron-umbrella-5.disabled, .btn-saffron-umbrella-5[disabled] { background-color: #e09600; }
-.btn-saffron-umbrella-5:hover { color: #ffffe4; text-shadow: 0px -1px 0px #c27800; }
-.btn-saffron-umbrella-5:focus { color: #ffff80; -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); border-color: #FEB41C #e09600 #e09600 #FEB41C; border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.25); }
-.btn-saffron-umbrella-5.active, .btn-saffron-umbrella-5:active { background-image: none; -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); color: #ffff80; }
+.btn-saffron-umbrella-5 {
+	text-shadow: 0px -1px 0px #e09600;
+	color: #ffffff;
+	background-color: #FEB41C;
+	background-image: linear-gradient(to top, #ffd23a, #e09600);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd23a', endColorstr='#e09600', GradientType=0); 
+	border-color: #FEB41C #e09600 #e09600 #FEB41C;
+	border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.25);
+
+	&:hover, &:active, &.active, &.disabled, &[disabled] {
+		background-color: #e09600;
+	}
+	&:hover {
+		color: #ffffe4;
+		text-shadow: 0px -1px 0px #c27800;
+	}
+	&:focus {
+		color: #ffff80;
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+		border-color: #FEB41C #e09600 #e09600 #FEB41C;
+		border-color: rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.35) rgba(0, 0, 0, 0.25);
+	}
+	&.active, &:active {
+		background-image: none; 
+		box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05); 
+		color: #ffff80;
+	}
+
+}
 
 
 
@@ -129,12 +153,12 @@
 	margin-top: 15px;
 }
 a.moretoday {
-	background: linear-gradient(bottom, rgb(212,212,212) 0%, rgb(255,255,255) 50%);
+	background: linear-gradient(to bottom, rgb(212,212,212) 0%, rgb(255,255,255) 50%);
 	color: #004058;
 	padding: 5px 10px;
 	font-weight: bold;
 	border: 1px solid #999;
 }
 a.moretoday:hover {
-	background: linear-gradient(bottom, rgb(255,207,87) 0%, rgb(255,243,194) 50%);
+	background: linear-gradient(to bottom, rgb(255,207,87) 0%, rgb(255,243,194) 50%);
 }

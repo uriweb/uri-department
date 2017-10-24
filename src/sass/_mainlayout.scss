@@ -698,3 +698,20 @@ hr, address {
 	padding-bottom:7px;
 	margin-top: 10px;
 }
+
+
+.not-found {
+	h1 {
+		white-space: nowrap;
+	}
+	figure.rhody-ohno {
+		float: right;
+	}
+}
+@media (min-width: 800px) {
+	.not-found {
+		figure.rhody-ohno {
+			margin-right: 100px;
+		}
+	}
+}

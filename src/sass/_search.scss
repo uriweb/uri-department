@@ -94,3 +94,29 @@
 #head .sf input[type=submit]:hover, #head .sf input[type=submit]:focus {
 background-color: #fff;
 }
+
+
+.search-404 {
+	margin-bottom: 2em;
+
+	label, input {
+		font-size: 12px;
+		padding: 6px;
+	}
+	
+	.search-input {
+		width: 40%;
+	}
+	.searchsubmit {
+		background-color: #002147;
+		border: 0;
+		color: #fff;
+		cursor: pointer;
+		padding: 8px;
+		&:hover {
+			background-color: #000;
+		}
+	}
+	
+	
+}
