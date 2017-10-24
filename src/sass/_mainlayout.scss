@@ -1,13 +1,15 @@
 /* Main Layout */
 
 .skiplinks {
-	text-indent: -99999px;
 	float: left;
+	position: absolute;
+	text-indent: -99999px;
 }
 
 .skiplinks:focus-within {
-	text-indent: 0;
 	float: none;
+	position: relative;
+	text-indent: 0;
 }
 
 /** hold-over from inuit.css SHARED section **/
