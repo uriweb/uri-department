@@ -95,8 +95,13 @@
 					<h2 id="meet_head"><?php echo of_get_option('urid_tagtitle'); ?></h2>
 					<?php while (have_posts()) : the_post(); ?>
 					<div class="image_container">
+						<?php if ( ! empty ( get_the_post_thumbnail() ) ) : ?>
 						<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
+						<?php endif; ?>
+
+						<?php if ( ! empty ( get_the_title() ) ) : ?>
 						<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+						<?php endif; ?>
 						<?php the_content(); ?>
 						<p class="more"><a href="<?php the_excerpt(); ?>">More</a></p>
 					</div>
