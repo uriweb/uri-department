@@ -404,7 +404,8 @@ function uri_department_get_people($args) {
 	);
 
 	$loop = new WP_Query( array_merge( $default_args, $args ) );
-
+	
+	$i = 0;
 	while ($loop->have_posts()) {
 		$i++;
 		$loop->the_post();
