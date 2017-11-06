@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						<div class="sf" id="urisearch">
 							<?php if (get_site_option('uri_cse') ): ?>
 
-								<form method="get" action="http://www.uri.edu/search" name="global_general_search_form">
+								<form method="get" action="//www.uri.edu/search" name="global_general_search_form">
 									<input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
 									<input type="hidden" name="cof" value="FORID:11" />
 									<label for="q">Search:</label>
