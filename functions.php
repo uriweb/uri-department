@@ -170,24 +170,6 @@ unregister_nav_menu( 'col1-menu' );
 unregister_nav_menu( 'footer-menu' );
 
 
-/**
- * Suppress version number
- */
-function uri_department_hide_version() {
-	return '';
-}
-add_filter('the_generator', 'uri_department_hide_version');
-
-
-
-// Use WordPress packaged jQuery
-function uri_department_insert_jquery(){
-	wp_enqueue_script('jquery');
-}
-add_filter('wp_enqueue_scripts','uri_department_insert_jquery');
-
-
-
 
 /**
  * Add JS
@@ -210,13 +192,13 @@ function uri_department_scripts_method() {
 		TRUE
 	);
     
-    wp_enqueue_script(
-		'scripts',
-		get_template_directory_uri() . '/js/scripts.built.js',
-		array( 'jquery' ),
-		$version,
-		TRUE
-	);
+//     wp_enqueue_script(
+// 		'scripts',
+// 		get_template_directory_uri() . '/js/scripts.built.js',
+// 		array( 'jquery' ),
+// 		$version,
+// 		TRUE
+// 	);
 
 }
 add_action( 'wp_enqueue_scripts', 'uri_department_scripts_method' );

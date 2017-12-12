@@ -28,7 +28,7 @@
 
 <div class="mobilefooter"><a href="http://web.uri.edu/about/services/">A-Z</a> &ndash; <a href="http://directory.uri.edu/">Directory</a> &ndash; <a href="http://web.uri.edu/about/contact">Contact Us</a> &ndash; <a href="#top">Jump to top</a></div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" type="text/javascript"></script-->
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {

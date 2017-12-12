@@ -24,7 +24,7 @@
 					$value = str_replace( '/', ' ', $value );
 				?>
 
-				<form method="get" action="http://www.uri.edu/search" class="search-404">
+				<form method="get" action="https://www.uri.edu/search" class="search-404">
 					<input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
 					<input type="hidden" name="cof" value="FORID:11" />
 					<label for="q">Search:</label>
