@@ -53,7 +53,9 @@ add_theme_support( 'automatic-feed-links' );
 /**
  * Include the custom post types plugin
  */
-require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
+if ( !function_exists( 'uri_post_types_post_type_maker' ) ) {
+    require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
+}
 
 /**
  * Include the component library plugin

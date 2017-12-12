@@ -11,6 +11,7 @@
  * - Hero
  * - Notice
  * - Panel
+ * - Social
  * - Tiles
  * - Video
  * - Waves
@@ -183,6 +184,32 @@ function uri_cl_shortcode_panel( $atts, $content = null ) {
 
 }
 add_shortcode( 'cl-panel', 'uri_cl_shortcode_panel' );
+
+
+/**
+ * Social
+ */
+function uri_cl_shortcode_social( $atts, $content = null ) {
+
+	// Attributes
+	extract( shortcode_atts(
+		array(
+			'style' => 'color',
+            'class' => '',
+            'facebook' => '',
+            'instagram' => '',
+            'twitter' => '',
+            'youtube' => '',
+            'snapchat' => '',
+            'linkedin' => ''
+		), $atts )
+	);
+    
+    include 'templates/cl-template-social.php';
+    return $output;
+
+}
+add_shortcode( 'cl-social', 'uri_cl_shortcode_social' );
 
 
 /**
