@@ -11,7 +11,7 @@ function uri_department_cachebuster() {
 	static $cache_buster;
 	if(empty($cache_buster)) {
 		$cache_buster = wp_get_theme()->get('Version');
-		//$cache_buster = date(time());
+		$cache_buster = date(time());
 	}
 	return $cache_buster;
 }
@@ -54,14 +54,21 @@ add_theme_support( 'automatic-feed-links' );
  * Include the custom post types plugin
  */
 if ( !function_exists( 'uri_post_types_post_type_maker' ) ) {
-    require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
+	require_once ( get_stylesheet_directory() . '/plugins/uri-post-types/uri-post-types.php' );
+}
+
+/**
+ * Include the URI People Tool plugin
+ */
+if ( !function_exists( 'uri_people_tool_post_type_maker' ) ) {
+	require_once ( get_stylesheet_directory() . '/plugins/uri-people-tool/uri-people-tool.php' );
 }
 
 /**
  * Include the component library plugin
  */
 if ( !function_exists( 'uri_cl_enqueues' ) ) {
-    require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
+	require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
 }
 
 /**
@@ -372,32 +379,6 @@ function uri_department_bypass_auto_formatting($content) {
 	return $content;   
 }
 add_filter( 'the_content', 'uri_department_bypass_auto_formatting', 1 );
-
-
-/**
- * Print a list of people
- * @param arr $args @see https://codex.wordpress.org/Class_Reference/WP_Query
- */
-function uri_department_get_people($args) {
-
-	$default_args = array(
-		'post_type' => 'people',
-		'posts_per_page' => -1,
-		'order' => 'DESC',
-		'orderby' => array('date' => 'DESC' ),
-	);
-
-	$loop = new WP_Query( array_merge( $default_args, $args ) );
-	
-	$i = 0;
-	while ($loop->have_posts()) {
-		$i++;
-		$loop->the_post();
-		get_template_part( 'templates/partials/person', 'card' );
-	}
-	wp_reset_postdata();
-
-}
 
 
 
