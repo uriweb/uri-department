@@ -11,7 +11,7 @@ function uri_department_cachebuster() {
 	static $cache_buster;
 	if(empty($cache_buster)) {
 		$cache_buster = wp_get_theme()->get('Version');
-		$cache_buster = date(time());
+		//$cache_buster = date(time());
 	}
 	return $cache_buster;
 }
