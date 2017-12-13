@@ -26,7 +26,7 @@
 					<?php if(get_field('peoplephone')) { ?><li><strong>Phone:</strong> <?php the_field('peoplephone'); ?></li><?php } ?>
 					<?php if(get_field('peoplefax')) { ?><li><strong>Fax:</strong> <?php the_field('peoplefax'); ?></li><?php } ?>
 					<?php if(get_field('peopleemail')) { ?><li><strong>Email:</strong> <a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a></li><?php } ?>
-					<?php if(get_field('peoplemail')) { ?><li><strong>Mailing Address:</strong> <?php the_field('peoplemail'); ?></li><?php } ?>
+					<?php if(get_field('peoplemail')) { ?><li><strong>Office Location:</strong> <?php the_field('peoplemail'); ?></li><?php } ?>
 				</ul>
 
 				<?php if(get_field('peoplebio')) { ?>
