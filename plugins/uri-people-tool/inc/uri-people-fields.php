@@ -77,10 +77,10 @@ if(function_exists('register_field_group')) {
 				'order_no' => '3',
 			),
 			array (
-				'label' => 'Mailing Address or Office',
+				'label' => 'Office Location or Mailing Address',
 				'name' => 'peoplemail',
 				'type' => 'textarea',
-				'instructions' => 'Enter the mailing address here. Use line breaks when necessary.',
+				'instructions' => 'Often, the office number is sufficient e.g. 100 Avedesian Hall, but enter a complete mailing address with line breaks if desired.',
 				'required' => '0',
 				'default_value' => '',
 				'formatting' => 'br',
