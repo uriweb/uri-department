@@ -60,11 +60,18 @@ function _uri_department_search_filter_number_of_results($total) {
 
 
 $query_id = $query->query['search_filter_id'];
-//  echo '<pre>';
+  echo '<pre>';
 // $vars = get_defined_vars();
 // var_dump ( array_keys ( $vars ) );
-//  var_dump ( $searchandfilter->get($query_id)->current_query() );
-//  echo '</pre>';
+
+$sf_current_query = $searchandfilter->get($query_id)->current_query();
+
+// var_dump ( $sf_current_query->get_search_term() );
+// 
+// var_dump ( $sf_current_query->is_filtered() );
+
+  
+echo '</pre>';
 
 
 if ( $query->have_posts() ): ?>
