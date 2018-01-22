@@ -60,7 +60,7 @@ function _uri_department_search_filter_number_of_results($total) {
 
 
 $query_id = $query->query['search_filter_id'];
-  echo '<pre>';
+//  echo '<pre>';
 // $vars = get_defined_vars();
 // var_dump ( array_keys ( $vars ) );
 
@@ -71,7 +71,7 @@ $sf_current_query = $searchandfilter->get($query_id)->current_query();
 // var_dump ( $sf_current_query->is_filtered() );
 
   
-echo '</pre>';
+// echo '</pre>';
 
 
 if ( $query->have_posts() ): ?>
@@ -90,7 +90,7 @@ if ( $query->have_posts() ): ?>
 			</div>
 		</div>
 	
-		<div class="search-filter-results-posts cl-tiles halves">
+		<div class="search-filter-results-posts ">
 			<?php
 			while ($query->have_posts())
 			{
@@ -119,8 +119,8 @@ if ( $query->have_posts() ): ?>
 							<div class="people-department people-field"><?php the_field( 'peopledepartment' ); ?></div>
 						<?php endif; ?>
 			
-						<?php if ( 1==2 && get_field( 'peopleresearch' ) ): ?>
-							<div class="people-research people-field">Research: <?php the_field( 'peopleresearch' ); ?></div>
+						<?php if ( get_field( 'peopleresearch' ) ): ?>
+							<div class="people-research people-field"><?php the_field( 'peopleresearch' ); ?></div>
 						<?php endif; ?>
 			
 						<?php
@@ -184,47 +184,3 @@ if ( $query->have_posts() ): ?>
 	<p>No Results Found.</p>
 
 <?php endif; ?>
-
-<style>
-	.search-filter-results .results-meta {
-		font-size: 13px;
-	}
-	.results-meta {
-		color: #555;
-		margin-bottom: 1.5rem;
-	}
-	
-	.search-filter-results hr {
-		clear: both;
-		display: block;
-		margin: 1rem 0;
-		visibility: hidden;
-	}
-	.people-result {
-		background-color: #eee;
-		border-radius: 2px;
-		margin-bottom: 1rem !important;
-		padding: 20px !important;
-	}
-	.people-result figure {
-		float: left;
-		margin: 0 1rem 0 0;
-	}
-	.people-result img {
-		max-width: 80px;
-	}
-	.people-result .people-field, .people-result .people-field p {
-		font-size: 14px !important;
-	}
-	
-	.wf-trajanpro-n7-active .people-result h3 {
-		margin-bottom: 2px;
-		position: relative;
-		top: -6px;
-	}
-	
-	.page-number:not(:last-child):after {
-		color: #555;
-		content: " | ";
-	}
-</style>
