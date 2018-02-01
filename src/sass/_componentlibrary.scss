@@ -1,9 +1,7 @@
 /* ======= DEPARTMENT THEME PATCHES ======= */
 
-$library: '.cl-tiles, .cl-card, .cl-dcard, .cl-boxout, .cl-panel';
 
-
-#{$library} {
+[class^="cl-"] {
     
     p {
         margin-bottom: 0;
@@ -14,13 +12,13 @@ $library: '.cl-tiles, .cl-card, .cl-dcard, .cl-boxout, .cl-panel';
 
 #mainpage .subcol {
     
-    #{$library} {
+    [class^="cl-"] {
         
         p {
             font-size: .9rem;
             line-height: 1.5;
             margin-bottom: 0;
-            padding-top: 1rem;
+            //padding-top: 1rem;
             color: inherit;
         }
         
@@ -28,9 +26,33 @@ $library: '.cl-tiles, .cl-card, .cl-dcard, .cl-boxout, .cl-panel';
     
 }
 
+
+/* Cards */
+
+.cl-card h3,
+.cl-dcard h3 {
+    color: #002147 !important;
+    margin-bottom: 1.4rem !important;
+}
+
+.cl-card p:last-child,
+.cl-tiles .cl-card p:last-child {
+    padding-bottom: 2rem !important;
+}
+
+.cl-dcard p:last-child,
+.cl-tiles .cl-dcard p:last-child {
+    padding-bottom: 1rem !important;
+}
+
+/* Panels */
+
 .cl-panel figure {
     margin-bottom: 0 !important;
 }
+
+
+/* Notices */
 
 .cl-notice h1 {
     font-family: 'Arial', sans-serif !important;
