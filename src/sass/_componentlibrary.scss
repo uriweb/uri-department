@@ -45,6 +45,46 @@
     padding-bottom: 1rem !important;
 }
 
+
+/* Heros */
+
+.cl-hero {
+
+    h1 {
+        color: #fff !important;
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: #fff !important;
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    .cl-hero {
+        h1 {
+            font-size: 2.2rem !important;
+        }
+        p {
+            font-size: 1.3rem !important;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .cl-hero {
+        h1 {
+            font-size: 2.8rem !important;
+        }
+        p {
+            font-size: 1.5rem !important;
+        }
+    }
+}
+
+
 /* Panels */
 
 .cl-panel figure {
