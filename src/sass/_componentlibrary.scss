@@ -1,0 +1,187 @@
+/* ======= DEPARTMENT THEME PATCHES ======= */
+
+
+[class^="cl-"] {
+    
+    p {
+        margin-bottom: 0;
+    }
+    
+}
+
+
+#mainpage .subcol {
+    
+    [class^="cl-"] {
+        
+        p {
+            margin-bottom: .5rem;
+            color: inherit;
+        }
+        
+    }
+    
+}
+
+/* Buttons */
+
+.cl-button {
+    text-decoration: none !important;
+}
+
+.cl-button:hover,
+.cl-button:focus {
+    color: #fff !important;
+}
+
+.cl-hero .cl-button:hover,
+.cl-hero .cl-button:focus {
+    color: inherit !important;
+}
+
+.cl-panel, .cl-notice {
+    .cl-button:not(.disabled):not(:hover):not(:focus) {
+        color: #002147 !important;
+    }
+}
+
+/* Cards */
+
+.cl-card h3,
+.cl-dcard h3 {
+    color: #002147 !important;
+    margin-bottom: 1.4rem !important;
+}
+
+.cl-card p:last-child,
+.cl-tiles .cl-card p:last-child {
+    padding-bottom: 1rem !important;
+}
+
+.cl-dcard p:last-child,
+.cl-tiles .cl-dcard p:last-child {
+    padding-bottom: .8rem !important;
+}
+
+
+/* Heros */
+
+.cl-hero {
+
+    h1 {
+        color: #fff !important;
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: #fff !important;
+        font-size: 1.1rem;
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+    .cl-hero {
+        h1 {
+            font-size: 2.2rem !important;
+        }
+        p {
+            font-size: 1.3rem !important;
+        }
+    }
+}
+
+@media screen and (min-width: 721px) {
+    .cl-hero.fullwidth,
+    .cl-hero.super {
+        left: calc(41.346% - 4.5px) !important;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .cl-hero {
+        h1 {
+            font-size: 2.8rem !important;
+        }
+        p {
+            font-size: 1.5rem !important;
+        }
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .cl-hero.fullwidth,
+    .cl-hero.super {
+        left: calc(41.346% - 20px) !important;
+    }
+}
+
+
+/* Panels */
+
+.cl-panel figure {
+    margin-bottom: 0 !important;
+}
+
+.cl-panel p {
+    padding-top: 1rem !important;
+}
+
+.cl-panel p:first-of-type {
+    padding-top: 1.2rem !important;
+}
+
+
+/* Notices */
+
+.cl-notice h1 {
+    font-family: 'Arial', sans-serif !important;
+}
+
+.cl-notice p {
+    margin-bottom: 0 !important;
+    margin-top: .8rem !important;
+}
+
+
+/* Social Bar */
+
+.cl-social {
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.cl-social li {
+    margin: 0 !important;
+    
+}
+
+.cl-social li:not(:first-child) {
+    margin-left: 10px !important;
+}
+
+
+/* Tabs */
+
+.cl-tabs.cl-tabs-js [role="tablist"] {
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.cl-tabs.cl-tabs-js [role="tablist"] li {
+    margin-bottom: 0 !important;
+    font-size: 1.2rem !important;
+}
+
+.cl-tabs.cl-tabs-js [role="tablist"] a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+
+/* Video */
+
+.cl-video h1 {
+    color: #fff !important;
+}
