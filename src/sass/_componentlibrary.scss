@@ -15,7 +15,7 @@
     [class^="cl-"] {
         
         p {
-            margin-bottom: 0;
+            margin-bottom: .5rem;
             color: inherit;
         }
         
@@ -55,12 +55,12 @@
 
 .cl-card p:last-child,
 .cl-tiles .cl-card p:last-child {
-    padding-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
 }
 
 .cl-dcard p:last-child,
 .cl-tiles .cl-dcard p:last-child {
-    padding-bottom: 1rem !important;
+    padding-bottom: .8rem !important;
 }
 
 
