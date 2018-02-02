@@ -135,8 +135,6 @@
 }
 
 
-
-
 /* Notices */
 
 .cl-notice h1 {
@@ -146,4 +144,22 @@
 .cl-notice p {
     margin-bottom: 0 !important;
     margin-top: .8rem !important;
+}
+
+
+/* Social Bar */
+
+.cl-social {
+    margin: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.cl-social li {
+    margin: 0 !important;
+    
+}
+
+.cl-social li:not(:first-child) {
+    margin-left: 10px !important;
 }
