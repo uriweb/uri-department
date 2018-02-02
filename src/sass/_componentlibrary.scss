@@ -73,6 +73,13 @@
     }
 }
 
+@media screen and (min-width: 721px) {
+    .cl-hero.fullwidth,
+    .cl-hero.super {
+        left: calc(41.346% - 4.5px) !important;
+    }
+}
+
 @media screen and (min-width: 800px) {
     .cl-hero {
         h1 {
@@ -81,6 +88,13 @@
         p {
             font-size: 1.5rem !important;
         }
+    }
+}
+
+@media screen and (min-width: 961px) {
+    .cl-hero.fullwidth,
+    .cl-hero.super {
+        left: calc(41.346% - 20px) !important;
     }
 }
 
