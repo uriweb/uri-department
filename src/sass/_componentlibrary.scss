@@ -26,6 +26,27 @@
     
 }
 
+/* Buttons */
+
+.cl-button {
+    text-decoration: none !important;
+}
+
+.cl-button:hover,
+.cl-button:focus {
+    color: #fff !important;
+}
+
+.cl-hero .cl-button:hover,
+.cl-hero .cl-button:focus {
+    color: inherit !important;
+}
+
+.cl-panel, .cl-notice {
+    .cl-button:not(.disabled):not(:hover):not(:focus) {
+        color: #002147 !important;
+    }
+}
 
 /* Cards */
 
