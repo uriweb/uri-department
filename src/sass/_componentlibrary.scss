@@ -185,3 +185,30 @@
 .cl-video h1 {
     color: #fff !important;
 }
+
+
+/* Error Checking */
+
+.cl-errors div {
+    font-size: .8rem !important;
+}
+
+.cl-errors ul {
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.cl-errors li {
+    margin: .5rem 0 0 !important;
+    padding: .2rem .5rem !important;
+    font-size: .8rem !important;
+    line-height: 1.5 !important;
+}
+
+.cl-errors li.cl-error-warning {
+    color: #8e7800 !important;
+}
+
+.cl-errors li.cl-error-fatal {
+    color: #b70000 !important;
+}
