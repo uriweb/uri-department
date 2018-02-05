@@ -29,8 +29,8 @@
     text-decoration: none !important;
 }
 
-.cl-button:hover,
-.cl-button:focus {
+.cl-button:not(.disabled):hover,
+.cl-button:not(.disabled):focus {
     color: #fff !important;
 }
 
