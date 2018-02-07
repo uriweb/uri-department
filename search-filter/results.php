@@ -22,7 +22,7 @@
  *
  */
 
-
+$search = ( ! empty ( $_REQUEST['_sf_s'] ) ) ? $_REQUEST['_sf_s'] : FALSE;
 
 /**
  * quick and dirty pagination 
@@ -55,6 +55,19 @@ function _uri_department_search_filter_pagination($current_page, $num_pages, $of
 function _uri_department_search_filter_number_of_results($total) {
 	$r = ( $total == 1 ) ? 'result' : 'results';
 	return '<div class="search-filter-total">Found ' . $total . ' ' . $r . '</div>';
+}
+
+
+/**
+ * quick and dirty relevanssi highlight
+ * if relevanssi is present, highlight search terms found in the string.  
+ * otherwise, return the field contents
+ */
+function _uri_department_result_highlight($string, $search) {
+	if ( $search !== FALSE && function_exists( 'relevanssi_highlight_terms' ) ) {  
+		return relevanssi_highlight_terms( $string, $search ); 
+	}
+	return $string;
 }
 
 
@@ -108,19 +121,32 @@ if ( $query->have_posts() ): ?>
 							<a href="<?php the_permalink() ?>"><figure><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/default/uri80.gif" alt="Person Icon" /></figure></a>
 						<?php endif; ?>
 
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<h3><a href="<?php the_permalink(); ?>"><?php
+							// the_title();
+							$title = get_the_title();
+							echo _uri_department_result_highlight( $title, $search );
+						?></a></h3>
 
 			
-						<?php if ( get_field( 'peopletitle' ) ): ?>
-							<div class="people-title people-field"><?php the_field( 'peopletitle' ); ?></div>
+						<?php if ( $people_title = get_field( 'peopletitle' ) ): ?>
+							<div class="people-title people-field"><?php
+								 //the_field( 'peopletitle' );
+								 echo _uri_department_result_highlight( $people_title, $search );
+							?></div>
 						<?php endif; ?>
 			
-						<?php if ( get_field( 'peopledepartment' ) ): ?>
-							<div class="people-department people-field"><?php the_field( 'peopledepartment' ); ?></div>
+						<?php if ( $people_department = get_field( 'peopledepartment' ) ): ?>
+							<div class="people-department people-field"><?php
+								//the_field( 'peopledepartment' );
+								 echo _uri_department_result_highlight( $people_department, $search );
+							?></div>
 						<?php endif; ?>
 			
-						<?php if ( get_field( 'peopleresearch' ) ): ?>
-							<div class="people-research people-field"><?php the_field( 'peopleresearch' ); ?></div>
+						<?php if ( $people_research == get_field( 'peopleresearch' ) ): ?>
+							<div class="people-research people-field"><?php
+								//the_field( 'peopleresearch' );
+								 echo _uri_department_result_highlight( $people_research, $search );
+							?></div>
 						<?php endif; ?>
 			
 						<?php
@@ -132,7 +158,11 @@ if ( $query->have_posts() ): ?>
 								$terms[] = '<a href="?_sft_peoplegroups=' . $t->slug . '">' . $t->name . '</a>';
 							}
 							if ( ! empty( $terms ) && ! is_wp_error( $terms ) ): ?>
-								<div class="people-expertise people-field">Areas of expertise: <?php echo implode ( ', ', $terms ); ?></div>
+								<div class="people-expertise people-field">Areas of expertise: <?php
+									$terms = implode ( ', ', $terms );
+									// echo $terms;
+									echo _uri_department_result_highlight( $terms, $search );
+								?></div>
 							<?php endif; ?>
 			
 					</div>
@@ -140,13 +170,21 @@ if ( $query->have_posts() ): ?>
 				<?php else: // not a people post, use default search and filter template ?>
 
 					<div>
-						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+						<h2><a href="<?php the_permalink(); ?>"><?php
+							// the_title();
+							$title = get_the_title();
+							echo _uri_department_result_highlight( $title, $search );
+						?></a></h2>
 			
-						<p><br /><?php the_excerpt(); ?></p>
+						<p><br /><?php
+							//the_excerpt();
+							$excerpt = get_the_excerpt();
+							echo _uri_department_result_highlight( $excerpt, $search );
+						?></p>
 						<?php 
 							if ( has_post_thumbnail() ) {
 								echo '<p>';
-								the_post_thumbnail("small");
+								the_post_thumbnail('small');
 								echo '</p>';
 							}
 						?>
