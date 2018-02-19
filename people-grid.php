@@ -86,7 +86,11 @@
 									)
 							)
 						);
-						uri_department_get_people($args);
+						if ( function_exists( 'uri_people_tool_get_people' ) ) {
+							uri_people_tool_get_people($args);
+						} else {
+							uri_department_get_people($args);
+						}
 
 						$args = array(
 							'meta_query' => array(
@@ -110,7 +114,11 @@
 									)
 							)
 						);
-						uri_department_get_people($args);
+						if ( function_exists( 'uri_people_tool_get_people' ) ) {
+							uri_people_tool_get_people($args);
+						} else {
+							uri_department_get_people($args);
+						}
 				
 						echo '<div style="clear:both;"></div>';
 						echo '</div><!-- end people sector -->';
@@ -139,7 +147,11 @@
 					),
 					'orderby' => array( 'meta_value' => 'ASC', 'publication_date' => 'DESC' ),
 				);
-				uri_department_get_people($args);
+				if ( function_exists( 'uri_people_tool_get_people' ) ) {
+					uri_people_tool_get_people($args);
+				} else {
+					uri_department_get_people($args);
+				}
 
 				$args = array(
 					'meta_query' => array(
@@ -156,7 +168,11 @@
 					),
 					'orderby' => array('publication_date' => 'DESC' ),
 				);
-				uri_department_get_people($args);
+				if ( function_exists( 'uri_people_tool_get_people' ) ) {
+					uri_people_tool_get_people($args);
+				} else {
+					uri_department_get_people($args);
+				}
 
 				echo '<div style="clear:both;"></div>';
 

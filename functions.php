@@ -65,13 +65,6 @@ if ( !function_exists( 'uri_people_tool_post_type_maker' ) ) {
 }
 
 /**
- * Include the component library plugin
- */
-if ( !function_exists( 'uri_cl_enqueues' ) ) {
-	require_once ( get_stylesheet_directory() . '/plugins/uri-component-library/uri-component-library.php' );
-}
-
-/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
