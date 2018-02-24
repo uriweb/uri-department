@@ -374,6 +374,24 @@ function uri_department_bypass_auto_formatting($content) {
 add_filter( 'the_content', 'uri_department_bypass_auto_formatting', 1 );
 
 
+/**
+ * Santizes output from ACF.
+ * Security filter per Lisa Chen
+ * @see https://www.advancedcustomfields.com/resources/acf_form/#security
+ */
+function uri_department_kses_post( $value ) {
+	
+	// is array
+	if( is_array($value) ) {
+		return array_map('uri_department_kses_post', $value);
+	}
+		
+	// return
+	return wp_kses_post( $value );
+
+}
+add_filter('acf/update_value', 'uri_department_kses_post', 10, 1);
+
 
 function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $allowed_tags = '', $container = 'p', $smileys = 'no' ) {
 	global $post;
@@ -422,9 +440,6 @@ function the_excerpt_reloaded($words = 25, $link_text = 'Read more &#187;', $all
 	}
 	print $return;
 }
-
-
-
 
 
 
