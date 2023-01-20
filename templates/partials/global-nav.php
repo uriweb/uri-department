@@ -65,7 +65,7 @@
 </div>
 <div class="cell research">
 	<ul>
-		<li class="parentcat"><a href="https://web.uri.edu/research/">Research &amp; Outreach</a></li>
+		<li class="parentcat"><a href="https://web.uri.edu/research/">Research</a></li>
 		<!--<li><a class="odd" href="http://web.uri.edu/researchecondev/">Research and Economic Development</a></li>
 		<li><a href="http://web.uri.edu/bec/">Business Engagement Center</a></li>
 		<li><a class="odd" href="http://web.uri.edu/career/">Experiential Learning</a></li>
