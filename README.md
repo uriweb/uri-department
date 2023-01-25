@@ -12,14 +12,10 @@ The URI Department theme is installed on nearly all academic websites. Campus co
 * Activate theme
 * Configure with Customizer or at /wp-admin/themes.php?page=options-framework
 
-#### What if I have questions?
-
-Contact John Pennypacker ([jpennypacker@uri.edu](mailto:jpennypacker@uri.edu)) in the URI Web Communications team.
-
 ## Theme details
 
 Contributors: John Pennypacker, Brandon Fuller  
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
-Stable tag: 3.5.0  
+Stable tag: 3.5.1  
