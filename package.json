@@ -4,12 +4,13 @@
   "description": "WordPress Theme for URI Department Pages",
   "main": "index.php",
   "homepage": "https://www.uri.edu",
-  "repository": "https://bitbucket.org/uriweb/uri-department",
+  "repository": "https://github.com/uriweb/uri-department",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author1": "John Pennypacker <jpennypacker@uri.edu>",
   "author2": "Brandon Fuller <bjcfuller@uri.edu>",
+  "author3": "Alexandra Gauss <alexandra_gauss@uri.edu>",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
