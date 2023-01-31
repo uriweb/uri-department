@@ -58,13 +58,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#urisearch">Skip to search</a></div><!-- end screen reader -->
 
 
-<?php 
+<?php
 // Site wide alerts if they exist
 /* This fopen disabled 2015-08-13 by Chi Shen -- doesn't not seem to function,
-   and as a result it generates a lot of unecessary error messages in the 
+   and as a result it generates a lot of unecessary error messages in the
    server logs.  Sarah Couch and Lisa Chen aware of change. */
 
-//  if (@fopen("http://web.uri.edu/files/alert.txt","r")) { ?>  
+//  if (@fopen("http://web.uri.edu/files/alert.txt","r")) { ?>
 <?php if (false) { ?>
 <div class="alertbar">
 	<?php echo ( file_get_contents( "http://web.uri.edu/files/alert.txt") ); ?>
@@ -75,7 +75,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="firstlayer">
 	<div id="top">
 
-		<?php	
+		<?php
 			get_template_part( 'templates/partials/global-header' );
 		?>
 
@@ -112,7 +112,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="grid-5">
 						<div class="quick">
-							<a href="http://web.uri.edu/its/uri-email/" class="mail">Email</a><a href="http://www.uri.edu/ecampus" class="ecampus">eCampus</a><a href="http://sakai.uri.edu" class="sakai">Sakai</a><a href="http://rhodynet.uri.edu" class="rhodynet">RhodyNet</a>
+							<a href="http://web.uri.edu/its/uri-email/" class="mail">Email</a><a href="http://www.uri.edu/ecampus" class="ecampus">eCampus</a><a href="https://brightspace.uri.edu/d2l/home" class="sakai">Brightspace</a><a href="https://uri.joinhandshake.com/login" class="rhodynet">Handshake</a>
 						</div>
 					</div>
 					<div style="clear:both;"></div>
@@ -129,10 +129,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="subpagetop">
 	<div class="wrapper">
 		<div class="grids">
-		
+
 			<div id="deptbanner" class="grid-3">
 
-				<?php 
+				<?php
 					// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
 					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
 					$urid_altcus = of_get_option('urid_altcus');
@@ -140,7 +140,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					// check for new customizer header image
 					$background_image = get_header_image();
-					// good stuff to know about: get_custom_header()->width and get_custom_header()->height 
+					// good stuff to know about: get_custom_header()->width and get_custom_header()->height
 
 					if($background_image === NULL || $background_image == '') {
 						// check for legacy header image
@@ -151,20 +151,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 						// The header image is still empty.  Use a default
 						$background_image = get_stylesheet_directory_uri() . '/images/uri-minidefault.jpg';
 					}
-					
+
 				?>
 				<a rel="home" class="deptpic" title="<?php echo $title; ?>" href="<?php echo esc_url( home_url() ); ?>"<?php if ($background_image !== FALSE) { ?> style="background-image: url(<?php echo $background_image; ?>);"<?php } ?>><?php bloginfo('name'); ?></a>
 			</div>
-			
+
 			<div id="deptsec" class="grid-7">
 
-				<?php 
+				<?php
 					// 2017-05-04  jp  in moving theme options to the customizer, we don't need the options framework anymore
 					// but this code still checks it for those sites who haven't used Customizer to outfit their sites.
 					$address = get_option('uri_department_department_address');
 					$email = get_option('uri_department_department_email');
 					$phone = get_option('uri_department_department_phone');
-					
+
 					// check for legacy values
 					if ( empty ( $address ) ) {
 						$address = of_get_option('urid_address');
@@ -175,8 +175,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					if ( empty( $phone ) ) {
 						$phone = of_get_option('urid_phone');
 					}
-					
-										
+
+
 				?>
 
 				<h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
@@ -197,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					?>
 					<p><?php echo implode(' &ndash; ', $strings); ?></p>
 			</div>
-			
+
 			<div class="grid-3">
 				<div id="extrabutton">
 					<a href="<?php echo get_site_option('uri_gohome'); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/urihome.png" alt="Go back to the URI Homepage" />URI Homepage</a>
@@ -217,6 +217,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- back to everything else -->
 
 <div id="mainpage">
-<div class="wrap"> 
+<div class="wrap">
 <div class="wrapper">
 <div class="grids">
