@@ -1,7 +1,7 @@
 {
   "name": "uri-department",
   "version": "3.5.0",
-  "description": "WordPress Theme for URI Department Pages",
+  "description": "WordPress Theme for URI Department Pages (deprecated)",
   "main": "index.php",
   "homepage": "https://www.uri.edu",
   "repository": "https://github.com/uriweb/uri-department",
