@@ -20,4 +20,4 @@ Contributors: John Pennypacker, Brandon Fuller, Alexandra Gauss
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
-Stable tag: 3.5.1  
+Stable tag: 3.6.0  
