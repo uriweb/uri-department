@@ -15,16 +15,17 @@
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "browser-sync": "^2.18.8",
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-header": "^1.8.8",
+    "gulp": "^4.0.2",
+    "gulp-concat": ">=2.6.1",
+    "gulp-header": "^2.0.9",
     "gulp-jshint": "^2.0.4",
-    "gulp-postcss": "^7.0.0",
-    "gulp-sass": "^3.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^1.9.1",
     "gulp-strip-debug": "^1.1.0",
     "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.4"
+    "jshint": "^2.9.4",
+    "sass": "^1.57.1"
   },
   "browserslist": {
     "production": [

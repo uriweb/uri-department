@@ -3,11 +3,11 @@ var gulp = require('gulp');
 // include plug-ins
 var jshint = require('gulp-jshint');
 var concat = require('gulp-concat');
-var stripDebug = require('gulp-strip-debug');
+//var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require("sass"));
 var sourcemaps = require('gulp-sourcemaps');
 var header = require('gulp-header');
 
