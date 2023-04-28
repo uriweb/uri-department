@@ -72,4 +72,10 @@ class RecentPosts extends WP_Widget {
   }
 }
 
-add_action( 'widgets_init', create_function('', 'return register_widget("RecentPosts");') );?>
+add_action ( 'widgets_init', 'RecentPosts' );
+function RecentPosts() {
+    return register_widget('RecentPosts');
+}
+
+
+?>

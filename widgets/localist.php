@@ -44,4 +44,8 @@ class Localist extends WP_Widget {
 	}
 
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("Localist");') );
+
+add_action ( 'widgets_init', 'Localist' );
+function Localist() {
+    return register_widget('Localist');
+}
