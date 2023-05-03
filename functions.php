@@ -25,6 +25,35 @@ function uri_department_remove_version() {
 }
 add_filter('the_generator', 'uri_department_remove_version');
 
+/**
+ * Set the Google Tag Manager property ID
+ *
+ * @return str
+ */
+function uri_department_gtm_value() {
+
+	return 'GTM-K5GL9W';
+
+}
+
+
+/**
+ * Adds Google Tag Manager code to <head>
+ */
+function uri_department_gtm() {
+	$gtm = uri_department_gtm_value();
+	if ( ! empty( $gtm ) ) :
+	?>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','<?php echo $gtm; ?>');</script>
+	<?php
+	endif;
+}
+add_action( 'wp_head', 'uri_department_gtm' );
+
 
 /**
  * Establish theme settings settings
