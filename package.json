@@ -1,6 +1,6 @@
 {
   "name": "uri-department",
-  "version": "3.6.1",
+  "version": "3.6.2",
   "description": "WordPress Theme for URI Department Pages (deprecated)",
   "main": "index.php",
   "homepage": "https://www.uri.edu",
@@ -13,19 +13,19 @@
   "author3": "Alexandra Gauss <alexandra_gauss@uri.edu>",
   "license": "MIT",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "browser-sync": "^2.18.8",
-    "gulp": "^4.0.2",
+    "autoprefixer": "^10.4.19",
+    "browser-sync": "^3.0.2",
+    "gulp": "^5.0.0",
     "gulp-concat": ">=2.6.1",
     "gulp-header": "^2.0.9",
-    "gulp-jshint": "^2.0.4",
-    "gulp-postcss": "^9.0.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-postcss": "^10.0.0",
     "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.4",
-    "sass": "^1.57.1"
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-strip-debug": "^6.0.0",
+    "gulp-uglify": "^3.0.2",
+    "jshint": "^2.13.6",
+    "sass": "^1.77.8"
   },
   "browserslist": {
     "production": [

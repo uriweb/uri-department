@@ -19,5 +19,5 @@ The URI Department theme is installed on nearly all academic websites. Campus co
 Contributors: John Pennypacker, Brandon Fuller, Alexandra Gauss  
 Tags: themes  
 Requires at least: 4.0  
-Tested up to: 4.9  
-Stable tag: 3.6.1  
+Tested up to: 6.1.7  
+Stable tag: 3.6.2  
