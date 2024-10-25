@@ -46,13 +46,6 @@
 
 <body <?php body_class(); ?>>
 
-<?php
-	$gtm = uri_department_gtm_value();
-if ( ! empty( $gtm ) ) {
-	echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . $gtm . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
-}
-?>
-
 <!-- screen reader links --><div class="skiplinks"><a href="#content_start">Skip to content</a> &ndash; <a href="#urisearch">Skip to search</a></div><!-- end screen reader -->
 
 
