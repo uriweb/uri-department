@@ -4,9 +4,13 @@ URI Department is a WordPress theme designed for the University of Rhode Island.
 
 This repo no longer sees active development (bug/security fixes only), as it is being replaced by [URI Modern](https://github.com/uriweb/uri-modern).
 
-## What is this repository for?
+## What's new in 4.0
 
-The URI Department theme is installed on nearly all academic websites. Campus collaborators are encouraged to contribute code to improve the theme.
+* Removes Google Tag Manager scripts
+
+> Note: Installing this version without another means of GTM or GA injection will cease all analytics tracking. Think carefully!
+
+For complete details, see the [commit history](https://github.com/uriweb/uri-department/pull/10/commits) and the [issue tracker](https://github.com/uriweb/uri-department/issues).
 
 ## How do I get set up?
 
